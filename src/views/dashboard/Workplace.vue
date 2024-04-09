@@ -2,298 +2,110 @@
   <!-- <div> -->
   <page-header-wrapper1 :title="false">
     <template v-slot:content>
-      <!-- <div class="page-header-content">
-        <video width="600" height="360" controls v-if="false">
-          <source :src="tzbanner" type="video/mp4" />
-        </video>
-        <img :src="tzbanner" alt="" />
-      </div> -->
     </template>
     <template v-slot:extraContent>
-      <!-- <div class="extra-content">
-        <a-tabs v-model:activeKey="activeKey">
-          <a-tab-pane key="1" tab="资讯动态">
-            <a-list item-layout="horizontal" :data-source="data">
-              <a-list-item slot="renderItem" slot-scope="item, index">
-                <a-list-item-meta>
-                  <div slot="title" style="cursor: pointer">{{ item.title }}</div>
-                </a-list-item-meta>
-              </a-list-item>
-            </a-list>
-          </a-tab-pane>
-          <a-tab-pane key="2" tab="培训通知" force-render>Content of Tab Pane 2</a-tab-pane>
-          <a-tab-pane key="3" tab="政策文件">Content of Tab Pane 3</a-tab-pane>
-        </a-tabs>
-      </div> -->
     </template>
+
+
+    <div class="container logocontainer">
+      <div class="fusion-fullwidth fullwidth-box fusion-builder-row-4 fusion-flex-container nonhundred-percent-fullwidth non-hundred-percent-height-scrolling"
+  style="--awb-background-position:left top;--awb-border-sizes-top:0px;--awb-border-sizes-bottom:0px;--awb-border-sizes-left:0px;--awb-border-sizes-right:0px;--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-padding-top:90px;--awb-padding-bottom:3.5%;--awb-background-color:var(--awb-color1);--awb-flex-wrap:wrap;">
+    <div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap"
+    style="max-width:1331.2px;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
+      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-6 fusion_builder_column_1_6 1_6 fusion-flex-column fusion-no-small-visibility"
+      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:16.666666666667%;--awb-margin-top-large:10px;--awb-spacing-right-large:11.52%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:11.52%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+        <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
+        </div>
+      </div>
+      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-7 fusion_builder_column_2_3 2_3 fusion-flex-column"
+      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:66.666666666667%;--awb-margin-top-large:10px;--awb-spacing-right-large:2.88%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:2.88%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+        <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
+          <div class="fusion-image-element " style="text-align:center;--awb-margin-bottom:32px;--awb-caption-title-font-family:var(--h2_typography-font-family);--awb-caption-title-font-weight:var(--h2_typography-font-weight);--awb-caption-title-font-style:var(--h2_typography-font-style);--awb-caption-title-size:var(--h2_typography-font-size);--awb-caption-title-transform:var(--h2_typography-text-transform);--awb-caption-title-line-height:var(--h2_typography-line-height);--awb-caption-title-letter-spacing:var(--h2_typography-letter-spacing);">
+            <span class=" fusion-imageframe imageframe-none imageframe-2 hover-type-none">
+              <a class="fusion-no-lightbox" href="#" target="_blank" aria-label="logo"
+              rel="noopener noreferrer">
+
+                <el-image class="img-responsive wp-image-7 lazyloaded" src="http://106.54.167.222:39900/wp-content/uploads/2024/04/logo-300x296.png">
+                  <div slot="error" class="image-slot">
+                  <img width="300" height="296" src="../../assets/logo-300x296.png" alt="">
+                  </div>
+                </el-image>
+
+
+              </a>
+            </span>
+          </div>
+          <div class="fusion-title title fusion-title-3 fusion-sep-none fusion-title-center fusion-title-text fusion-title-size-two"
+          style="--awb-margin-top:0px;">
+            <h2 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
+            style="margin:0;text-transform:capitalize;font-size:37px;line-height:1.15">
+              国家应急医学研究中心
+            </h2>
+          </div>
+          <div class="fusion-text fusion-text-1" style="--awb-content-alignment:center;--awb-font-size:var(--awb-typography2-font-size);--awb-line-height:var(--awb-typography2-line-height);--awb-letter-spacing:var(--awb-typography2-letter-spacing);--awb-text-transform:var(--awb-typography2-text-transform);--awb-text-font-family:var(--awb-typography2-font-family);--awb-text-font-weight:var(--awb-typography2-font-weight);--awb-text-font-style:var(--awb-typography2-font-style);">
+            <p>
+              关注每一个人的生命安全
+            </p>
+          </div>
+          <div class="fusion-separator" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:15px;margin-bottom:35px;width:100%;max-width:170px;">
+            <div class="fusion-separator-border sep-single sep-solid" style="--awb-height:20px;--awb-amount:20px;--awb-sep-color:var(--awb-color4);border-color:var(--awb-color4);border-top-width:1px;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-8 fusion_builder_column_1_6 1_6 fusion-flex-column fusion-no-small-visibility"
+      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:16.666666666667%;--awb-margin-top-large:10px;--awb-spacing-right-large:11.52%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:11.52%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+        <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
+        </div>
+      </div>
+      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-9 fusion_builder_column_3_5 3_5 fusion-flex-column"
+      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:60%;--awb-margin-top-large:10px;--awb-spacing-right-large:6.4%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:3.2%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+        <div class="fusion-column-wrapper fusion-flex-justify-content-center fusion-content-layout-column">
+          <div class="fusion-title title fusion-title-4 fusion-sep-none fusion-title-text fusion-title-size-three"
+          style="--awb-margin-top:30px;">
+            <h3 class="fusion-title-heading title-heading-left fusion-responsive-typography-calculated"
+            style="margin:0;text-transform:capitalize;--fontSize:24;line-height:var(--awb-typography1-line-height);">
+              中心简介
+            </h3>
+          </div>
+          <div class="fusion-text fusion-text-2">
+            <p>
+              应急总医院是应急管理部直属三级医院。国家应急医学研究中心是经应急管理部和国家卫健委批准，依托应急总医院组建，集医疗、教学、科研、救援、转化于一体的国家级平台，承担应急医学救援、应急医疗资源储备、国际医疗救援、应急医学研究和人才培养等职责。
+            </p>
+            <p>
+              国家应急医学研究中心培训工作围绕应急医学内容设计各类培训课程，包括但不限于：应急急救员培训、消防救援队伍卫勤技能培训、校园应急安全培训、家庭急救等。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-10 fusion_builder_column_2_5 2_5 fusion-flex-column"
+      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:40%;--awb-margin-top-large:5%;--awb-spacing-right-large:4.8%;--awb-margin-bottom-large:40px;--awb-spacing-left-large:4.8%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+        <div class="fusion-column-wrapper fusion-flex-justify-content-center fusion-content-layout-row">
+          <video width="380" height="250" controls="">
+            <source src="http://vod.jj-edu.cn/promotional.mp4" type="video/mp4">
+          </video>
+          <div class="fusion-video fusion-vimeo fusion-no-small-visibility fusion-no-large-visibility"
+          style="--awb-max-width:600px;--awb-max-height:350px;--awb-align-self:center;--awb-width:100%;"
+          data-autoplay="1">
+            <div class="video-shortcode">
+              <lite-vimeo videoid="http://vod.jj-edu.cn/promotional.mp4" class="landscape"
+              params="&amp;autopause=0&amp;muted=1" title="Vimeo video player 1" width="600"
+              height="350" data-fusion-vimeo-thumbnail-loaded="true">
+                <button type="button" class="ltv-playbtn">
+                </button>
+              </lite-vimeo>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+
 
     <div>
 
-     <!-- banner开始 -->
-
-      <!-- <div>
-        <img :src="bannerobj" class="banner" alt="banner" />
-      </div> -->
-
-
-
-    <!-- 课程开始 -->
-    <div class="container">
-      <div class="news-header">
-        课程列表
-      </div>
-      <div class="course-container">
-        <div class="course">
-          <img src="http://www.wiseloong.com/template/default/images/mb1.png" alt="Course 1">
-          <h3>
-            心肺复苏
-          </h3>
-          <p>
-            心肺复苏一般指心肺复苏术。心肺复苏术分为初级心肺复苏和高级心肺复苏。主要是通过人工胸外按压、开通气道、人工呼吸以及应用辅助设备、特殊技术等建..
-          </p>
-          <ul>
-            <li>
-              内容 1
-            </li>
-          </ul>
-        </div>
-        <div class="course">
-          <img src="http://www.wiseloong.com/template/default/images/mb2.png" alt="Course 2">
-          <h3>
-            烫伤烧伤
-          </h3>
-          <p>
-            烧伤和烫伤是生活中比较常见的情况，它们随时都可以发生在人们身边。轻者给患者带来痛苦，重者将危及患者生命，还可带来终生伤害，因此了解烧伤烫伤的相关知识非常重要。。
-          </p>
-          <ul>
-            <li>
-              内容 1
-            </li>
-          </ul>
-        </div>
-        <div class="course">
-          <img src="http://www.wiseloong.com/template/default/images/mb3.png" alt="Course 3">
-          <h3>
-            AED的使用
-          </h3>
-          <p>
-            除颤器一般操作步骤如下，自动体外除颤器（AED）可根据说明书和设备提示进行操作。连接除颤器导线，接通电源，检查同步性能，选择R波较高导联进行示波观察。
-          </p>
-          <ul>
-            <li>
-              内容 3
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
-    <!-- 课程结束 -->
-    <!-- 新闻开始 -->
-    <div class="container-new">
-      <div class="news-header">
-        新闻动态
-      </div>
-      <!-- 新闻动态标题 -->
-      <div class="news-column">
-        <div class="news-table">
-          <img src="https://www.nies.edu.cn/storage/nies/web/cn/article/2024/03/c6801ac0fcc0215f7b0e06c97de6e5f8.jpg"
-          alt="News 1">
-          <div class="news-details">
-            <div>
-              <div class="news-title">
-                新闻标题 1
-              </div>
-              <div class="news-content">
-                新闻内容摘要...
-              </div>
-            </div>
-            <div class="news-date">
-              日期: 2024-04-01
-            </div>
-          </div>
-        </div>
-        <div class="news-table">
-          <img src="https://www.nies.edu.cn/storage/nies/web/cn/article/2024/02/47b049361309e86e3b3b868cc5046d62.jpg"
-          alt="News 2">
-          <div class="news-details">
-            <div>
-              <div class="news-title">
-                新闻标题 2
-              </div>
-              <div class="news-content">
-                新闻内容摘要...
-              </div>
-            </div>
-            <div class="news-date">
-              日期: 2024-04-02
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="news-column">
-        <div class="news-table">
-          <img src="https://www.nies.edu.cn/storage/nies/web/cn/article/2024/01/2d7c37013be45a6671ef476bcfdd4a84.png"
-          alt="News 3">
-          <div class="news-details">
-            <div>
-              <div class="news-title">
-                新闻标题 3
-              </div>
-              <div class="news-content">
-                新闻内容摘要...
-              </div>
-            </div>
-            <div class="news-date">
-              日期: 2024-04-03
-            </div>
-          </div>
-        </div>
-        <div class="news-table">
-          <img src="https://www.nies.edu.cn/storage/nies/web/cn/article/2024/01/2d7c37013be45a6671ef476bcfdd4a84.png"
-          alt="News 4">
-          <div class="news-details">
-            <div>
-              <div class="news-title">
-                新闻标题 4
-              </div>
-              <div class="news-content">
-                新闻内容摘要...
-              </div>
-            </div>
-            <div class="news-date">
-              日期: 2024-04-04
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 新闻结束 -->
-    <!-- 教材开始 -->
-    <div class="container-jiaocai">
-      <div class="section">
-        <div class="section-header">
-          推荐教材
-        </div>
-      </div>
-      <!-- 推荐教材标题 -->
-      <div class="textbook-column">
-        <div class="textbook-table">
-          <img src="http://118.178.233.104:8080/test/img/textbook1.fdb821cc.png"
-          alt="Textbook 1">
-          <div class="textbook-details">
-            <div class="textbook-title">
-              教材标题 1
-            </div>
-            <div class="textbook-content">
-              教材内容摘要...
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="textbook-column">
-        <div class="textbook-table">
-          <img src="http://118.178.233.104:8080/test/img/textbook2.4d51be9f.png"
-          alt="Textbook 2">
-          <div class="textbook-details">
-            <div class="textbook-title">
-              教材标题 2
-            </div>
-            <div class="textbook-content">
-              教材内容摘要...
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="textbook-column">
-        <div class="textbook-table">
-          <img src="http://118.178.233.104:8080/test/img/textbook3.a594d412.png"
-          alt="Textbook 3">
-          <div class="textbook-details">
-            <div class="textbook-title">
-              教材标题 3
-            </div>
-            <div class="textbook-content">
-              教材内容摘要...
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="textbook-column">
-        <div class="textbook-table">
-          <img src="http://118.178.233.104:8080/test/img/textbook4.1ac51623.png"
-          alt="Textbook 4">
-          <div class="textbook-details">
-            <div class="textbook-title">
-              教材标题 4
-            </div>
-            <div class="textbook-content">
-              教材内容摘要...
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 教材结束 -->
-    <!-- 团队开始 -->
-    <div class="container-td">
-      <div class="section">
-        <div class="news-header">
-          专家团队
-        </div>
-      </div>
-      <!-- 专家团队标题 -->
-      <div class="full-width-box">
-        <div class="circle-images">
-          <img src="http://vod.jj-edu.cn/87RviRoKxAwTCiEV_微信图片_20230805182850.png"
-          alt="Image 1">
-          <img src="http://vod.jj-edu.cn/U79ax4rEkYbeXpAp_微信图片_20230731122736.jpg"
-          alt="Expert 2">
-          <img src="http://vod.jj-edu.cn/21DzKVmlGGSBrZFT_Ch5nQWSxLfCAQsDGAATfUvB6uB0333.png"
-          alt="Image 3">
-          <!-- 添加更多小图片 -->
-          <img src="http://vod.jj-edu.cn/bLLxAaidDSYXkbZq_Ch5nQWSxNoqAP8-OAANilTE3ZAI875.png"
-          alt="Image 4">
-          <img src="http://vod.jj-edu.cn/csHC5seSdHJD7Pjh_El8rdqe28fWiZyGW_CWW69gngRzgtnPkD_Ch5nQWSyAwyAYe2nAEdph4S6bTE214%20(6).png"
-          alt="Image 5">
-          <img src="http://vod.jj-edu.cn/EoDLZ5iAc3XKrk4q_El8rdqe28fWiZyGW_CWW69gngRzgtnPkD_Ch5nQWSyAwyAYe2nAEdph4S6bTE214%20(5).png"
-          alt="Image 6">
-          <img src="http://vod.jj-edu.cn/RRBDY4hdu1B9Fr42_El8rdqe28fWiZyGW_CWW69gngRzgtnPkD_Ch5nQWSyAwyAYe2nAEdph4S6bTE214%20(4).png"
-          alt="Image 7">
-          <img src="http://vod.jj-edu.cn/lMjgv1npkH7Neq13_El8rdqe28fWiZyGW_CWW69gngRzgtnPkD_Ch5nQWSyAwyAYe2nAEdph4S6bTE214%20(3).png"
-          alt="Image 8">
-          <img src="http://vod.jj-edu.cn/87RviRoKxAwTCiEV_微信图片_20230805182850.png"
-          alt="Image 1">
-          <img src="http://vod.jj-edu.cn/U79ax4rEkYbeXpAp_微信图片_20230731122736.jpg"
-          alt="Expert 2">
-          <img src="http://vod.jj-edu.cn/21DzKVmlGGSBrZFT_Ch5nQWSxLfCAQsDGAATfUvB6uB0333.png"
-          alt="Image 3">
-          <!-- 添加更多小图片 -->
-          <img src="http://vod.jj-edu.cn/bLLxAaidDSYXkbZq_Ch5nQWSxNoqAP8-OAANilTE3ZAI875.png"
-          alt="Image 4">
-          <img src="http://vod.jj-edu.cn/csHC5seSdHJD7Pjh_El8rdqe28fWiZyGW_CWW69gngRzgtnPkD_Ch5nQWSyAwyAYe2nAEdph4S6bTE214%20(6).png"
-          alt="Image 5">
-          <img src="http://vod.jj-edu.cn/EoDLZ5iAc3XKrk4q_El8rdqe28fWiZyGW_CWW69gngRzgtnPkD_Ch5nQWSyAwyAYe2nAEdph4S6bTE214%20(5).png"
-          alt="Image 6">
-          <img src="http://vod.jj-edu.cn/RRBDY4hdu1B9Fr42_El8rdqe28fWiZyGW_CWW69gngRzgtnPkD_Ch5nQWSyAwyAYe2nAEdph4S6bTE214%20(4).png"
-          alt="Image 7">
-          <img src="http://vod.jj-edu.cn/lMjgv1npkH7Neq13_El8rdqe28fWiZyGW_CWW69gngRzgtnPkD_Ch5nQWSyAwyAYe2nAEdph4S6bTE214%20(3).png"
-          alt="Image 8">
-          <!-- 添加更多小图片 -->
-        </div>
-        <!-- <button class="more-button">
-          更多
-        </button> -->
-        <a-button class="more-button" type="primary">
-          更多
-        </a-button>
-      </div>
-    </div>
-        <!-- 团队结束 -->
-
-
-
-    </div>
-  <!-- </div> -->
   </page-header-wrapper1>
 </template>
 
