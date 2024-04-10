@@ -558,7 +558,7 @@
 
 
 
-      <div class="fusion-fullwidth fullwidth-box fusion-builder-row-7 fusion-flex-container hundred-percent-fullwidth non-hundred-percent-height-scrolling"
+      <!-- <div class="fusion-fullwidth fullwidth-box fusion-builder-row-7 fusion-flex-container hundred-percent-fullwidth non-hundred-percent-height-scrolling"
       style="--awb-background-position:left top;--awb-border-sizes-top:0px;--awb-border-sizes-bottom:0px;--awb-border-sizes-left:0px;--awb-border-sizes-right:0px;--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-padding-top:0px;--awb-padding-right:0px;--awb-padding-bottom:0px;--awb-padding-left:0px;--awb-flex-wrap:wrap;">
       <div class="fusion-builder-row fusion-row fusion-flex-align-items-stretch fusion-flex-content-wrap"
       style="width:calc( 100% + 0px ) !important;max-width:calc( 100% + 0px ) !important;margin-left: calc(-0px / 2 );margin-right: calc(-0px / 2 );">
@@ -679,10 +679,33 @@
           </div>
         </div>
       </div>
+      </div> -->
+
+
+      <div class="imglist">
+
+
+        <el-row :gutter="20">
+          <el-col :span="8" v-for="item in imglist">
+            <div class="imgelem">
+              <el-image :src="item.url">
+              <div slot="error" class="image-slot">
+                <i class="el-icon-picture-outline"></i>
+              </div>
+              </el-image>
+              <div class="imgtitle">
+                <div>{{item.title}}</div>
+                <div></div>
+                <div>了解更多</div>
+              </div>
+            </div>
+        </el-col>
+       </el-row>
+
+
+
+
       </div>
-
-
-
 
 
 
@@ -696,11 +719,13 @@
         <div class="subtitle">
           新闻早知道
         </div>
-
+        <div class="bottomline">
+           <div class="bottomlinecenter"></div>
+        </div>
         <div class="newcontent">
 
           <div class="ant-pro-pages-list-projects-cardList">
-          <a-list :data-source="datanews" :grid="{ gutter: 24, xl: 4, lg: 3, md: 3, sm: 2, xs: 1 }">
+          <a-list :data-source="datanews" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
             <a-list-item slot="renderItem" slot-scope="item">
               <a-card class="ant-pro-pages-list-projects-card" hoverable>
                 <img slot="cover" :src="item.cover" :alt="item.title" />
@@ -863,6 +888,20 @@ export default {
       textbook3: require('@/assets/textbook3.png'),
       textbook4: require('@/assets/textbook4.png'),
       datanews: [],
+      imglist:[
+        {
+          url:require('@/assets/home_courses_section_bg.jpg'),
+          title:"课程"
+        },
+        {
+          url:require('@/assets/home_events_section_bg-1.jpg'),
+          title:"事件"
+        },
+        {
+          url:require('@/assets/home_latest_news_section_bg-1.jpg'),
+          title:"热点新闻"
+        }
+      ]
     }
   },
   computed: {
@@ -904,7 +943,7 @@ export default {
   },
   methods: {
     getList () {
-      this.$http.get('/list/article', { params: { count: 8 } }).then(res => {
+      this.$http.get('/list/article', { params: { count: 3 } }).then(res => {
         console.log('res', res)
         this.datanews = res.result
         // this.loading = false
@@ -1582,19 +1621,87 @@ footer p {
 
 
 <style lang="less" scoped>
- .news{
 
+  .imglist{
+    padding: 20px;
+    background: #f7f5f4;
+    .imgelem{
+      position: relative;
+      cursor: pointer;
+      .imgtitle{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        div:first-child{
+          font-size: 40px;
+          color: #FFF;
+          margin-bottom: 40px;
+        }
+        div:nth-child(2){
+          height: 1px;
+          width: 70px;
+          background: #f09a3e;
+          text-align: center;
+          position: absolute;
+          transform: translate(-50%, 0);
+          left: 50%;
+        }
+        div:nth-child(3){
+          font-size: 20px;
+          color: #FFF;
+          // border-top: 1px solid #f09a3e;
+          padding-top: 30px;
+        }
+      }
+    }
+    /deep/img {
+            width: 100%;
+            height: 100%;
+            /* 设置放大比例 */
+            transform: scale(1);
+            /* 给图片添加过渡效果 */
+            transition: all 1s;
+        }
+ 
+        /deep/ img:hover {
+            /* 修改放大比例 */
+            transform: scale(1.2);
+        }
+}
+
+
+ .news{
+  padding: 20px;
   background: #f7f5f4;
    .title{
     display: flex;
     justify-content: center;
     font-size: 34px;
+    padding-bottom: 30px;
    }
    .subtitle{
     display: flex;
     justify-content: center;
     font-size: 20px;
     color: #7E8890;
+    padding-bottom: 30px;
+   }
+   .bottomline{
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    .bottomlinecenter{
+      height: 1px;
+      width: 200px;
+      background: #f09a3e;
+      }
+   }
+
+   .newcontent{
+    padding: 40px 0;
    }
  }
 

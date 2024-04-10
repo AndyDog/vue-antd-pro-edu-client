@@ -2,14 +2,14 @@ import Mock from 'mockjs2'
 import { builder, getQueryParameters } from '../util'
 
 const titles = [
-  'Alipay',
-  'Angular',
-  'Ant Design',
+  // 'Alipay',
+  // 'Angular',
+  // 'Ant Design',
   '国家应急医学研究中心',
-  'Bootstrap',
-  'React',
-  'Vue',
-  'Webpack'
+  // 'Bootstrap',
+  // 'React',
+  // 'Vue',
+  // 'Webpack'
 ]
 
 const avatar = ['https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
@@ -19,11 +19,21 @@ const avatar = ['https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE
   'https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png'
 ]
 
-const covers = [
+const covers1 = [
   'https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png',
   'https://gw.alipayobjects.com/zos/rmsportal/iZBVOIhGJiAnhplqjvZW.png',
   'https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png',
   'https://gw.alipayobjects.com/zos/rmsportal/gLaIAoVWTtLbBWZNYEMg.png'
+]
+
+const covers = [
+  require('@/assets/266381809445946364978539786.png'),
+  require('@/assets/af30d5ff82ef6753edf5a9100b07a5ec.jpg'),
+  require('@/assets/xts5.jpeg'),
+
+  // 'https://gw.alipayobjects.com/zos/rmsportal/iZBVOIhGJiAnhplqjvZW.png',
+  // 'https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png',
+  // 'https://gw.alipayobjects.com/zos/rmsportal/gLaIAoVWTtLbBWZNYEMg.png'
 ]
 
 const owner = [
@@ -35,7 +45,7 @@ const owner = [
 ]
 
 const content = '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。'
-const description = '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。'
+const description = '国务院安委办、应急管理部召开全国安全防范工作视频会议强调 狠抓责任措施落实 及时消除事故隐患 确保全国安全形势稳定'
 const href = 'https://ant.design'
 
 const article = (options) => {
