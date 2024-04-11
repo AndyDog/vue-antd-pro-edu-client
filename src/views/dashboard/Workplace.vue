@@ -112,574 +112,108 @@
 
 
 
-      <div class="fusion-fullwidth fullwidth-box fusion-builder-row-6 fusion-flex-container nonhundred-percent-fullwidth non-hundred-percent-height-scrolling"
-      style="--awb-background-position:left top;--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-padding-top:4%;--awb-padding-bottom:6%;--awb-background-color:var(--awb-color2);--awb-flex-wrap:wrap;">
-        <div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap"
-        style="max-width:1331.2px;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
-          <div class="fusion-layout-column fusion_builder_column fusion-builder-column-12 fusion_builder_column_1_2 1_2 fusion-flex-column"
-          style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:50%;--awb-margin-top-large:10px;--awb-spacing-right-large:3.84%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:3.84%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
-            <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
-              <div class="fusion-title title fusion-title-5 fusion-sep-none fusion-title-text fusion-title-size-three"
-              style="--awb-margin-top:30px;">
-                <h3 class="fusion-title-heading title-heading-left fusion-responsive-typography-calculated"
-                style="margin:0;text-transform:capitalize;--fontSize:24;line-height:var(--awb-typography1-line-height);">
-                  我们在做什么
-                </h3>
-              </div>
-              <div class="fusion-text fusion-text-3">
-                <p style="text-align: left;">
-                  致力于急救教学、学习和研究，并培养生命安全的领航者，他们在社会急救中发挥至关重要的作用。
-                </p>
-              </div>
-              <div class="fusion-separator fusion-full-width-sep" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:5px;width:100%;">
-              </div>
-              <ul style="--awb-size:19px;--awb-iconcolor:hsla(var(--awb-color4-h),calc( var(--awb-color4-s) - 1% ),var(--awb-color4-l),var(--awb-color4-a));--awb-line-height:32.3px;--awb-icon-width:32.3px;--awb-icon-height:32.3px;--awb-icon-margin:13.3px;--awb-content-margin:45.6px;"
-              class="fusion-checklist fusion-checklist-1 fusion-checklist-default type-icons">
-                <li class="fusion-li-item" style="">
-                  <span class="icon-wrapper circle-no">
-                    <i class="fusion-li-icon university-globe" aria-hidden="true">
-                    </i>
-                  </span>
-                  <div class="fusion-li-item-content">
-                    <p>
-                      <span style="color: var(--awb-textcolor); background-color: var(--awb-odd-row-bgcolor); font-size: var(--awb-size); font-family: var(--body_typography-font-family); font-style: var(--body_typography-font-style,normal); font-weight: var(--body_typography-font-weight); letter-spacing: var(--body_typography-letter-spacing);">
-                        应急救援
-                      </span>
-                      – 在灾难、事故等突发情况下，为伤员提供紧急救护和医疗救助，包括现场急救、伤员分类、转运和安全的医疗处置等
-                    </p>
-                  </div>
-                </li>
-                <li class="fusion-li-item" style="">
-                  <span class="icon-wrapper circle-no">
-                    <i class="fusion-li-icon university-school" aria-hidden="true">
-                    </i>
-                  </span>
-                  <div class="fusion-li-item-content">
-                    <p>
-                      <span style="color: var(--awb-textcolor); background-color: var(--awb-even-row-bgcolor); font-size: var(--awb-size); font-family: var(--body_typography-font-family); font-style: var(--body_typography-font-style,normal); font-weight: var(--body_typography-font-weight); letter-spacing: var(--body_typography-letter-spacing);">
-                        紧急医疗管理
-                      </span>
-                      – 管理医疗资源、协调医疗人员，确保在紧急情况下医疗服务的有效组织和运作。
-                    </p>
-                  </div>
-                </li>
-                <li class="fusion-li-item" style="">
-                  <span class="icon-wrapper circle-no">
-                    <i class="fusion-li-icon university-vcard-o" aria-hidden="true">
-                    </i>
-                  </span>
-                  <div class="fusion-li-item-content">
-                    <p>
-                      <span style="color: var(--awb-textcolor); background-color: var(--awb-odd-row-bgcolor); font-size: var(--awb-size); font-family: var(--body_typography-font-family); font-style: var(--body_typography-font-style,normal); font-weight: var(--body_typography-font-weight); letter-spacing: var(--body_typography-letter-spacing);">
-                        应急预案制定和培训
-                      </span>
-                      – 制定应急医疗预案，培训医疗人员和应急救援人员，提高他们应对紧急情况的能力和应变能力。
-                    </p>
-                  </div>
-                </li>
-                <li class="fusion-li-item" style="">
-                  <span class="icon-wrapper circle-no">
-                    <i class="fusion-li-icon university-vcard-o" aria-hidden="true">
-                    </i>
-                  </span>
-                  <div class="fusion-li-item-content">
-                    <p>
-                      <span style="color: var(--awb-textcolor); background-color: var(--awb-even-row-bgcolor); font-size: var(--awb-size); font-family: var(--body_typography-font-family); font-style: var(--body_typography-font-style,normal); font-weight: var(--body_typography-font-weight); letter-spacing: var(--body_typography-letter-spacing);">
-                        心理援助
-                      </span>
-                      – 在灾难或紧急情况下，为受创伤的个体和群体提供心理援助和心理治疗，缓解心理创伤。
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <div class="fusion-separator fusion-full-width-sep" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:25px;width:100%;">
-              </div>
-              <div class="fusion-text fusion-text-4">
-                <p style="text-align: left;">
-                  总的来说，应急医学致力于在各种突发情况下保护人类生命和健康，通过紧急救援、疾病控制、资源管理等措施，尽可能地减少伤亡和疾病传播的风险。
-                </p>
-              </div>
+      <div class="introlist">
+        <el-row type="flex"  :gutter="30" class="row-bg" justify="center">
+        <el-col :span="10">
+        <div class="grid-content bg-purple">
+            <div class="title">
+            我们在做什么
             </div>
-          </div>
-          <div class="fusion-layout-column fusion_builder_column fusion-builder-column-13 fusion_builder_column_1_2 1_2 fusion-flex-column"
-          style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:50%;--awb-margin-top-large:10px;--awb-spacing-right-large:3.84%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:3.84%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
-            <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
-              <div class="fusion-title title fusion-title-6 fusion-sep-none fusion-title-text fusion-title-size-three"
-              style="--awb-margin-top:30px;">
-                <h3 class="fusion-title-heading title-heading-left fusion-responsive-typography-calculated"
-                style="margin:0;text-transform:capitalize;--fontSize:24;line-height:var(--awb-typography1-line-height);">
-                  应急文化
-                </h3>
-              </div>
-              <div class="accordian fusion-accordian" style="--awb-border-size:0px;--awb-icon-size:25px;--awb-content-font-size:var(--awb-typography4-font-size);--awb-icon-alignment:left;--awb-hover-color:var(--awb-color1);--awb-border-color:var(--awb-color3);--awb-background-color:var(--awb-color1);--awb-divider-color:var(--awb-color3);--awb-divider-hover-color:var(--awb-color3);--awb-icon-color:var(--awb-color4);--awb-title-color:var(--awb-color4);--awb-content-color:var(--awb-color6);--awb-icon-box-color:var(--awb-color8);--awb-toggle-hover-accent-color:var(--awb-color4);--awb-title-font-family:var(--awb-typography1-font-family);--awb-title-font-weight:var(--awb-typography1-font-weight);--awb-title-font-style:var(--awb-typography1-font-style);--awb-title-font-size:var(--awb-typography2-font-size);--awb-title-letter-spacing:var(--awb-typography1-letter-spacing);--awb-title-line-height:var(--awb-typography1-line-height);--awb-content-font-family:var(--awb-typography4-font-family);--awb-content-font-weight:var(--awb-typography4-font-weight);--awb-content-font-style:var(--awb-typography4-font-style);">
-                <div class="panel-group fusion-toggle-icon-unboxed" id="accordion-2082-1">
-                  <div class="fusion-panel panel-default panel-885626d7e8799cc7b fusion-toggle-no-divider fusion-toggle-boxed-mode">
-                    <div class="panel-heading">
-                      <h4 class="panel-title toggle fusion-responsive-typography-calculated"
-                      id="toggle_885626d7e8799cc7b" data-fontsize="20" data-lineheight="23px"
-                      style="--fontSize: 20; line-height: 1.15; --minFontSize: 20;">
-                        <a aria-expanded="false" aria-controls="885626d7e8799cc7b" role="button"
-                        data-toggle="collapse" data-parent="#accordion-2082-1" data-target="#885626d7e8799cc7b"
-                        href="#885626d7e8799cc7b">
-                          <span class="fusion-toggle-icon-wrapper" aria-hidden="true">
-                            <i class="fa-fusion-box active-icon awb-icon-minus" aria-hidden="true">
-                            </i>
-                            <i class="fa-fusion-box inactive-icon awb-icon-plus" aria-hidden="true">
-                            </i>
-                          </span>
-                          <span class="fusion-toggle-heading">
-                            我们的使命
-                          </span>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="885626d7e8799cc7b" class="panel-collapse collapse " aria-labelledby="toggle_885626d7e8799cc7b">
-                      <div class="panel-body toggle-content fusion-clearfix">
-                        <p>
-                          应急医学的使命是保障人民生命安全、健康和社会稳定，应对各种突发事件和紧急情况，提供及时、有效的医疗救援和支持。其核心使命包括：
-                        </p>
-                        <ol>
-                          <li>
-                            <strong>
-                              保护生命
-                            </strong>
-                            ：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。
-                          </li>
-                          <li>
-                            <strong>
-                              减轻痛苦
-                            </strong>
-                            ：应急医学努力提供及时有效的医疗救助，缓解伤痛，减轻患者的痛苦。
-                          </li>
-                          <li>
-                            <strong>
-                              控制疫情
-                            </strong>
-                            ：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。
-                          </li>
-                          <li>
-                            <strong>
-                              维护社会秩序
-                            </strong>
-                            ：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。
-                          </li>
-                          <li>
-                            <strong>
-                              恢复生活
-                            </strong>
-                            ：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。
-                          </li>
-                          <li>
-                            <strong>
-                              预防再次发生
-                            </strong>
-                            ：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。
-                          </li>
-                        </ol>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="fusion-panel panel-default panel-eaae891e367b1a103 fusion-toggle-no-divider fusion-toggle-boxed-mode">
-                    <div class="panel-heading">
-                      <h4 class="panel-title toggle fusion-responsive-typography-calculated"
-                      id="toggle_eaae891e367b1a103" data-fontsize="20" data-lineheight="23px"
-                      style="--fontSize: 20; line-height: 1.15; --minFontSize: 20;">
-                        <a aria-expanded="false" aria-controls="eaae891e367b1a103" role="button"
-                        data-toggle="collapse" data-parent="#accordion-2082-1" data-target="#eaae891e367b1a103"
-                        href="#eaae891e367b1a103">
-                          <span class="fusion-toggle-icon-wrapper" aria-hidden="true">
-                            <i class="fa-fusion-box active-icon awb-icon-minus" aria-hidden="true">
-                            </i>
-                            <i class="fa-fusion-box inactive-icon awb-icon-plus" aria-hidden="true">
-                            </i>
-                          </span>
-                          <span class="fusion-toggle-heading">
-                            我们的理念
-                          </span>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="eaae891e367b1a103" class="panel-collapse collapse " aria-labelledby="toggle_eaae891e367b1a103">
-                      <div class="panel-body toggle-content fusion-clearfix">
-                        <div class="flex-1 overflow-hidden">
-                          <div class="react-scroll-to-bottom--css-zuhcp-79elbk h-full">
-                            <div class="react-scroll-to-bottom--css-zuhcp-1n7m0yu">
-                              <div class="flex flex-col text-sm pb-9">
-                                <div class="w-full text-token-text-primary" data-testid="conversation-turn-7">
-                                  <div class="px-4 py-2 justify-center text-base md:gap-6 m-auto">
-                                    <div class="flex flex-1 text-base mx-auto gap-3 md:px-5 lg:px-1 xl:px-5 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] group final-completion">
-                                      <div class="relative flex w-full flex-col agent-turn">
-                                        <div class="flex-col gap-1 md:gap-3">
-                                          <div class="flex flex-grow flex-col max-w-full">
-                                            <div class="min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto"
-                                            data-message-author-role="assistant" data-message-id="be049158-700c-40b7-a098-75a0964a7876">
-                                              <div class="markdown prose w-full break-words dark:prose-invert light">
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="mt-1 flex justify-start gap-3 empty:hidden">
-                                            <div class="text-gray-400 flex self-end lg:self-center items-center justify-center lg:justify-start mt-0 -ml-1 h-7 gap-[2px] visible">
-                                              <div class="flex">
-                                                应急医学的理念体现了对突发事件和紧急情况的独特认知和应对方式，其核心包括：
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="pr-2 lg:pr-0">
-                                            <div class="flex-1 overflow-hidden">
-                                              <div class="react-scroll-to-bottom--css-zuhcp-79elbk h-full">
-                                                <div class="react-scroll-to-bottom--css-zuhcp-1n7m0yu">
-                                                  <div class="flex flex-col text-sm pb-9">
-                                                    <div class="w-full text-token-text-primary" data-testid="conversation-turn-7">
-                                                      <div class="px-4 py-2 justify-center text-base md:gap-6 m-auto">
-                                                        <div class="flex flex-1 text-base mx-auto gap-3 md:px-5 lg:px-1 xl:px-5 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] group final-completion">
-                                                          <div class="relative flex w-full flex-col agent-turn">
-                                                            <div class="flex-col gap-1 md:gap-3">
-                                                              <div class="flex flex-grow flex-col max-w-full">
-                                                                <div class="min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto"
-                                                                data-message-author-role="assistant" data-message-id="be049158-700c-40b7-a098-75a0964a7876">
-                                                                  <div class="markdown prose w-full break-words dark:prose-invert light">
-                                                                    <ol>
-                                                                      <li>
-                                                                        <strong>
-                                                                          综合性和多学科性
-                                                                        </strong>
-                                                                        ：应急医学强调跨学科合作和综合应对，不仅涉及医学领域，还包括工程学、社会学、心理学等多个学科的知识与技能。综合性和多学科性是应对复杂紧急情况的重要保障。
-                                                                      </li>
-                                                                      <li>
-                                                                        <strong>
-                                                                          及时响应和迅速行动
-                                                                        </strong>
-                                                                        ：应急医学强调对紧急情况的敏感度和快速反应能力。在灾难或事故发生后，应急医学需要立即展开行动，以最大限度地减少伤亡和病患，保障生命安全。
-                                                                      </li>
-                                                                      <li>
-                                                                        <strong>
-                                                                          预防为主和全民参与
-                                                                        </strong>
-                                                                        ：应急医学注重预防工作，强调在突发事件发生前就进行风险评估、预警和预防措施的制定。同时，鼓励全民参与，提高公众的应对能力和自救能力。
-                                                                      </li>
-                                                                      <li>
-                                                                        <strong>
-                                                                          科学管理和资源优化
-                                                                        </strong>
-                                                                        ：应急医学提倡科学管理医疗资源，包括人力、物资和设施等，以确保在紧急情况下资源的合理利用和最大化效益。
-                                                                      </li>
-                                                                      <li>
-                                                                        <strong>
-                                                                          人文关怀和心理支持
-                                                                        </strong>
-                                                                        ：应急医学强调对受灾群众的人文关怀和心理支持，关注其身心健康，通过心理援助和社会支持，帮助他们度过难关。
-                                                                      </li>
-                                                                      <li>
-                                                                        <strong>
-                                                                          持续改进和学习
-                                                                        </strong>
-                                                                        ：应急医学不断总结经验教训，不断改进工作方法和应对策略，以适应不断变化的紧急情况和应对挑战。
-                                                                      </li>
-                                                                    </ol>
-                                                                    <p>
-                                                                      综上所述，应急医学的理念是以综合性、及时响应、全民参与、科学管理、人文关怀和持续改进为核心，为突发事件和紧急情况下的医疗救援提供指导和支持。
-                                                                    </p>
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="fusion-panel panel-default panel-11e7a9aab4f80f48c fusion-toggle-no-divider fusion-toggle-boxed-mode">
-                    <div class="panel-heading">
-                      <h4 class="panel-title toggle fusion-responsive-typography-calculated"
-                      id="toggle_11e7a9aab4f80f48c" data-fontsize="20" data-lineheight="23px"
-                      style="--fontSize: 20; line-height: 1.15; --minFontSize: 20;">
-                        <a aria-expanded="false" aria-controls="11e7a9aab4f80f48c" role="button"
-                        data-toggle="collapse" data-parent="#accordion-2082-1" data-target="#11e7a9aab4f80f48c"
-                        href="#11e7a9aab4f80f48c">
-                          <span class="fusion-toggle-icon-wrapper" aria-hidden="true">
-                            <i class="fa-fusion-box active-icon awb-icon-minus" aria-hidden="true">
-                            </i>
-                            <i class="fa-fusion-box inactive-icon awb-icon-plus" aria-hidden="true">
-                            </i>
-                          </span>
-                          <span class="fusion-toggle-heading">
-                            我们的承诺
-                          </span>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="11e7a9aab4f80f48c" class="panel-collapse collapse " aria-labelledby="toggle_11e7a9aab4f80f48c">
-                      <div class="panel-body toggle-content fusion-clearfix">
-                        <p>
-                          应急医学的承诺体现了医疗机构、医护人员以及整个应急医学系统对于保障人民生命安全和健康的坚定信念和责任感。其主要承诺包括：
-                        </p>
-                        <ol>
-                          <li>
-                            <strong>
-                              保障生命安全
-                            </strong>
-                            ：应急医学承诺在突发事件和紧急情况下，尽最大努力保障每一个人的生命安全，无论是受伤患者、疫情患者还是其他受灾群众。
-                          </li>
-                          <li>
-                            <strong>
-                              及时救援和医疗救助
-                            </strong>
-                            ：应急医学承诺对于受伤患者和急需医疗救助的人员提供及时救援和医疗支持，无论是在灾难现场还是医疗机构内。
-                          </li>
-                          <li>
-                            <strong>
-                              全面覆盖和公平对待
-                            </strong>
-                            ：应急医学承诺在紧急情况下，为所有需要帮助的人提供服务，不分国界、种族、信仰或社会地位，保证医疗服务的公平和公正。
-                          </li>
-                          <li>
-                            <strong>
-                              保障医护人员安全
-                            </strong>
-                            ：应急医学承诺为医护人员提供必要的安全保障措施，确保他们在执行任务时的安全与健康。
-                          </li>
-                          <li>
-                            <strong>
-                              透明和诚信
-                            </strong>
-                            ：应急医学承诺在信息公开、沟通透明方面保持高度诚信，及时向公众通报灾情、疫情及相关医疗信息，以促进社会信任和合作。
-                          </li>
-                          <li>
-                            <strong>
-                              持续改进和学习
-                            </strong>
-                            ：应急医学承诺不断改进工作方法和应对策略，吸取经验教训，提高医疗救援能力和效率。
-                          </li>
-                          <li>
-                            <strong>
-                              关注人文关怀和心理支持
-                            </strong>
-                            ：应急医学承诺为受灾群众提供人文关怀和心理支持，关注他们的身心健康，帮助他们渡过难关。
-                          </li>
-                        </ol>
-                        <p>
-                          综上所述，应急医学的承诺是坚定地致力于保障人民生命安全和健康，以及提供及时有效的医疗救援服务，为社会稳定与发展作出积极贡献。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="fusion-panel panel-default panel-3518843f69a019a8a fusion-toggle-no-divider fusion-toggle-boxed-mode">
-                    <div class="panel-heading">
-                      <h4 class="panel-title toggle fusion-responsive-typography-calculated"
-                      id="toggle_3518843f69a019a8a" data-fontsize="20" data-lineheight="23px"
-                      style="--fontSize: 20; line-height: 1.15; --minFontSize: 20;">
-                        <a aria-expanded="false" aria-controls="3518843f69a019a8a" role="button"
-                        data-toggle="collapse" data-parent="#accordion-2082-1" data-target="#3518843f69a019a8a"
-                        href="#3518843f69a019a8a">
-                          <span class="fusion-toggle-icon-wrapper" aria-hidden="true">
-                            <i class="fa-fusion-box active-icon awb-icon-minus" aria-hidden="true">
-                            </i>
-                            <i class="fa-fusion-box inactive-icon awb-icon-plus" aria-hidden="true">
-                            </i>
-                          </span>
-                          <span class="fusion-toggle-heading">
-                            我们的价值
-                          </span>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="3518843f69a019a8a" class="panel-collapse collapse " aria-labelledby="toggle_3518843f69a019a8a">
-                      <div class="panel-body toggle-content fusion-clearfix">
-                        <ol>
-                          <li>
-                            <strong>
-                              保障生命安全
-                            </strong>
-                            ：应急医学通过及时的救援和医疗服务，可以最大程度地减少伤亡人数，保障人民生命安全，是社会稳定和发展的基础。
-                          </li>
-                          <li>
-                            <strong>
-                              保障公共卫生
-                            </strong>
-                            ：在突发事件和紧急情况下，应急医学不仅能够控制疫情传播，还能够提供各种预防措施，保障公众健康，维护社会公共卫生安全。
-                          </li>
-                          <li>
-                            <strong>
-                              维护社会稳定
-                            </strong>
-                            ：应急医学在灾难和紧急情况中发挥着重要的维稳作用，通过提供医疗救援和支持，稳定受灾群众情绪，防止社会动荡和混乱。
-                          </li>
-                          <li>
-                            <strong>
-                              提高应对能力
-                            </strong>
-                            ：应急医学可以通过应急演练、培训和技术创新等手段，提高医疗机构和医护人员的应急能力和水平，为日常医疗工作提供更好的支持。
-                          </li>
-                          <li>
-                            <strong>
-                              促进社会团结
-                            </strong>
-                            ：在灾难面前，应急医学能够促进社会各界的团结合作，凝聚社会力量，共同应对危机，增强社会凝聚力和向心力。
-                          </li>
-                          <li>
-                            <strong>
-                              提升国家形象
-                            </strong>
-                            ：应急医学的高效运作和优质服务，能够提升国家在国际社会中的形象和声誉，增强国际社会的信任和合作。
-                          </li>
-                          <li>
-                            <strong>
-                              推动科技发展
-                            </strong>
-                            ：应急医学在医疗设备、医疗技术和医疗管理等方面不断创新和发展，推动医疗科技的进步，促进医疗卫生事业的发展。
-                          </li>
-                        </ol>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="subtitle">
+              致力于急救教学、学习和研究，并培养生命安全的领航者，他们在社会急救中发挥至关重要的作用。
             </div>
-          </div>
+            <div class="list">
+                 <div v-for="item in introlist1">
+                 <span><i :class="item.icon"></i></span>
+                 {{item.name}}
+                 </div>
+            </div>
+            <div class="introlistLeftFooter">
+              总的来说，应急医学致力于在各种突发情况下保护人类生命和健康，通过紧急救援、疾病控制、资源管理等措施，尽可能地减少伤亡和疾病传播的风险。
+            </div>
         </div>
+        </el-col>
+        <el-col :span="10"><div class="grid-content bg-purple-light">
+          <div class="title">
+            应急文化
+            </div>
+            <div class="introlistRightList">
+            
+    
+              <div>
+                <a-collapse default-active-key="1" :bordered="false" accordion>
+                  <template #expandIcon="props">
+                    <a-icon :type="props.isActive?'minus':'plus'" />
+                  </template>
+                  <a-collapse-panel key="1" header="   我们的使命" :style="customStyle">
+                    <div class="panel-body toggle-content fusion-clearfix">
+                    <p>应急医学的使命是保障人民生命安全、健康和社会稳定，应对各种突发事件和紧急情况，提供及时、有效的医疗救援和支持。其核心使命包括：</p>
+                    <ol>
+                    <li><strong>保护生命</strong>：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。</li>
+                    <li><strong>减轻痛苦</strong>：应急医学努力提供及时有效的医疗救助，缓解伤痛，减轻患者的痛苦。</li>
+                    <li><strong>控制疫情</strong>：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。</li>
+                    <li><strong>维护社会秩序</strong>：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。</li>
+                    <li><strong>恢复生活</strong>：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。</li>
+                    <li><strong>预防再次发生</strong>：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。</li>
+                    </ol>
+                    </div>
+                  </a-collapse-panel>
+                  <a-collapse-panel key="2" header="我们的理念" :style="customStyle">
+                    <div class="panel-body toggle-content fusion-clearfix">
+                    <p>应急医学的使命是保障人民生命安全、健康和社会稳定，应对各种突发事件和紧急情况，提供及时、有效的医疗救援和支持。其核心使命包括：</p>
+                    <ol>
+                    <li><strong>保护生命</strong>：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。</li>
+                    <li><strong>减轻痛苦</strong>：应急医学努力提供及时有效的医疗救助，缓解伤痛，减轻患者的痛苦。</li>
+                    <li><strong>控制疫情</strong>：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。</li>
+                    <li><strong>维护社会秩序</strong>：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。</li>
+                    <li><strong>恢复生活</strong>：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。</li>
+                    <li><strong>预防再次发生</strong>：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。</li>
+                    </ol>
+                    </div>
+                  </a-collapse-panel>
+                  <a-collapse-panel key="3" header="我们的承诺" :style="customStyle">
+                    <div class="panel-body toggle-content fusion-clearfix">
+                    <p>应急医学的使命是保障人民生命安全、健康和社会稳定，应对各种突发事件和紧急情况，提供及时、有效的医疗救援和支持。其核心使命包括：</p>
+                    <ol>
+                    <li><strong>保护生命</strong>：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。</li>
+                    <li><strong>减轻痛苦</strong>：应急医学努力提供及时有效的医疗救助，缓解伤痛，减轻患者的痛苦。</li>
+                    <li><strong>控制疫情</strong>：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。</li>
+                    <li><strong>维护社会秩序</strong>：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。</li>
+                    <li><strong>恢复生活</strong>：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。</li>
+                    <li><strong>预防再次发生</strong>：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。</li>
+                    </ol>
+                    </div>
+                  </a-collapse-panel>
+                  <a-collapse-panel key="4" header="我们的价值" :style="customStyle">
+                    <div class="panel-body toggle-content fusion-clearfix">
+                  <p>应急医学的使命是保障人民生命安全、健康和社会稳定，应对各种突发事件和紧急情况，提供及时、有效的医疗救援和支持。其核心使命包括：</p>
+                  <ol>
+                  <li><strong>保护生命</strong>：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。</li>
+                  <li><strong>减轻痛苦</strong>：应急医学努力提供及时有效的医疗救助，缓解伤痛，减轻患者的痛苦。</li>
+                  <li><strong>控制疫情</strong>：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。</li>
+                  <li><strong>维护社会秩序</strong>：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。</li>
+                  <li><strong>恢复生活</strong>：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。</li>
+                  <li><strong>预防再次发生</strong>：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。</li>
+                  </ol>
+                  </div>
+                  </a-collapse-panel>
+                </a-collapse>
+              </div>
+
+
+            
+            </div>
+        
+ 
+        
+        </div>
+        </el-col>
+
+        </el-row>
+      
+      
       </div>
 
-
-
-
-      <!-- <div class="fusion-fullwidth fullwidth-box fusion-builder-row-7 fusion-flex-container hundred-percent-fullwidth non-hundred-percent-height-scrolling"
-      style="--awb-background-position:left top;--awb-border-sizes-top:0px;--awb-border-sizes-bottom:0px;--awb-border-sizes-left:0px;--awb-border-sizes-right:0px;--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-padding-top:0px;--awb-padding-right:0px;--awb-padding-bottom:0px;--awb-padding-left:0px;--awb-flex-wrap:wrap;">
-      <div class="fusion-builder-row fusion-row fusion-flex-align-items-stretch fusion-flex-content-wrap"
-      style="width:calc( 100% + 0px ) !important;max-width:calc( 100% + 0px ) !important;margin-left: calc(-0px / 2 );margin-right: calc(-0px / 2 );">
-        <div class="fusion-layout-column fusion_builder_column fusion-builder-column-14 fusion_builder_column_1_3 1_3 fusion-flex-column fusion-column-inner-bg-wrapper"
-        style="--awb-padding-top:18%;--awb-padding-bottom:18%;--awb-inner-bg-blend:overlay;--awb-inner-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:0px;--awb-margin-bottom-large:0px;--awb-spacing-left-large:0px;--awb-width-medium:100%;--awb-spacing-right-medium:0px;--awb-spacing-left-medium:0px;--awb-width-small:100%;--awb-spacing-right-small:0px;--awb-spacing-left-small:0px;">
-          <span class="fusion-column-inner-bg hover-type-zoomin">
-            <a class="fusion-column-anchor" href="http://192.168.1.9:2080/">
-              <span class="fusion-column-inner-bg-image lazyloaded" data-bg="http://106.54.167.222:39900/wp-content/uploads/2015/12/home_courses_section_bg.jpg"
-              style="background-image: url(&quot;http://106.54.167.222:39900/wp-content/uploads/2015/12/home_courses_section_bg.jpg&quot;);">
-              </span>
-            </a>
-          </span>
-          <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column fusion-column-has-bg-image"
-          data-bg-url="http://106.54.167.222:39900/wp-content/uploads/2015/12/home_courses_section_bg.jpg">
-            <div class="fusion-separator fusion-no-small-visibility fusion-no-medium-visibility fusion-full-width-sep"
-            style="align-self: center;margin-left: auto;margin-right: auto;margin-top:170px;width:100%;">
-            </div>
-            <div class="fusion-title title fusion-title-7 fusion-sep-none fusion-title-center fusion-title-text fusion-title-size-two"
-            style="--awb-text-color:var(--awb-color1);--awb-margin-top:40px;">
-              <h2 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
-              style="margin:0;text-transform:capitalize;--fontSize:34;line-height:var(--awb-typography1-line-height);">
-                课程
-              </h2>
-            </div>
-            <div class="fusion-separator" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:0px;margin-bottom:30px;width:100%;max-width:60px;">
-              <div class="fusion-separator-border sep-single sep-solid" style="--awb-height:20px;--awb-amount:20px;--awb-sep-color:hsla(var(--awb-color4-h),calc( var(--awb-color4-s) - 1% ),var(--awb-color4-l),var(--awb-color4-a));border-color:hsla(var(--awb-color4-h),calc( var(--awb-color4-s) - 1% ),var(--awb-color4-l),var(--awb-color4-a));border-top-width:1px;">
-              </div>
-            </div>
-            <div class="fusion-text fusion-text-5">
-              <p style="text-align: center;">
-                <a href="http://106.54.167.222:39900/courses/">
-                  <span style="color: var(--awb-color1);">
-                    了解更多
-                  </span>
-                </a>
-              </p>
-            </div>
-            <div class="fusion-separator fusion-no-small-visibility fusion-no-medium-visibility fusion-full-width-sep"
-            style="align-self: center;margin-left: auto;margin-right: auto;margin-top:170px;width:100%;">
-            </div>
-          </div>
-        </div>
-        <div class="fusion-layout-column fusion_builder_column fusion-builder-column-15 fusion_builder_column_1_3 1_3 fusion-flex-column fusion-column-inner-bg-wrapper"
-        style="--awb-padding-top:18%;--awb-padding-bottom:18%;--awb-inner-bg-blend:overlay;--awb-inner-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:0px;--awb-margin-bottom-large:0px;--awb-spacing-left-large:0px;--awb-width-medium:100%;--awb-spacing-right-medium:0px;--awb-spacing-left-medium:0px;--awb-width-small:100%;--awb-spacing-right-small:0px;--awb-spacing-left-small:0px;">
-          <span class="fusion-column-inner-bg hover-type-zoomin">
-            <a class="fusion-column-anchor" href="http://192.168.1.9:2080/">
-              <span class="fusion-column-inner-bg-image lazyloaded" data-bg="http://106.54.167.222:39900/wp-content/uploads/2015/12/home_latest_news_section_bg-1.jpg"
-              style="background-image: url(&quot;http://106.54.167.222:39900/wp-content/uploads/2015/12/home_latest_news_section_bg-1.jpg&quot;);">
-              </span>
-            </a>
-          </span>
-          <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column fusion-column-has-bg-image"
-          data-bg-url="http://106.54.167.222:39900/wp-content/uploads/2015/12/home_latest_news_section_bg-1.jpg">
-            <div class="fusion-separator fusion-full-width-sep" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:170px;width:100%;">
-            </div>
-            <div class="fusion-title title fusion-title-8 fusion-sep-none fusion-title-center fusion-title-text fusion-title-size-two"
-            style="--awb-text-color:var(--awb-color1);--awb-margin-top:40px;">
-              <h2 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
-              style="margin:0;text-transform:capitalize;--fontSize:34;line-height:var(--awb-typography1-line-height);">
-                事件
-              </h2>
-            </div>
-            <div class="fusion-separator" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:0px;margin-bottom:30px;width:100%;max-width:60px;">
-              <div class="fusion-separator-border sep-single sep-solid" style="--awb-height:20px;--awb-amount:20px;--awb-sep-color:hsla(var(--awb-color4-h),calc( var(--awb-color4-s) - 1% ),var(--awb-color4-l),var(--awb-color4-a));border-color:hsla(var(--awb-color4-h),calc( var(--awb-color4-s) - 1% ),var(--awb-color4-l),var(--awb-color4-a));border-top-width:1px;">
-              </div>
-            </div>
-            <div class="fusion-text fusion-text-6">
-              <p style="text-align: center;">
-                <a href="http://106.54.167.222:39900/events/">
-                  <span style="color: var(--awb-color1);">
-                    了解更多
-                  </span>
-                </a>
-              </p>
-            </div>
-            <div class="fusion-separator fusion-no-small-visibility fusion-no-medium-visibility fusion-full-width-sep"
-            style="align-self: center;margin-left: auto;margin-right: auto;margin-top:170px;width:100%;">
-            </div>
-          </div>
-        </div>
-        <div class="fusion-layout-column fusion_builder_column fusion-builder-column-16 fusion_builder_column_1_3 1_3 fusion-flex-column fusion-column-inner-bg-wrapper"
-        style="--awb-padding-top:18%;--awb-padding-bottom:18%;--awb-inner-bg-blend:overlay;--awb-inner-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:0px;--awb-margin-bottom-large:0px;--awb-spacing-left-large:0px;--awb-width-medium:100%;--awb-spacing-right-medium:0px;--awb-spacing-left-medium:0px;--awb-width-small:100%;--awb-spacing-right-small:0px;--awb-spacing-left-small:0px;">
-          <span class="fusion-column-inner-bg hover-type-zoomin">
-            <a class="fusion-column-anchor" href="http://192.168.1.9:2080/">
-              <span class="fusion-column-inner-bg-image lazyloaded" data-bg="http://106.54.167.222:39900/wp-content/uploads/2015/12/home_events_section_bg-1.jpg"
-              style="background-image: url(&quot;http://106.54.167.222:39900/wp-content/uploads/2015/12/home_events_section_bg-1.jpg&quot;);">
-              </span>
-            </a>
-          </span>
-          <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column fusion-column-has-bg-image"
-          data-bg-url="http://106.54.167.222:39900/wp-content/uploads/2015/12/home_events_section_bg-1.jpg">
-            <div class="fusion-separator fusion-no-small-visibility fusion-no-medium-visibility fusion-full-width-sep"
-            style="align-self: center;margin-left: auto;margin-right: auto;margin-top:170px;width:100%;">
-            </div>
-            <div class="fusion-title title fusion-title-9 fusion-sep-none fusion-title-center fusion-title-text fusion-title-size-two"
-            style="--awb-text-color:var(--awb-color1);--awb-margin-top:40px;">
-              <h2 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
-              style="margin:0;text-transform:capitalize;--fontSize:34;line-height:var(--awb-typography1-line-height);">
-                热点新闻
-              </h2>
-            </div>
-            <div class="fusion-separator" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:0px;margin-bottom:30px;width:100%;max-width:60px;">
-              <div class="fusion-separator-border sep-single sep-solid" style="--awb-height:20px;--awb-amount:20px;--awb-sep-color:hsla(var(--awb-color4-h),calc( var(--awb-color4-s) - 1% ),var(--awb-color4-l),var(--awb-color4-a));border-color:hsla(var(--awb-color4-h),calc( var(--awb-color4-s) - 1% ),var(--awb-color4-l),var(--awb-color4-a));border-top-width:1px;">
-              </div>
-            </div>
-            <div class="fusion-text fusion-text-7">
-              <p style="text-align: center;">
-                <a href="http://106.54.167.222:39900/lates-news/">
-                  <span style="color: var(--awb-color1);">
-                    了解更多
-                  </span>
-                </a>
-              </p>
-            </div>
-            <div class="fusion-separator fusion-no-small-visibility fusion-no-medium-visibility fusion-full-width-sep"
-            style="align-self: center;margin-left: auto;margin-right: auto;margin-top:170px;width:100%;">
-            </div>
-          </div>
-        </div>
-      </div>
-      </div> -->
 
 
       <div class="imglist">
@@ -706,8 +240,6 @@
 
 
       </div>
-
-
 
 
 
@@ -901,7 +433,27 @@ export default {
           url:require('@/assets/home_latest_news_section_bg-1.jpg'),
           title:"热点新闻"
         }
-      ]
+      ],
+      introlist1:[
+        {
+          name:"应急救援 – 在灾难、事故等突发情况下，为伤员提供紧急救护和医疗救助，包括现场急救、伤员分类、转运和安全的医疗处置等",
+          icon:"el-icon-picture-outline-round"
+        },
+        {
+          name:"紧急医疗管理 – 管理医疗资源、协调医疗人员，确保在紧急情况下医疗服务的有效组织和运作。",
+          icon:"el-icon-s-shop"
+        },
+        {
+          name:"应急预案制定和培训 – 制定应急医疗预案，培训医疗人员和应急救援人员，提高他们应对紧急情况的能力和应变能力。",
+          icon:"el-icon-potato-strips"
+        },
+        {
+          name:"心理援助 – 在灾难或紧急情况下，为受创伤的个体和群体提供心理援助和心理治疗，缓解心理创伤。",
+          icon:"el-icon-potato-strips"
+        }
+      ],
+      customStyle:
+        'background: #fff;border-radius: 4px;margin-bottom: 24px;border: 0;overflow: hidden',
     }
   },
   computed: {
@@ -1703,6 +1255,50 @@ footer p {
    .newcontent{
     padding: 40px 0;
    }
+ }
+
+
+ .introlist{
+  padding: 20px;
+  background: #f7f5f4;
+    .title{
+      font-size: 24px;
+      color: #333c4e;
+      font-weight: 600;
+      margin: 30px 0 20px 0;
+    }
+    .subtitle{
+      font-size: 15px;
+      color: #7E8890;
+      margin-bottom: 20px;
+    }
+
+    .list{
+      font-size: 19px;
+      color: #7E8890;
+      i{
+       color: #f09a3e
+      }
+      div{
+        margin: 20px 0;
+        line-height: 28px;
+      }
+    }
+    .introlistLeftFooter{
+      font-size: 15px;
+      color: #7E8890;
+    }
+   /deep/.ant-collapse-header{
+    font-size: 20px;
+    color: #f09a3e
+   }
+
+   /deep/ .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow{
+    font-size: 25px;
+    margin-right: 15px;
+   }
+
+
  }
 
 

@@ -82,10 +82,32 @@
             ></span>
             <span class="fusion-highlighted-text-postfix">健康生命保驾护航</span>
           </h2>
-        </div>
-        <div></div>
-      </div>
+         </div>
+         <p style="text-align: center; font-size: 20px;">致力于保障人民生命安全和健康，以及提供及时有效的医疗救援服务，为社会稳定与发展作出积极贡献</p>
+        <div>
+          <el-form :inline="true" :model="formInline" class="demo-form-inline">
+          <el-form-item label="">
+            <el-input v-model="formInline.user" placeholder="姓名"></el-input>
+          </el-form-item>
+          <el-form-item label="">
+            <el-input v-model="formInline.user" placeholder="Email"></el-input>
+          </el-form-item>
+          <el-form-item label="">
+            <el-input v-model="formInline.user" placeholder="电话"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button style="height:50px;" type="warning" @click="onSubmit">Apply Now</el-button>
+          </el-form-item>
+        </el-form>
 
+
+        </div>
+      </div>
+      <div class="allfooter">
+          <div>
+            国家应急中心© 保留所有权利由 XXXX 提供支持
+          </div>
+        </div>
       <!-- <GlobalFooter></GlobalFooter> -->
       <!-- <div class="footer">
         <div data-v-0cded264="" data-v-e506c3de="" style="background: #252b3a" class="friendship-bg">
@@ -214,6 +236,10 @@ export default {
 
       // 是否手机模式
       isMobile: false,
+
+      formInline:{
+
+      }
     }
   },
   computed: {
@@ -333,6 +359,7 @@ export default {
   background: #333c4e;
   padding: 50px 30px;
   text-align: center;
+
 }
 .fusion-highlighted-text-wrapper {
   position: relative;
@@ -358,4 +385,8 @@ export default {
     animation-name: fusion-title-highlight-off-loop;
   }
 }
+.allfooter{
+    padding: 20px 30px;
+    background-image: linear-gradient(180deg, #b1c3ff 0%, #ffffff 100%);;
+  }
 </style>
