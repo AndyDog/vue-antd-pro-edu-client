@@ -21,7 +21,6 @@
     -->
 
     <template v-slot:menuHeaderRender>
-
       <div>
         <img :src="logo" />
 
@@ -64,19 +63,29 @@
     </template>
     <!-- custom footer / 自定义Footer -->
     <template v-slot:footerRender>
-
-
-      <div class="fusion-title-heading">
-       <div class="fusion-highlighted-text-wrapper"><h2 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated" style="margin:0;text-transform:capitalize;--fontSize:34;line-height:var(--awb-typography1-line-height);"><span class="fusion-highlighted-text-prefix">加入我们</span> <span class="fusion-highlighted-text-wrapper"><span class="fusion-highlighted-text" style="color:var(--awb-color4);">为14亿中国人</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M8.1,146.2c0,0,240.6-55.6,479-13.8"></path></svg></span> <span class="fusion-highlighted-text-postfix">健康生命保驾护航</span></h2></div>
-       <div></div>
-
-
+      <div class="fusion-title-heading-footer">
+        <div class="fusion-highlighted-text-wrapper">
+          <h2
+            class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
+            style="
+              margin: 0;
+              text-transform: capitalize;
+              --fontSize: 34;
+              line-height: var(--awb-typography1-line-height);
+            "
+          >
+            <span class="fusion-highlighted-text-prefix">加入我们</span>
+            <span class="fusion-highlighted-text-wrapper"
+              ><span class="fusion-highlighted-text" style="color: var(--awb-color4)">为14亿中国人</span
+              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path d="M8.1,146.2c0,0,240.6-55.6,479-13.8"></path></svg
+            ></span>
+            <span class="fusion-highlighted-text-postfix">健康生命保驾护航</span>
+          </h2>
+        </div>
+        <div></div>
       </div>
 
-
-
-
-      
       <!-- <GlobalFooter></GlobalFooter> -->
       <!-- <div class="footer">
         <div data-v-0cded264="" data-v-e506c3de="" style="background: #252b3a" class="friendship-bg">
@@ -127,19 +136,26 @@
       <!-- {{bannerobj}} -->
       <img :src="bannerobj" class="banner" alt="banner" />
 
-      <div class="bannerText" :class="routename" v-if="routename=='Workplace'">
-        <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated">国家应急医学研究中心</h1>
-        <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated" style="font-size: 26px;margin: 10px 20px;">National Emergency Medical Research Center</h1>
+      <div class="bannerText" :class="routename" v-if="routename == 'Workplace'">
+        <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated">
+          国家应急医学研究中心
+        </h1>
+        <h1
+          class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
+          style="font-size: 26px; margin: 10px 20px"
+        >
+          National Emergency Medical Research Center
+        </h1>
         <div class="btngroup">
           <el-button class="btn1">查看详情</el-button>
           <el-button class="btn2">联系我们</el-button>
         </div>
       </div>
       <div class="bannerText" :class="routename" v-else>
-        <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated">{{routenameTitle}}</h1>
-
+        <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated">
+          {{ routenameTitle }}
+        </h1>
       </div>
-
     </div>
     <router-view />
   </pro-layout>
@@ -228,12 +244,12 @@ export default {
       }
       return obj[this.$route.name] || this.banner
     },
-    routename(){
+    routename() {
       return this.$route.name
     },
-    routenameTitle(){
+    routenameTitle() {
       return menu[this.$route.meta.title]
-    }
+    },
   },
   created() {
     const routes = this.mainMenu.find((item) => item.path === '/')
@@ -312,24 +328,25 @@ export default {
 
 <style lang="less">
 @import './BasicLayout.less';
-.fusion-title-heading{
+.fusion-title-heading-footer {
   position: relative;
-  background: #333c4e; 
+  background: #333c4e;
   padding: 50px 30px;
+  text-align: center;
 }
-.fusion-highlighted-text-wrapper{
+.fusion-highlighted-text-wrapper {
   position: relative;
-   display:inline-block;
+  display: inline-block;
 }
 .fusion-title-heading svg {
-    margin-top: var(--awb-highlight-top-margin);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: calc(100% + .75em);
-    height: calc(100% + .75em);
-    transform: translate(-50%, -50%);
-    overflow: visible;
+  margin-top: var(--awb-highlight-top-margin);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 0.75em);
+  height: calc(100% + 0.75em);
+  transform: translate(-50%, -50%);
+  overflow: visible;
   path {
     stroke: #f09a3e;
     stroke-width: 6;
@@ -339,6 +356,6 @@ export default {
     stroke-linejoin: round;
     animation: fusion-title-highlight 10s;
     animation-name: fusion-title-highlight-off-loop;
-}
+  }
 }
 </style>
