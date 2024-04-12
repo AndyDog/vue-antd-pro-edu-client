@@ -14,7 +14,8 @@ Vue.use(Router)
 const createRouter = () =>
   new Router({
     mode: 'hash',
-    routes: constantRouterMap,
+    // routes: constantRouterMap,
+    routes: constantRouterMap.concat(asyncRouterMap),
   })
 
 const router = createRouter()

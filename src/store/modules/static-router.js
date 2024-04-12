@@ -1,6 +1,185 @@
 import { asyncRouterMap, constantRouterMap } from '@/config/router.config'
 import cloneDeep from 'lodash.clonedeep'
-
+const routerdata = [
+  {
+    path: '/',
+    name: 'index',
+    component: {
+      name: 'BasicLayout',
+      components: {
+        SettingDrawer: {
+          name: 'SettingDrawer',
+          props: { getContainer: {}, settings: {}, i18nRender: { type: [null, null], default: false } },
+          inject: ['locale'],
+          methods: {},
+        },
+        RightContent: {
+          name: 'RightContent',
+          components: {
+            AvatarDropdown: {
+              name: 'AvatarDropdown',
+              props: { currentUser: {}, menu: { default: true } },
+              methods: {},
+              staticRenderFns: [],
+              _compiled: true,
+              _scopeId: 'data-v-4c936209',
+              beforeCreate: [null],
+              beforeDestroy: [null],
+              __file: 'src/components/GlobalHeader/AvatarDropdown.vue',
+            },
+            SelectLang: {
+              props: { prefixCls: { default: 'ant-pro-drop-down' } },
+              name: 'SelectLang',
+              mixins: [{ computed: {}, methods: {} }],
+            },
+          },
+          props: {
+            prefixCls: { default: 'ant-pro-global-header-index-action' },
+            isMobile: {},
+            topMenu: { required: true },
+            theme: { required: true },
+          },
+          computed: {},
+          methods: {},
+          staticRenderFns: [],
+          _compiled: true,
+          beforeCreate: [null],
+          beforeDestroy: [null],
+          __file: 'src/components/GlobalHeader/RightContent.vue',
+        },
+        GlobalFooter: {
+          name: 'ProGlobalFooter',
+          components: { GlobalFooter: { name: 'GlobalFooter', props: { links: {}, copyright: { type: null } } } },
+          staticRenderFns: [],
+          _compiled: true,
+          _scopeId: 'data-v-0ef88851',
+          beforeCreate: [null],
+          beforeDestroy: [null],
+          __file: 'src/components/GlobalFooter/index.vue',
+        },
+        Ads: {
+          props: {},
+          methods: {},
+          _scopeId: 'data-v-ad75d0b8',
+          beforeCreate: [null],
+          beforeDestroy: [null],
+          __file: 'src/components/Other/CarbonAds.vue',
+        },
+      },
+      computed: {},
+      methods: {},
+      staticRenderFns: [],
+      _compiled: true,
+      beforeCreate: [null],
+      beforeDestroy: [null],
+      __file: 'src/layouts/BasicLayout.vue',
+    },
+    meta: { title: 'menu.home' },
+    redirect: '/dashboard/workplace',
+    children: [
+      {
+        path: '/dashboard/workplace',
+        name: 'Workplace',
+        meta: { title: 'menu.dashboard', keepAlive: true, permission: ['dashboard'] },
+      },
+      { path: '/intro', name: 'intro', meta: { title: 'menu.intro', keepAlive: true, permission: ['form'] } },
+      { path: '/course', name: 'course', meta: { title: 'menu.course', keepAlive: true, permission: ['form'] } },
+      { path: '/training', name: 'training', meta: { title: 'menu.training', keepAlive: true, permission: ['form'] } },
+      { path: '/showwork', name: 'showwork', meta: { title: 'menu.showwork', keepAlive: true, permission: ['table'] } },
+      { path: '/zzrz', name: 'zzrz', meta: { title: 'menu.zzrz', keepAlive: true, permission: ['table'] } },
+      {
+        path: '/recommendedTextbook',
+        name: 'recommendedTextbook',
+        hidden: true,
+        meta: { title: 'menu.recommendedTextbook', keepAlive: true, permission: ['table'] },
+      },
+      {
+        path: '/expertTeam',
+        name: 'expertTeam',
+        hidden: true,
+        hideChildrenInMenu: true,
+        meta: { title: 'menu.expertTeam', keepAlive: true, permission: ['table'] },
+      },
+      {
+        path: '/trainingDetail/:id',
+        name: 'trainingDetail',
+        hidden: true,
+        meta: { title: 'menu.trainingDetail', keepAlive: true, permission: ['form'] },
+      },
+      {
+        path: '/stylecenter',
+        name: 'stylecenter',
+        hidden: true,
+        meta: { title: 'menu.stylecenter', keepAlive: true, permission: ['table'] },
+      },
+      {
+        path: '/account',
+        component: { name: 'RouteView' },
+        redirect: '/account/center',
+        name: 'account',
+        hidden: true,
+        meta: { title: 'menu.account', icon: 'user', keepAlive: true, permission: ['user'] },
+        children: [
+          {
+            path: '/account/center',
+            name: 'center',
+            meta: { title: 'menu.account.center', keepAlive: true, permission: ['user'] },
+          },
+          {
+            path: '/account/settings',
+            name: 'settings',
+            meta: { title: 'menu.account.settings', hideHeader: true, permission: ['user'] },
+            redirect: '/account/settings/basic',
+            hideChildrenInMenu: true,
+            children: [
+              {
+                path: '/account/settings/basic',
+                name: 'BasicSettings',
+                meta: { title: 'account.settings.menuMap.basic', hidden: true, permission: ['user'] },
+              },
+              {
+                path: '/account/settings/security',
+                name: 'SecuritySettings',
+                meta: {
+                  title: 'account.settings.menuMap.security',
+                  hidden: true,
+                  keepAlive: true,
+                  permission: ['user'],
+                },
+              },
+              {
+                path: '/account/settings/custom',
+                name: 'CustomSettings',
+                meta: { title: 'account.settings.menuMap.custom', hidden: true, keepAlive: true, permission: ['user'] },
+              },
+              {
+                path: '/account/settings/binding',
+                name: 'BindingSettings',
+                meta: {
+                  title: 'account.settings.menuMap.binding',
+                  hidden: true,
+                  keepAlive: true,
+                  permission: ['user'],
+                },
+              },
+              {
+                path: '/account/settings/notification',
+                name: 'NotificationSettings',
+                meta: {
+                  title: 'account.settings.menuMap.notification',
+                  hidden: true,
+                  keepAlive: true,
+                  permission: ['user'],
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  { path: '*', redirect: '/404', hidden: true },
+]
 /**
  * 过滤账户是否拥有某一个权限，并将菜单从加载列表移除
  *
@@ -42,7 +221,7 @@ function hasRole(roles, route) {
   }
 }
 
-function filterAsyncRouter (routerMap, role) {
+function filterAsyncRouter(routerMap, role) {
   // const accessedRouters = routerMap.filter(route => {
   //   if (hasPermission(role.permissionList, route)) {
   //     if (route.children && route.children.length) {
@@ -59,25 +238,26 @@ function filterAsyncRouter (routerMap, role) {
 const permission = {
   state: {
     routers: constantRouterMap,
-    addRouters: []
+    addRouters: routerdata,
   },
   mutations: {
     SET_ROUTERS: (state, routers) => {
       state.addRouters = routers
+      console.log(JSON.stringify(routers))
       state.routers = constantRouterMap.concat(routers)
-    }
+    },
   },
   actions: {
-    GenerateRoutes ({ commit }, data) {
-      return new Promise(resolve => {
+    GenerateRoutes({ commit }, data) {
+      return new Promise((resolve) => {
         const { role } = data
         const routerMap = cloneDeep(asyncRouterMap)
         const accessedRouters = filterAsyncRouter(routerMap, role)
         commit('SET_ROUTERS', accessedRouters)
         resolve()
       })
-    }
-  }
+    },
+  },
 }
 
 export default permission
