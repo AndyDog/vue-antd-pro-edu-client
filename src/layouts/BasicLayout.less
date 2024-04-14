@@ -1,8 +1,8 @@
-
-.ant-pro-basicLayout-content{
+.ant-pro-basicLayout-content {
   margin: 0;
 }
-body{
+
+body {
   color: #606266;
 }
 
@@ -23,7 +23,7 @@ body{
 
   .ant-pro-account-avatar {
     .antd-pro-global-header-index-avatar {
-      margin: ~'calc((@{layout-header-height} - 24px) / 2)' 0;
+      margin:~'calc((@{layout-header-height} - 24px) / 2)' 0;
       margin-right: 8px;
       color: @primary-color;
       vertical-align: top;
@@ -42,51 +42,63 @@ body{
   }
 }
 
-.ant-pro-top-nav-header-main{
-  justify-content:space-between
+.ant-pro-top-nav-header-main {
+  justify-content: space-between
 }
-.ant-pro-global-header-index-right{
+
+.ant-pro-global-header-index-right {
   margin-left: 10px;
 }
-.ant-pro-top-nav-header-logo{
+
+.ant-pro-top-nav-header-logo {
   width: auto;
 }
-.ant-pro-top-nav-header-logo h1{
+
+.ant-pro-top-nav-header-logo h1 {
   font-weight: 600;
-  vertical-align:middle;
+  vertical-align: middle;
 }
-.ant-layout-footer{
+
+.ant-layout-footer {
   padding: 0;
 }
-.ant-pro-fixed-header{
+
+.ant-pro-fixed-header {
   z-index: 20 !important;
 }
-.ant-layout{
+
+.ant-layout {
   background: #FFF !important;
 }
-.banner{
+
+.banner {
   object-fit: cover;
   width: 100%;
   /* height: 626px; */
   max-height: 800px;
-  min-height:560px;
+  min-height: 560px;
   text-align: center;
 }
-/deep/.ant-layout{
+
+/deep/.ant-layout {
   background: #f6f6f6;
 }
+
 /deep/.ant-card-body {
   padding: 3px 24px;
   zoom: 1;
 }
-/deep/.ant-card-head-title{
+
+/deep/.ant-card-head-title {
   font-weight: 600;
   color: #000;
 }
-.pxmg-image1{
+
+.pxmg-image1 {
   width: 100%;
   margin-top: 20px;
-  img{
+
+  img {
     object-fit: cover;
     width: 100%;
     height: 200px;
@@ -96,25 +108,28 @@ body{
 .ant-pro-basicLayout-content .ant-pro-page-header-wrap {
   // margin: 24px -24px 0;
   // max-width: 1200px;
-  margin: 24px auto;
+  margin: 0px auto;
   background: #f7f5f4;
 }
+
 .ant-pro-page-header-wrap-children-content {
-  margin: 24px 0px 0;
+  // margin: 24px 0px 0;
+  margin: 0;
 }
-.ant-layout-header{
-  .ant-tabs-bar{
+
+.ant-layout-header {
+  .ant-tabs-bar {
     border-bottom: none;
     margin: 6px 0 1px 0;
   }
 }
 
 
-.footer{
+.footer {
   // padding: 24px 50px;
 }
 
-.default-main{
+.default-main {
   max-width: 1200px;
   margin: 0px auto;
 }
@@ -130,7 +145,7 @@ body{
   margin-top: 15px;
 }
 
-.friendship-link > p span {
+.friendship-link>p span {
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
@@ -139,7 +154,7 @@ body{
   border-bottom: 2px solid #65acef;
 }
 
-.friendship-link > ul {
+.friendship-link>ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -147,30 +162,30 @@ body{
   padding: 0 27px;
 }
 
-.friendship-link > ul li {
+.friendship-link>ul li {
   width: 25%;
   font-size: 14px;
   text-align: center;
 }
 
-.friendship-link > ul li:first-child {
+.friendship-link>ul li:first-child {
   text-align: left;
 }
 
-.friendship-link > ul li:last-child {
+.friendship-link>ul li:last-child {
   text-align: right;
 }
 
-.friendship-link > ul li a {
+.friendship-link>ul li a {
   color: #aaaaab;
 }
 
-.friendship-link > ul li a:hover {
+.friendship-link>ul li a:hover {
   color: var(--color-primary);
 }
 
 @media only screen and (max-width: 900px) {
-  .friendship-link > ul li {
+  .friendship-link>ul li {
     width: 50%;
     text-align: center !important;
     margin-bottom: 5px;
@@ -178,7 +193,7 @@ body{
 }
 
 @media only screen and (max-width: 450px) {
-  .friendship-link > ul li {
+  .friendship-link>ul li {
     width: 100%;
   }
 }
@@ -249,17 +264,20 @@ body{
 }
 
 
-.bannercontent{
+.bannercontent {
   position: relative;
-  img{
-    min-height:560px ;
+
+  img {
+    min-height: 560px;
   }
-  .bannerText{
+
+  .bannerText {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    h1{
+
+    h1 {
       margin: 0;
       font-size: 10rem;
       text-transform: capitalize;
@@ -269,22 +287,23 @@ body{
       text-align: center;
     }
   }
-  .btngroup{
+
+  .btngroup {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFF;
-    .btn1{
+
+    .btn1 {
       background: #f09a3e;
       border: 1px solid #f09a3e;
       color: #FFF;
     }
-    .btn2{
+
+    .btn2 {
       background: #00bcd4;
       border: 1px solid #00bcd4;
       color: #FFF;
     }
   }
 }
-
-
