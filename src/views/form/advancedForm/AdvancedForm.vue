@@ -1,40 +1,86 @@
 <template>
-  <page-header-wrapper>
-    <a-card class="card" title="课程分类" :bordered="false">
+  <page-header-wrapper11 :title="false">
 
-  <a-tabs v-model="activeKey">
-    <a-tab-pane key="1" tab="全部">
-        <a-row :gutter="16">
-        <a-col class="gutter-row" v-for="item in tabdata" :span="6">
-          <div class="gutter-box">
-              <div class="imgcontent">
-                <img style="width:100%;height:100%;" src="http://106.14.124.163:8090/api/system/sysStaticPicture/trainingProgram"
-                  alt="">
-              </div>   
+    <div class="imglist">
+      <el-row :gutter="0">
+        <el-col :xs="12" :sm="12" :lg="{ span: '4-8' }" class="card-panel-col" v-for="fit in imageList" :key="fit">
+          <div>
+            <el-image style="width: 100%; height: 150px" :src="fit.url" fit="contain"></el-image>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+    <div class="homepagecontent1">
+      <div class="homepagecontent1img">
+        <el-image class="img-responsive wp-image-7 lazyloaded"
+          src="http://106.54.167.222:39900/wp-content/uploads/2024/04/logo-300x296.png">
+          <div slot="error" class="image-slot">
+            <img width="300" height="296" src="@/assets/logo-300x296.png" alt="">
+          </div>
+        </el-image>
+      </div>
 
-            <div class="imgtitle"> {{item.title}}</div>
+      <div class="homepagecontent1title">
+        <div>
+          <div class="title">
+            应急医学的使命是保障人民生命安全、健康和社会稳定
+          </div>
+          <div class="subtitle">
+            涉及到在灾难、事故、战争、流行病等紧急情况下提供医疗救援、处理伤病患者、管理医疗资源等方面的工作
+          </div>
+          <div class="bottomline">
+            <div class="bottomlinecenter"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="homepagecontentbtn">
+        <el-row type="flex" :gutter="30" class="row-bg" justify="center">
+          <el-col :span="10">
+            <div class="grid-content bg-purple">
+              <el-image style="width: 100%; height: 300px" :src="ke1image" :preview-src-list="[ke1image]">
+              </el-image>
             </div>
-        </a-col>
-      </a-row>
-  <!-- <a-list item-layout="horizontal" :data-source="data">
-            <a-list-item slot="renderItem" slot-scope="item, index">
-              <a-list-item-meta>
-                <a slot="title" href="https://www.antdv.com/">{{ item.title }}</a>
-              </a-list-item-meta>
-            </a-list-item>
-          </a-list> -->
+          </el-col>
+          <el-col :span="10">
+            <div class="grid-content bg-purple-light">
 
+              <div class="introlistRightList">
+                <div class="title">校园急救课程</div>
+                <div class="content">
+                  校园急救课程是针对学生、教职员工和校园社区成员的急救培训课程，旨在提高校园内紧急情况下的应对能力和急救技能。以下是一个校园急救课程的概述：
+                  校园急救课程旨在向校园社区成员传授基本的急救技能和知识，以提高他们在校园内发生意外事件或紧急情况时的应对能力和自救能力。该课程通常由专业的急救培训机构或医疗机构提供，结合校园实际情况和学生特点，设计相应的课程内容和教学方法。
+                </div>
+                <div class="btn">
+                  <el-button style="width: 100%;" type="warning" @click="gobook">Learn More</el-button>
+                </div>
 
-    </a-tab-pane>
-    <a-tab-pane key="2" tab="法律法规" force-render>Content of Tab Pane 2</a-tab-pane>
-    <a-tab-pane key="3" tab="理论知识" force-render>Content of Tab Pane 2</a-tab-pane>
-    <a-tab-pane key="4" tab="技能训练">Content of Tab Pane 3</a-tab-pane>
-  </a-tabs>
+              </div>
+            </div>
+          </el-col>
+        </el-row>
+      </div>
 
+      <div class="ant-pro-pages-list-projects-cardList">
+        <a-list :data-source="courseList" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
+          <a-list-item slot="renderItem" slot-scope="item">
+            <a-card class="ant-pro-pages-list-projects-card" hoverable>
+              <img slot="cover" :src="item.icon" :alt="item.title" />
+              <!-- <a-card-meta :title="item.title">
+                  <template slot="description">
+                    <div>
+                      {{item.subtitle}}
+                    </div>
+                  </template>
+                </a-card-meta> -->
 
-    </a-card>
-
-  </page-header-wrapper>
+            </a-card>
+          </a-list-item>
+        </a-list>
+      </div>
+    </div>
+  </page-header-wrapper11>
 </template>
 
 <script>
@@ -66,12 +112,12 @@ export default {
     RepositoryForm,
     TaskForm
   },
-  data () {
+  data() {
     return {
       loading: false,
       memberLoading: false,
       activeKey: '1',
-      tabdata : [
+      tabdata: [
         {
           title: 'aid课程001',
         },
@@ -114,39 +160,58 @@ export default {
           scopedSlots: { customRender: 'operation' }
         }
       ],
-      data: [
+      imageList: [
         {
           key: '1',
-          name: '小明',
-          workId: '001',
-          editable: false,
-          department: '行政部'
+          url: require("@/assets/client-logo-5.png"),
         },
         {
           key: '2',
-          name: '李莉',
-          workId: '002',
-          editable: false,
-          department: 'IT部'
+          url: require("@/assets/client-logo-6-1.png"),
         },
         {
           key: '3',
-          name: '王小帅',
-          workId: '003',
-          editable: false,
-          department: '财务部'
+          url: require("@/assets/client-logo-7-2.png"),
+        },
+        {
+          key: '4',
+          url: require("@/assets/client-logo-8-1.png"),
+        },
+        {
+          key: '5',
+          url: require("@/assets/client-logo-9-2.png"),
         }
       ],
-
-      errors: []
+      errors: [],
+      ke1image: require("@/assets/ke1.jpg"),
+      courseList: [
+        {
+          title: "基础急救课程",
+          subtitle: "Engineering & Technology",
+          icon: require('@/assets/jchu.jpg'),
+          content: "基础急救课程旨在向普通公众和一般工作人员传授基本的急救技能和知识，使他们能够在紧急情况下提供有效的急救服务。该课程涵盖了心肺复苏（CPR）、止血、骨折固定、意识评估等基本急救技能，以及应急处置流程和紧急情况的应对策略。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
+        },
+        {
+          title: "公共场所急救",
+          subtitle: "Arts & Humanities",
+          icon: require('@/assets/ggcs.jpg'),
+          content: "公共场所急救培训通常由专业的急救培训机构或医疗机构提供，针对不同类型的公共场所（如商场、餐厅、体育场馆、地铁站等）的工作人员进行定制化的培训。该课程旨在向公共场所工作人员传授基本的急救技能和知识，使他们能够在紧急情况下迅速、有效地应对，保障员工和访客的生命安全。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
+        },
+        {
+          title: "心里急救课程",
+          subtitle: "Business & Management",
+          icon: require('@/assets/xinli.jpg'),
+          content: "心理急救课程旨在向医护人员、社会工作者、教育工作者以及一般公众传授基本的心理援助技能和知识，使他们能够在紧急情况下提供有效的心理支持，帮助受到心理危机影响的个人。该课程强调对个人情绪和心理状态的敏感性，以及在危机情况下如何有效地应对和处理。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
+        }
+      ]
     }
   },
   methods: {
 
-    handleSubmit (e) {
+    handleSubmit(e) {
       e.preventDefault()
     },
-    newMember () {
+    newMember() {
       const length = this.data.length
       this.data.push({
         key: length === 0 ? '1' : (parseInt(this.data[length - 1].key) + 1).toString(),
@@ -157,11 +222,11 @@ export default {
         isNew: true
       })
     },
-    remove (key) {
+    remove(key) {
       const newData = this.data.filter(item => item.key !== key)
       this.data = newData
     },
-    saveRow (record) {
+    saveRow(record) {
       this.memberLoading = true
       const { key, name, workId, department } = record
       if (!name || !workId || !department) {
@@ -181,21 +246,21 @@ export default {
         this.memberLoading = false
       })
     },
-    toggle (key) {
+    toggle(key) {
       const target = this.data.find(item => item.key === key)
       target._originalData = { ...target }
       target.editable = !target.editable
     },
-    getRowByKey (key, newData) {
+    getRowByKey(key, newData) {
       const data = this.data
       return (newData || data).find(item => item.key === key)
     },
-    cancel (key) {
+    cancel(key) {
       const target = this.data.find(item => item.key === key)
       Object.keys(target).forEach(key => { target[key] = target._originalData[key] })
       target._originalData = undefined
     },
-    handleChange (value, key, column) {
+    handleChange(value, key, column) {
       const newData = [...this.data]
       const target = newData.find(item => key === item.key)
       if (target) {
@@ -205,7 +270,7 @@ export default {
     },
 
     // 最终全页面提交
-    validate () {
+    validate() {
       const { $refs: { repository, task }, $notification } = this
       const repositoryForm = new Promise((resolve, reject) => {
         repository.form.validateFields((err, values) => {
@@ -239,7 +304,7 @@ export default {
         this.errorList(tmp)
       })
     },
-    errorList (errors) {
+    errorList(errors) {
       if (!errors || errors.length === 0) {
         return
       }
@@ -251,64 +316,113 @@ export default {
           fieldLabel: fieldLabels[key]
         }))
     },
-    scrollToField (fieldKey) {
+    scrollToField(fieldKey) {
       const labelNode = document.querySelector(`label[for="${fieldKey}"]`)
       if (labelNode) {
         labelNode.scrollIntoView(true)
       }
+    },
+
+
+    gobook() {
+      this.$router.push('/course/courseDetail/3333')
     }
   },
-  
+
 }
 </script>
 
 <style lang="less" scoped>
-  .card{
-    margin-bottom: 24px;
-  }
-  .popover-wrapper {
-    :deep(.antd-pro-pages-forms-style-errorPopover .ant-popover-inner-content) {
-      min-width: 256px;
-      max-height: 290px;
-      padding: 0;
-      overflow: auto;
-    }
-  }
-  .antd-pro-pages-forms-style-errorIcon {
-    user-select: none;
-    margin-right: 24px;
-    color: #f5222d;
-    cursor: pointer;
-    i {
-          margin-right: 4px;
-    }
-  }
-  .antd-pro-pages-forms-style-errorListItem {
-    padding: 8px 16px;
-    list-style: none;
-    border-bottom: 1px solid #e8e8e8;
-    cursor: pointer;
-    transition: all .3s;
+.el-col-lg-4-8 {
+  width: 20%;
+}
 
-    &:hover {
-      background: #e6f7ff;
+.imglist {
+  background: #FFF;
+}
+
+.homepagecontent1 {
+  padding: 90px 30px 45px 30px;
+
+  .homepagecontent1img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .homepagecontent1title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .title {
+      font-size: 34px;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
-    .antd-pro-pages-forms-style-errorIcon {
-      float: left;
-      margin-top: 4px;
-      margin-right: 12px;
-      padding-bottom: 22px;
-      color: #f5222d;
+
+    .subtitle {
+      margin-bottom: 20px;
+      font-size: 20px;
     }
-    .antd-pro-pages-forms-style-errorField {
-      margin-top: 2px;
-      color: rgba(0,0,0,.45);
-      font-size: 12px;
+
+    .bottomline {
+      margin-bottom: 60px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+
+      .bottomlinecenter {
+        height: 1px;
+        width: 200px;
+        background: #f09a3e;
+      }
+    }
+
+
+  }
+
+  .homepagecontentbtn {
+    background: #FFF;
+
+    .introlistRightList {
+      text-align: center;
+      padding: 30px;
+
+      .title {
+        color: #f09a3e;
+        font-size: 20px;
+      }
+
+      .content {
+        color: #7E8890;
+        font-size: 15px;
+        line-height: 30px;
+        padding: 20px 0;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   }
-  .imgtitle{
-    // width: ;
+
+
+  .cardtitle {
+    color: #333C4E;
+    font-size: 20px;
     font-weight: 600;
-    font-size: 16px;
+    margin-bottom: 20px;
   }
+
+  .fusion-text {
+    color: #7E8890;
+
+    p {
+      line-height: 30px;
+      font-size: 15px;
+    }
+  }
+}
 </style>

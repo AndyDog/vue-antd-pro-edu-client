@@ -58,9 +58,33 @@ export const asyncRouterMap = [
       {
         path: '/course',
         name: 'course',
-        component: () => import('@/views/form/advancedForm/AdvancedForm'),
+        redirect: '/course/home',
+        component: () => import('@/views/form/advancedForm/coursehome'),
         meta: { title: 'menu.course', keepAlive: true, permission: ['form'] },
+        children: [
+          {
+            path: 'home',
+            name: 'courseDetailhome',
+            hidden: true,
+            component: () => import('@/views/form/advancedForm/AdvancedForm'),
+            meta: { title: 'menu.coursehome', keepAlive: true, permission: ['form'] },
+          },
+          {
+            path: 'courseDetail/:id',
+            name: 'courseDetail',
+            hidden: true,
+            component: () => import('@/views/form/advancedForm/courseDetail'),
+            meta: { title: 'menu.courseDetail', keepAlive: true, permission: ['form'] },
+          },
+        ]
       },
+      // {
+      //   path: '/courseDetail/:id',
+      //   name: 'courseDetail',
+      //   hidden: true,
+      //   component: () => import('@/views/form/advancedForm/courseDetail'),
+      //   meta: { title: 'menu.courseDetail', keepAlive: true, permission: ['form'] },
+      // },
       {
         path: '/training',
         name: 'training',
@@ -109,14 +133,33 @@ export const asyncRouterMap = [
         meta: { title: 'menu.trainingDetail', keepAlive: true, permission: ['form'] },
       },
 
-
-      // {
-      //   path: '/studyResults',
-      //   name: 'studyResults',
-      //   component: () => import('@/views/list/BasicList'),
-      //   meta: { title: 'menu.studyResults', keepAlive: true, permission: ['table'] }
-      // },
-
+       {
+            path: '/list/search',
+            name: 'SearchList',
+            component: () => import('@/views/list/search/SearchLayout'),
+            redirect: '/list/search/article',
+            meta: { title: 'menu.list.search-list', keepAlive: true, permission: ['table'] },
+            children: [
+              {
+                path: '/list/search/article',
+                name: 'SearchArticles',
+                component: () => import('../views/list/search/Article'),
+                meta: { title: 'menu.list.search-list.articles', permission: ['table'] }
+              },
+              {
+                path: '/list/search/project',
+                name: 'SearchProjects',
+                component: () => import('../views/list/search/Projects'),
+                meta: { title: 'menu.list.search-list.projects', permission: ['table'] }
+              },
+              {
+                path: '/list/search/application',
+                name: 'SearchApplications',
+                component: () => import('../views/list/search/Applications'),
+                meta: { title: 'menu.list.search-list.applications', permission: ['table'] }
+              }
+            ]
+      },
 
       {
         path: '/stylecenter',

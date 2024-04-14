@@ -8,130 +8,82 @@
 
 
     <div class="containerhomne logocontainer">
-      <div class="fusion-fullwidth fullwidth-box fusion-builder-row-4 fusion-flex-container nonhundred-percent-fullwidth non-hundred-percent-height-scrolling"
-       style="--awb-background-position:left top;--awb-border-sizes-top:0px;--awb-border-sizes-bottom:0px;--awb-border-sizes-left:0px;--awb-border-sizes-right:0px;--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-padding-top:90px;--awb-padding-bottom:3.5%;--awb-background-color:var(--awb-color1);--awb-flex-wrap:wrap;">
-    <div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap"
-    style="max-width:1331.2px;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
-      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-6 fusion_builder_column_1_6 1_6 fusion-flex-column fusion-no-small-visibility"
-      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:16.666666666667%;--awb-margin-top-large:10px;--awb-spacing-right-large:11.52%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:11.52%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
-        <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
-        </div>
-      </div>
-      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-7 fusion_builder_column_2_3 2_3 fusion-flex-column"
-      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:66.666666666667%;--awb-margin-top-large:10px;--awb-spacing-right-large:2.88%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:2.88%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
-        <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
-          <div class="fusion-image-element " style="text-align:center;--awb-margin-bottom:32px;--awb-caption-title-font-family:var(--h2_typography-font-family);--awb-caption-title-font-weight:var(--h2_typography-font-weight);--awb-caption-title-font-style:var(--h2_typography-font-style);--awb-caption-title-size:var(--h2_typography-font-size);--awb-caption-title-transform:var(--h2_typography-text-transform);--awb-caption-title-line-height:var(--h2_typography-line-height);--awb-caption-title-letter-spacing:var(--h2_typography-letter-spacing);">
-            <span class=" fusion-imageframe imageframe-none imageframe-2 hover-type-none">
-              <a class="fusion-no-lightbox" href="#" target="_blank" aria-label="logo"
-              rel="noopener noreferrer">
 
-                <el-image class="img-responsive wp-image-7 lazyloaded" src="http://106.54.167.222:39900/wp-content/uploads/2024/04/logo-300x296.png">
+
+     <div class="homepagecontent1">
+         <div class="homepagecontent1img">
+          <el-image class="img-responsive wp-image-7 lazyloaded" src="http://106.54.167.222:39900/wp-content/uploads/2024/04/logo-300x296.png">
                   <div slot="error" class="image-slot">
                   <img width="300" height="296" src="../../assets/logo-300x296.png" alt="">
                   </div>
-                </el-image>
+          </el-image>
+         </div>
 
-
-              </a>
-            </span>
-          </div>
-          <div class="fusion-title title fusion-title-3 fusion-sep-none fusion-title-center fusion-title-text fusion-title-size-two"
-          style="--awb-margin-top:0px;">
-            <h2 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
-            style="margin:0;text-transform:capitalize;font-size:37px;line-height:1.15">
+         <div class="homepagecontent1title">
+          <div>
+            <div class="title">
               国家应急医学研究中心
-            </h2>
-          </div>
-          <div class="fusion-text fusion-text-1" style="--awb-content-alignment:center;--awb-font-size:var(--awb-typography2-font-size);--awb-line-height:var(--awb-typography2-line-height);--awb-letter-spacing:var(--awb-typography2-letter-spacing);--awb-text-transform:var(--awb-typography2-text-transform);--awb-text-font-family:var(--awb-typography2-font-family);--awb-text-font-weight:var(--awb-typography2-font-weight);--awb-text-font-style:var(--awb-typography2-font-style);">
-            <p>
+            </div>
+            <div class="subtitle">
               关注每一个人的生命安全
-            </p>
-          </div>
-          <div class="fusion-separator" style="align-self: center;margin-left: auto;margin-right: auto;margin-top:15px;margin-bottom:35px;width:100%;max-width:170px;">
-            <div class="fusion-separator-border sep-single sep-solid" style="--awb-height:20px;height:1px;--awb-amount:20px;--awb-sep-color:var(--awb-color4);border-color:var(--awb-color4);border-top-width:1px;">
             </div>
+            <div class="bottomline"><div class="bottomlinecenter"></div></div>
           </div>
-        </div>
-      </div>
-      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-8 fusion_builder_column_1_6 1_6 fusion-flex-column fusion-no-small-visibility"
-      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:16.666666666667%;--awb-margin-top-large:10px;--awb-spacing-right-large:11.52%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:11.52%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
-        <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
-        </div>
-      </div>
-      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-9 fusion_builder_column_3_5 3_5 fusion-flex-column"
-      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:60%;--awb-margin-top-large:10px;--awb-spacing-right-large:6.4%;--awb-margin-bottom-large:10px;--awb-spacing-left-large:3.2%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
-        <div class="fusion-column-wrapper fusion-flex-justify-content-center fusion-content-layout-column">
-          <div class="fusion-title title fusion-title-4 fusion-sep-none fusion-title-text fusion-title-size-three"
-          style="--awb-margin-top:30px;">
-            <h3 class="fusion-title-heading title-heading-left fusion-responsive-typography-calculated"
-            style="margin:0;text-transform:capitalize;--fontSize:24;line-height:var(--awb-typography1-line-height);">
-              中心简介
-            </h3>
-          </div>
-          <div class="fusion-text fusion-text-2">
-            <p>
-              应急总医院是应急管理部直属三级医院。国家应急医学研究中心是经应急管理部和国家卫健委批准，依托应急总医院组建，集医疗、教学、科研、救援、转化于一体的国家级平台，承担应急医学救援、应急医疗资源储备、国际医疗救援、应急医学研究和人才培养等职责。
-            </p>
-            <p>
-              国家应急医学研究中心培训工作围绕应急医学内容设计各类培训课程，包括但不限于：应急急救员培训、消防救援队伍卫勤技能培训、校园应急安全培训、家庭急救等。
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="fusion-layout-column fusion_builder_column fusion-builder-column-10 fusion_builder_column_2_5 2_5 fusion-flex-column"
-      style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:40%;--awb-margin-top-large:5%;--awb-spacing-right-large:4.8%;--awb-margin-bottom-large:40px;--awb-spacing-left-large:4.8%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
-        <div class="fusion-column-wrapper fusion-flex-justify-content-center fusion-content-layout-row">
-          <video width="380" height="250" controls="">
-            <source src="http://vod.jj-edu.cn/promotional.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-      </div>
+
+         </div>
 
 
-      <div class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container hundred-percent-fullwidth non-hundred-percent-height-scrolling" 
-      style="--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-background-color:var(--awb-color2);--awb-flex-wrap:wrap;">
-      <div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap" style="width:calc( 100% + 0px ) !important;max-width:calc( 100% + 0px ) !important;margin-left: calc(-0px / 2 );margin-right: calc(-0px / 2 );">
-        <div class="fusion-layout-column fusion_builder_column fusion-builder-column-11 fusion_builder_column_1_1 1_1 fusion-flex-column fusion-flex-align-self-flex-start fusion-column-no-min-height" style="--awb-bg-blend:overlay;--awb-bg-size:cover;--awb-width-large:100%;--awb-margin-top-large:0px;--awb-spacing-right-large:0px;--awb-margin-bottom-large:20px;--awb-spacing-left-large:0px;--awb-width-medium:100%;--awb-spacing-right-medium:0px;--awb-spacing-left-medium:0px;--awb-width-small:100%;--awb-spacing-right-small:0px;--awb-spacing-left-small:0px;">
-          <div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column">
-            <div class="fusion-section-separator section-separator bigtriangle fusion-section-separator-1" style="--awb-spacer-height:99px;--awb-divider-height:99px;--awb-spacer-padding-top:inherit;--awb-sep-padding:0;--awb-svg-padding:0;">
-              <div class="fusion-section-separator-svg fusion-section-separator-fullwidth">
-                <svg class="fusion-big-triangle-candy" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" fill="rgba(255,255,255,1)"><path d="M-1 -1 L50 99 L101 -1 Z"></path></svg>
+      <el-row type="flex"  :gutter="30" class="row-bg" justify="center">
+        <el-col :span="10">
+          <div class="grid-content bg-purple">
+              <div class="cardtitle">
+                中心简介
               </div>
-              <div class="fusion-section-separator-spacer fusion-section-separator-fullwidth">
-                <div class="fusion-section-separator-spacer-height">
-                </div>
+              <div class="fusion-text fusion-text-2">
+                <p>
+                  应急总医院是应急管理部直属三级医院。国家应急医学研究中心是经应急管理部和国家卫健委批准，依托应急总医院组建，集医疗、教学、科研、救援、转化于一体的国家级平台，承担应急医学救援、应急医疗资源储备、国际医疗救援、应急医学研究和人才培养等职责。
+                </p>
+                <p>
+                  国家应急医学研究中心培训工作围绕应急医学内容设计各类培训课程，包括但不限于：应急急救员培训、消防救援队伍卫勤技能培训、校园应急安全培训、家庭急救等。
+                </p>
               </div>
+          </div>
+        </el-col>
+        <el-col :span="10"><div class="grid-content bg-purple-light">
+
+            <div class="introlistRightList">
+            
+              <video width="380" height="250" controls="">
+                <source src="http://vod.jj-edu.cn/promotional.mp4" type="video/mp4">
+              </video>
+
             </div>
-          </div>
-        </div>
-      </div>
-      </div>
-
-
+           </div>
+        </el-col>
+        </el-row>
+     </div>
 
 
       <div class="introlist">
         <el-row type="flex"  :gutter="30" class="row-bg" justify="center">
         <el-col :span="10">
-        <div class="grid-content bg-purple">
-            <div class="title">
-            我们在做什么
-            </div>
-            <div class="subtitle">
-              致力于急救教学、学习和研究，并培养生命安全的领航者，他们在社会急救中发挥至关重要的作用。
-            </div>
-            <div class="list">
-                 <div v-for="item in introlist1">
-                 <span><i :class="item.icon"></i></span>
-                 {{item.name}}
-                 </div>
-            </div>
-            <div class="introlistLeftFooter">
-              总的来说，应急医学致力于在各种突发情况下保护人类生命和健康，通过紧急救援、疾病控制、资源管理等措施，尽可能地减少伤亡和疾病传播的风险。
-            </div>
-        </div>
+          <div class="grid-content bg-purple">
+              <div class="title">
+              我们在做什么
+              </div>
+              <div class="subtitle">
+                致力于急救教学、学习和研究，并培养生命安全的领航者，他们在社会急救中发挥至关重要的作用。
+              </div>
+              <div class="list">
+                  <div v-for="item in introlist1">
+                  <span><i :class="item.icon"></i></span>
+                  {{item.name}}
+                  </div>
+              </div>
+              <div class="introlistLeftFooter">
+                总的来说，应急医学致力于在各种突发情况下保护人类生命和健康，通过紧急救援、疾病控制、资源管理等措施，尽可能地减少伤亡和疾病传播的风险。
+              </div>
+          </div>
         </el-col>
         <el-col :span="10"><div class="grid-content bg-purple-light">
           <div class="title">
@@ -203,12 +155,8 @@
 
             
             </div>
-        
- 
-        
-        </div>
+           </div>
         </el-col>
-
         </el-row>
       
       
@@ -1299,6 +1247,59 @@ footer p {
    }
 
 
+ }
+
+ .homepagecontent1{
+  padding: 90px 30px 45px 30px;
+   .homepagecontent1img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   .homepagecontent1title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .title{
+      font-size: 34px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .subtitle{
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .bottomline{
+      margin-bottom: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    .bottomlinecenter{
+      height: 1px;
+      width: 200px;
+      background: #f09a3e;
+      }
+    }
+
+
+   }
+
+   .cardtitle{
+      color: #333C4E;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .fusion-text{
+      color: #7E8890;
+
+      p{
+        line-height: 30px;
+        font-size: 15px;
+      }
+    }
  }
 
 

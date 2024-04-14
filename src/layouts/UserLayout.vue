@@ -1,7 +1,7 @@
 <template>
 
   <div id="userLayout" :class="['user-layout-wrapper', isMobile && 'mobile']">
-    <div class="container"  v-if="false">
+    <div class="container">
       <!-- <div class="user-layout-lang">
         <select-lang class="select-lang-trigger" />
       </div> -->
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <router-view />
+    <!-- <router-view /> -->
   </div>
 </template>
 

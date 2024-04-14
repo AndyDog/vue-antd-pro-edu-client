@@ -38,7 +38,8 @@ export default {
   'menu.account.logout': '退出登录',
   'menu.intro': '关于我们',
   'menu.training': '培训项目',
-  'menu.course': '课程',
+  'menu.course': '课程培训',
+  'menu.coursehome': '课程培训',
   'menu.expertTeam': '专家团队',
   'menu.studyResults': '资源中心',
   'menu.recommendedTextbook': '推荐教材',
@@ -46,5 +47,6 @@ export default {
   'menu.stylecenter': '学习中心',
   'menu.showwork': '新闻动态',
   'menu.zzrz': '资质认证',
+  'menu.courseDetail':'校园急救课程'
   // 'menu7':"简介",
 }

@@ -3,7 +3,7 @@
     <!-- <avatar-dropdown :menu="showMenu" :current-user="currentUser" :class="prefixCls" /> -->
     <!-- <select-lang :class="prefixCls" /> -->
     <!-- @click="login" -->
-    <div style="color: red">登录/注册</div>
+    <div style="color: red" @click="login">登录/注册</div>
   </div>
 </template>
 

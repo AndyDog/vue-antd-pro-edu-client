@@ -25,7 +25,7 @@ export function resetRouter() {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher
 }
-
+console.log(router)
 // import Vue from 'vue'
 // import Router from 'vue-router'
 // import { constantRouterMap, asyncRouterMap } from '@/config/router.config'

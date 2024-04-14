@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <a-form id="formLogin" class="user-layout-login" ref="formLogin" :form="form" v-if="false" @submit="handleSubmit">
+    <a-form id="formLogin" class="user-layout-login" ref="formLogin" :form="form"  @submit="handleSubmit">
       <a-alert
         v-if="isLoginError"
         type="error"
@@ -184,15 +184,15 @@ export default {
     const aa = { password: '21232f297a57a5a743894a0e4a801fc3', username: 'admin' }
     //  console.log('login params', JSON.stringify(loginParams))
 
-    const query = this.$route.query
-    if (query&&query.type) {
+    // const query = this.$route.query
+    // if (query&&query.type) {
       
-    }else{
-      Login(aa)
-      .then((res) => this.loginSuccess(res))
-      .catch((err) => this.requestFailed(err))
-      .finally(() => {})
-    }
+    // }else{
+    //   Login(aa)
+    //   .then((res) => this.loginSuccess(res))
+    //   .catch((err) => this.requestFailed(err))
+    //   .finally(() => {})
+    // }
 
 
 

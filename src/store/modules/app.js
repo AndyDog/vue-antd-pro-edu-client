@@ -57,7 +57,8 @@ const app = {
       coursesmaintopheader:api+'courses_main_top_header',
       facilitiesptbtopbg1:api+"facilities_ptb_top_bg-1",
       latestnewsptbtopbg1:api+'latest_news_ptb_top_bg-1',
-      admissionsptbtopbg:api+'admissions_ptb_top_bg'
+      admissionsptbtopbg:api+'admissions_ptb_top_bg',
+      universitypagetitlebaropbg:api+'university_page_title_bar_op_bg',
     },
   },
   mutations: {

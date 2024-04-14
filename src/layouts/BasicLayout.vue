@@ -15,23 +15,16 @@
     -->
     <!-- <ads v-if="isProPreviewSite && !collapsed"/> -->
     <!-- Ads end -->
-
     <!-- 1.0.0+ 版本 pro-layout 提供 API，
           我们推荐使用这种方式进行 LOGO 和 title 自定义
     -->
-
     <template v-slot:menuHeaderRender>
       <div>
         <img :src="logo" />
-
-        <!-- {{ logo }} -->
-        <!-- @/assets/logo.png -->
         <h1>{{ title }}</h1>
       </div>
     </template>
-    <!-- 1.0.0+ 版本 pro-layout 提供 API,
-          增加 Header 左侧内容区自定义
-    -->
+
     <template v-slot:headerContentRender>
       <div>
         <a-tooltip title="刷新页面">
@@ -55,8 +48,6 @@
       <right-content :top-menu="settings.layout === 'topmenu'" :is-mobile="isMobile" :theme="settings.theme" />
     </template>
     <template v-slot:menuRender>
-      <!-- menuRender -->
-      <!-- {{menus}} -->
       <a-tabs v-model="activeKey" @tabClick="tabClick">
         <a-tab-pane :key="item.path" :tab="menu[item.meta.title]" v-for="item in menus"></a-tab-pane>
       </a-tabs>
@@ -70,20 +61,18 @@
             style="
               margin: 0;
               text-transform: capitalize;
-              --fontSize: 34;
-              line-height: var(--awb-typography1-line-height);
             "
           >
             <span class="fusion-highlighted-text-prefix">加入我们</span>
             <span class="fusion-highlighted-text-wrapper"
-              ><span class="fusion-highlighted-text" style="color: var(--awb-color4)">为14亿中国人</span
+              ><span class="fusion-highlighted-text" >为14亿中国人</span
               ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
                 <path d="M8.1,146.2c0,0,240.6-55.6,479-13.8"></path></svg
             ></span>
             <span class="fusion-highlighted-text-postfix">健康生命保驾护航</span>
           </h2>
-         </div>
-         <p style="text-align: center; font-size: 20px;">致力于保障人民生命安全和健康，以及提供及时有效的医疗救援服务，为社会稳定与发展作出积极贡献</p>
+        </div>
+         <p style="text-align: center; font-size: 20px;color: #7E8890;margin-bottom: 60px;">致力于保障人民生命安全和健康，以及提供及时有效的医疗救援服务，为社会稳定与发展作出积极贡献</p>
         <div>
           <el-form :inline="true" :model="formInline" class="demo-form-inline">
           <el-form-item label="">
@@ -96,7 +85,7 @@
             <el-input v-model="formInline.user" placeholder="电话"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button style="height:50px;" type="warning" @click="onSubmit">Apply Now</el-button>
+            <el-button style="height:40px;" type="warning" @click="onSubmit">Apply Now</el-button>
           </el-form-item>
         </el-form>
 
@@ -153,11 +142,21 @@
         </div>
       </div> -->
     </template>
+
+     <div class="backtop">
+      <a-back-top />
+     </div>
+
+
     <div class="bannercontent">
       <!-- @/assets/banner.png -->
       <!-- {{bannerobj}} -->
-      <img :src="bannerobj" class="banner" alt="banner" />
-
+  
+      <el-image :src="bannerobj.url1" style="width: 100%; min-height: 560px" fit="cover">
+        <div slot="error" class="image-slot">
+          <img :src="bannerobj.url2" class="banner" alt="banner" />
+        </div>
+      </el-image>
       <div class="bannerText" :class="routename" v-if="routename == 'Workplace'">
         <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated">
           国家应急医学研究中心
@@ -179,6 +178,7 @@
         </h1>
       </div>
     </div>
+
     <router-view />
   </pro-layout>
 </template>
@@ -257,16 +257,40 @@ export default {
       facilitiesptbtopbg1: (state) => state.app.imgList.facilitiesptbtopbg1,
       latestnewsptbtopbg1: (state) => state.app.imgList.latestnewsptbtopbg1,
       admissionsptbtopbg: (state) => state.app.imgList.admissionsptbtopbg,
+      universitypagetitlebaropbg: (state) => state.app.imgList.universitypagetitlebaropbg,
     }),
     bannerobj() {
       console.log(this.$route)
       const obj = {
-        Workplace: this.homemainsliderbg,
-        intro: this.coursegraphicdesignportfolioheader,
-        course: this.coursesmaintopheader,
-        training: this.facilitiesptbtopbg1,
-        showwork: this.latestnewsptbtopbg1,
-        zzrz: this.admissionsptbtopbg,
+        Workplace:{
+          url1:this.homemainsliderbg,
+          url2:require('@/assets/home_main_slider_bg.jpg')
+        },
+        intro: {
+          url1:this.coursegraphicdesignportfolioheader,
+          url2:require('@/assets/course_graphic_design_portfolio_header.jpg')
+        },
+        courseDetailhome: {
+          url1:this.coursesmaintopheader,
+          url2:require('@/assets/courses_main_top_header.jpg')
+        },
+        courseDetail: {
+          url1:this.universitypagetitlebaropbg,
+          url2:require('@/assets/university_page_title_bar_op_bg.jpg')
+        },
+        training: {
+          url1:this.facilitiesptbtopbg1,
+          url2:require('@/assets/facilities_ptb_top_bg-1.jpg')
+        },
+        
+        showwork: {
+          url1:this.latestnewsptbtopbg1,
+          url2:require('@/assets/latest_news_ptb_top_bg-1.jpg')
+        },
+        zzrz: {
+          url1:this.admissionsptbtopbg,
+          url2:require('@/assets/admissions_ptb_top_bg.jpg')
+        },
       }
       return obj[this.$route.name] || this.banner
     },
@@ -346,6 +370,7 @@ export default {
     },
     tabClick(key) {
       console.log(key)
+      window.scrollTo(0, 0);
       this.$router.push(key)
     },
   },
@@ -359,6 +384,20 @@ export default {
   background: #333c4e;
   padding: 50px 30px;
   text-align: center;
+  .fusion-highlighted-text-prefix{
+    font-size: 34px;
+    color: #FFF;
+  }
+  .fusion-highlighted-text-postfix{
+    font-size: 34px;
+    color: #FFF;
+  }
+   .fusion-highlighted-text{
+    font-size: 34px;
+    color: #f09a3e;
+   }
+  
+
 
 }
 .fusion-highlighted-text-wrapper {
