@@ -21,7 +21,7 @@ export default {
 
   'layouts.usermenu.dialog.title': '信息',
   'layouts.usermenu.dialog.content': '您确定要注销吗？',
-  'layouts.userLayout.title': '国家应急医学研究中心',
+  'layouts.userLayout.title': '应急医学数字教育示范基地',
   ...components,
   ...global,
   ...menu,
