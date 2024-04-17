@@ -80,31 +80,31 @@ const routerdata = [
       {
         path: '/dashboard/workplace',
         name: 'Workplace',
-        meta: { title: 'menu.dashboard', keepAlive: true, permission: ['dashboard'] },
+        meta: { title: 'menu.dashboard', keepAlive: false, permission: ['dashboard'] },
       },
-      { path: '/intro', name: 'intro', meta: { title: 'menu.intro', keepAlive: true, permission: ['form'] } },
-      { path: '/course', name: 'course', meta: { title: 'menu.course', keepAlive: true, permission: ['form'] } },
-      { path: '/training', name: 'training', meta: { title: 'menu.training', keepAlive: true, permission: ['form'] } },
-      { path: '/showwork', name: 'showwork', meta: { title: 'menu.showwork', keepAlive: true, permission: ['table'] } },
-      { path: '/zzrz', name: 'zzrz', meta: { title: 'menu.zzrz', keepAlive: true, permission: ['table'] } },
+      { path: '/intro', name: 'intro', meta: { title: 'menu.intro', keepAlive: false, permission: ['form'] } },
+      { path: '/course', name: 'course', meta: { title: 'menu.course', keepAlive: false, permission: ['form'] } },
+      { path: '/training', name: 'training', meta: { title: 'menu.training', keepAlive: false, permission: ['form'] } },
+      { path: '/showwork', name: 'showwork', meta: { title: 'menu.showwork', keepAlive: false, permission: ['table'] } },
+      { path: '/zzrz', name: 'zzrz', meta: { title: 'menu.zzrz', keepAlive: false, permission: ['table'] } },
       {
         path: '/recommendedTextbook',
         name: 'recommendedTextbook',
         hidden: true,
-        meta: { title: 'menu.recommendedTextbook', keepAlive: true, permission: ['table'] },
+        meta: { title: 'menu.recommendedTextbook', keepAlive: false, permission: ['table'] },
       },
       {
         path: '/expertTeam',
         name: 'expertTeam',
         hidden: true,
         hideChildrenInMenu: true,
-        meta: { title: 'menu.expertTeam', keepAlive: true, permission: ['table'] },
+        meta: { title: 'menu.expertTeam', keepAlive: false, permission: ['table'] },
       },
       {
         path: '/trainingDetail/:id',
         name: 'trainingDetail',
         hidden: true,
-        meta: { title: 'menu.trainingDetail', keepAlive: true, permission: ['form'] },
+        meta: { title: 'menu.trainingDetail', keepAlive: false, permission: ['form'] },
       },
 
       // {
@@ -112,7 +112,7 @@ const routerdata = [
       //       name: 'SearchList',
       //       // component: () => import('@/views/list/search/SearchLayout'),
       //       // redirect: '/list/search/article',
-      //       meta: { title: 'menu.list.search-list', keepAlive: true, permission: ['table'] },
+      //       meta: { title: 'menu.list.search-list', keepAlive: false, permission: ['table'] },
       //       children: [
       //         {
       //           path: '/list/search/article',
@@ -139,7 +139,7 @@ const routerdata = [
         path: '/stylecenter',
         name: 'stylecenter',
         hidden: true,
-        meta: { title: 'menu.stylecenter', keepAlive: true, permission: ['table'] },
+        meta: { title: 'menu.stylecenter', keepAlive: false, permission: ['table'] },
       },
       {
         path: '/account',
@@ -147,12 +147,12 @@ const routerdata = [
         redirect: '/account/center',
         name: 'account',
         hidden: true,
-        meta: { title: 'menu.account', icon: 'user', keepAlive: true, permission: ['user'] },
+        meta: { title: 'menu.account', icon: 'user', keepAlive: false, permission: ['user'] },
         children: [
           {
             path: '/account/center',
             name: 'center',
-            meta: { title: 'menu.account.center', keepAlive: true, permission: ['user'] },
+            meta: { title: 'menu.account.center', keepAlive: false, permission: ['user'] },
           },
           {
             path: '/account/settings',
@@ -172,14 +172,14 @@ const routerdata = [
                 meta: {
                   title: 'account.settings.menuMap.security',
                   hidden: true,
-                  keepAlive: true,
+                  keepAlive: false,
                   permission: ['user'],
                 },
               },
               {
                 path: '/account/settings/custom',
                 name: 'CustomSettings',
-                meta: { title: 'account.settings.menuMap.custom', hidden: true, keepAlive: true, permission: ['user'] },
+                meta: { title: 'account.settings.menuMap.custom', hidden: true, keepAlive: false, permission: ['user'] },
               },
               {
                 path: '/account/settings/binding',
@@ -187,7 +187,7 @@ const routerdata = [
                 meta: {
                   title: 'account.settings.menuMap.binding',
                   hidden: true,
-                  keepAlive: true,
+                  keepAlive: false,
                   permission: ['user'],
                 },
               },
@@ -197,7 +197,7 @@ const routerdata = [
                 meta: {
                   title: 'account.settings.menuMap.notification',
                   hidden: true,
-                  keepAlive: true,
+                  keepAlive: false,
                   permission: ['user'],
                 },
               },
@@ -263,7 +263,7 @@ function filterAsyncRouter(routerMap, role) {
   const accessedRouters = routerMap
   return accessedRouters
 }
-
+// routerdata
 const permission = {
   state: {
     routers: constantRouterMap,

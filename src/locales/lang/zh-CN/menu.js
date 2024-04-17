@@ -47,6 +47,8 @@ export default {
   'menu.stylecenter': '学习中心',
   'menu.showwork': '新闻动态',
   'menu.zzrz': '资质认证',
-  'menu.courseDetail':'校园急救课程'
+  'menu.courseDetail': '校园急救课程',
+  'information.news': '急救新闻',
+  'information.newslist': '急救新闻',
   // 'menu7':"简介",
 }

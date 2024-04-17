@@ -21,8 +21,8 @@
       <div>
         <a-tooltip title="刷新页面">
           <a-icon type="reload" style="font-size: 18px; cursor: pointer" @click="() => {
-              $message.info('只是一个DEMO')
-            }
+            $message.info('只是一个DEMO')
+          }
             " />
         </a-tooltip>
       </div>
@@ -134,7 +134,7 @@
 
     <div class="bannercontent">
       <!-- @/assets/banner.png -->
-      <!-- {{bannerobj}} -->
+      <!-- {{ bannerobj }} -->
 
       <el-image :src="bannerobj.url1" style="width: 100%; min-height: 560px" fit="cover">
         <div slot="error" class="image-slot">
@@ -274,7 +274,7 @@ export default {
           url2: require('@/assets/admissions_ptb_top_bg.jpg')
         },
       }
-      return obj[this.$route.name] || this.banner
+      return obj[this.$route.name] || this.facilitiesptbtopbg1
     },
     routename() {
       return this.$route.name
