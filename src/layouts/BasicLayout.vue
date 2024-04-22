@@ -136,7 +136,7 @@
       <!-- @/assets/banner.png -->
       <!-- {{ bannerobj }} -->
 
-      <el-image :src="bannerobj.url1" style="width: 100%; min-height: 560px" fit="cover">
+      <el-image :src="bannerobj.url1" style="width: 100%;" fit="cover">
         <div slot="error" class="image-slot">
           <img :src="bannerobj.url2" class="banner" alt="banner" />
         </div>
@@ -147,7 +147,7 @@
         </h1>
         <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
           style="font-size: 26px; margin: 10px 20px">
-          National Emergency Medical Research Center
+          EMERGENCY MEDICAL DIGITAL EDUCATION DEMONSTRATION BASE
         </h1>
         <div class="btngroup">
           <el-button class="btn1">查看详情</el-button>
