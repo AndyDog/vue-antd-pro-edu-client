@@ -65,16 +65,8 @@
       <div class="ant-pro-pages-list-projects-cardList">
         <a-list :data-source="courseList" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
           <a-list-item slot="renderItem" slot-scope="item">
-            <a-card class="ant-pro-pages-list-projects-card" hoverable>
+            <a-card class="ant-pro-pages-list-projects-card imgelem" hoverable>
               <img slot="cover" :src="item.icon" :alt="item.title" />
-              <!-- <a-card-meta :title="item.title">
-                  <template slot="description">
-                    <div>
-                      {{item.subtitle}}
-                    </div>
-                  </template>
-                </a-card-meta> -->
-
             </a-card>
           </a-list-item>
         </a-list>
@@ -424,5 +416,15 @@ export default {
       font-size: 15px;
     }
   }
+}
+
+.ant-pro-pages-list-projects-cardList {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.imgelem {
+  // max-width: 300px;
+  // max-height: 300px;
 }
 </style>
