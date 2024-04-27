@@ -45,7 +45,6 @@
           </el-col>
           <el-col :span="10">
             <div class="grid-content bg-purple-light">
-
               <div class="introlistRightList">
                 <div class="title">校园急救课程</div>
                 <div class="content">
@@ -63,13 +62,47 @@
       </div>
 
       <div class="ant-pro-pages-list-projects-cardList">
-        <a-list :data-source="courseList" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
+
+        <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>课程分类</span>
+            <!-- <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button> -->
+          </div>
+          <!-- {{ courseList }} -->
+          <el-tabs v-model="activeName" @tab-click="handleClick">
+            <el-tab-pane v-for="item in projectsperson" :label="item.dictName" :name="item.dictCode">
+              <a-list :data-source="courseList" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
+                <a-list-item slot="renderItem" slot-scope="item">
+                  <a-card class="ant-pro-pages-list-projects-card imgelem" hoverable @click="gobook(item)">
+                    <!-- <img slot="cover" :src="item.courseImagePath" :alt="item.courseName" /> -->
+                    <el-image :src="item.courseImagePath" :alt="item.courseName" fit="cover">
+                      <div slot="error" class="image-slot">
+                        <img slot="cover" :src="defaultimage" :alt="item.courseName || '基础急救课程'" />
+                      </div>
+                    </el-image>
+                    <div>
+                      <div v-if="item.courseName">{{ item.courseName }}</div>
+                      <div v-if="item.lecturer">主讲人：{{ item.lecturer }}</div>
+                    </div>
+                  </a-card>
+                </a-list-item>
+              </a-list>
+            </el-tab-pane>
+
+          </el-tabs>
+
+        </el-card>
+
+
+
+
+        <!-- <a-list :data-source="courseList" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
           <a-list-item slot="renderItem" slot-scope="item">
             <a-card class="ant-pro-pages-list-projects-card imgelem" hoverable>
               <img slot="cover" :src="item.icon" :alt="item.title" />
             </a-card>
           </a-list-item>
-        </a-list>
+        </a-list> -->
       </div>
     </div>
   </page-header-wrapper11>
@@ -80,7 +113,7 @@ import RepositoryForm from './RepositoryForm'
 import TaskForm from './TaskForm'
 import FooterToolBar from '@/components/FooterToolbar'
 import { baseMixin } from '@/store/app-mixin'
-
+import { queryDictionariesDetailLike } from '@/api/manage'
 const fieldLabels = {
   name: '仓库名',
   url: '仓库域名',
@@ -95,7 +128,13 @@ const fieldLabels = {
   dateRange2: '生效日期',
   type2: '任务类型'
 }
-
+const uniqueBy = (arr, key) => {
+  const map = new Map();
+  return arr.filter((item) => {
+    const k = key(item);
+    return map.has(k) ? false : map.set(k, item);
+  });
+};
 export default {
   name: 'AdvancedForm',
   mixins: [baseMixin],
@@ -176,6 +215,7 @@ export default {
       ],
       errors: [],
       ke1image: require("@/assets/ke1.jpg"),
+      defaultimage: require("@/assets/WTshSAcfPFulGGZg_i-AgeF3Chw2ABgwoAAKJEK3smWg766.jpg"),
       courseList: [
         {
           title: "基础急救课程",
@@ -195,11 +235,28 @@ export default {
           icon: require('@/assets/xinli.jpg'),
           content: "心理急救课程旨在向医护人员、社会工作者、教育工作者以及一般公众传授基本的心理援助技能和知识，使他们能够在紧急情况下提供有效的心理支持，帮助受到心理危机影响的个人。该课程强调对个人情绪和心理状态的敏感性，以及在危机情况下如何有效地应对和处理。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
         }
-      ]
+      ],
+      activeName: ""
     }
   },
   methods: {
-
+    getprojectsperson() {
+      let that = this
+      that.$http.post('http://192.168.71.16:3333/medicine/platform/queryDictionariesDetailLike', { "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then(res => {
+        console.log(res)
+        that.projectsperson = res && res.datas
+        // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
+        console.log(that.projectsperson)
+        that.projectsperson = uniqueBy(that.projectsperson, item => item.dictCode);
+        that.activeName = that.projectsperson[0].dictCode
+      })
+      // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
+      //   console.log(res)
+      //   that.projectsperson = res && res.data && res.data.list
+      //   // this.loading = false
+      //   // console.log(that.projects)
+      // })
+    },
     handleSubmit(e) {
       e.preventDefault()
     },
@@ -316,10 +373,37 @@ export default {
     },
 
 
-    gobook() {
-      this.$router.push('/course/courseDetail/3333')
-    }
+    gobook(row) {
+      const courseCode = row.courseCode || '1'
+      this.$router.push(`/course/courseDetail/${courseCode}`)
+    },
+
+    getqueryCourseList() {
+      let that = this
+      that.$http.post('http://192.168.71.16:3333/medicine/base/queryCourseList', { "currentPage": 1, "size": 100000, "type": 1 }).then(res => {
+        console.log(res)
+        that.courseList = res && res.datas
+        // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
+        console.log(that.projectsperson)
+        // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
+        // that.activeName = that.projectsperson[0].dictCode
+      })
+      // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
+      //   console.log(res)
+      //   that.projectsperson = res && res.data && res.data.list
+      //   // this.loading = false
+      //   // console.log(that.projects)
+      // })
+    },
+    // 
+
+
+
   },
+  mounted() {
+    this.getprojectsperson()
+    this.getqueryCourseList()
+  }
 
 }
 </script>
@@ -419,11 +503,15 @@ export default {
 }
 
 .ant-pro-pages-list-projects-cardList {
-  width: 70%;
+  //width: 70%;
   margin: 20px auto;
 }
 
 .imgelem {
+  img {
+    width: 100%;
+  }
+
   // max-width: 300px;
   // max-height: 300px;
 }

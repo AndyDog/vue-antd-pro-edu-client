@@ -102,7 +102,7 @@
                     <template #expandIcon="props">
                       <a-icon :type="props.isActive ? 'minus' : 'plus'" />
                     </template>
-                    <a-collapse-panel key="1" header="   我们的使命" :style="customStyle">
+                    <a-collapse-panel key="1" header="我们的使命" :style="customStyle">
                       <div class="panel-body toggle-content fusion-clearfix">
                         <p>应急医学的使命是保障人民生命安全、健康和社会稳定，应对各种突发事件和紧急情况，提供及时、有效的医疗救援和支持。其核心使命包括：</p>
                         <ol>
