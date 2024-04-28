@@ -35,7 +35,7 @@
 
       </div>
 
-      <div class="homepagecontentbtn">
+      <div class="homepagecontentbtn" v-if="false">
         <el-row type="flex" :gutter="30" class="row-bg" justify="center">
           <el-col :span="10">
             <div class="grid-content bg-purple">
@@ -217,24 +217,24 @@ export default {
       ke1image: require("@/assets/ke1.jpg"),
       defaultimage: require("@/assets/WTshSAcfPFulGGZg_i-AgeF3Chw2ABgwoAAKJEK3smWg766.jpg"),
       courseList: [
-        {
-          title: "基础急救课程",
-          subtitle: "Engineering & Technology",
-          icon: require('@/assets/jchu.jpg'),
-          content: "基础急救课程旨在向普通公众和一般工作人员传授基本的急救技能和知识，使他们能够在紧急情况下提供有效的急救服务。该课程涵盖了心肺复苏（CPR）、止血、骨折固定、意识评估等基本急救技能，以及应急处置流程和紧急情况的应对策略。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
-        },
-        {
-          title: "公共场所急救",
-          subtitle: "Arts & Humanities",
-          icon: require('@/assets/ggcs.jpg'),
-          content: "公共场所急救培训通常由专业的急救培训机构或医疗机构提供，针对不同类型的公共场所（如商场、餐厅、体育场馆、地铁站等）的工作人员进行定制化的培训。该课程旨在向公共场所工作人员传授基本的急救技能和知识，使他们能够在紧急情况下迅速、有效地应对，保障员工和访客的生命安全。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
-        },
-        {
-          title: "心里急救课程",
-          subtitle: "Business & Management",
-          icon: require('@/assets/xinli.jpg'),
-          content: "心理急救课程旨在向医护人员、社会工作者、教育工作者以及一般公众传授基本的心理援助技能和知识，使他们能够在紧急情况下提供有效的心理支持，帮助受到心理危机影响的个人。该课程强调对个人情绪和心理状态的敏感性，以及在危机情况下如何有效地应对和处理。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
-        }
+        // {
+        //   title: "基础急救课程",
+        //   subtitle: "Engineering & Technology",
+        //   icon: require('@/assets/jchu.jpg'),
+        //   content: "基础急救课程旨在向普通公众和一般工作人员传授基本的急救技能和知识，使他们能够在紧急情况下提供有效的急救服务。该课程涵盖了心肺复苏（CPR）、止血、骨折固定、意识评估等基本急救技能，以及应急处置流程和紧急情况的应对策略。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
+        // },
+        // {
+        //   title: "公共场所急救",
+        //   subtitle: "Arts & Humanities",
+        //   icon: require('@/assets/ggcs.jpg'),
+        //   content: "公共场所急救培训通常由专业的急救培训机构或医疗机构提供，针对不同类型的公共场所（如商场、餐厅、体育场馆、地铁站等）的工作人员进行定制化的培训。该课程旨在向公共场所工作人员传授基本的急救技能和知识，使他们能够在紧急情况下迅速、有效地应对，保障员工和访客的生命安全。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
+        // },
+        // {
+        //   title: "心里急救课程",
+        //   subtitle: "Business & Management",
+        //   icon: require('@/assets/xinli.jpg'),
+        //   content: "心理急救课程旨在向医护人员、社会工作者、教育工作者以及一般公众传授基本的心理援助技能和知识，使他们能够在紧急情况下提供有效的心理支持，帮助受到心理危机影响的个人。该课程强调对个人情绪和心理状态的敏感性，以及在危机情况下如何有效地应对和处理。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
+        // }
       ],
       activeName: ""
     }
@@ -242,13 +242,14 @@ export default {
   methods: {
     getprojectsperson() {
       let that = this
-      that.$http.post('http://192.168.71.16:3333/medicine/platform/queryDictionariesDetailLike', { "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then(res => {
+      that.$http.post('/platform/queryDictionariesDetailLike', { "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then(res => {
         console.log(res)
         that.projectsperson = res && res.datas
         // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
         console.log(that.projectsperson)
         that.projectsperson = uniqueBy(that.projectsperson, item => item.dictCode);
         that.activeName = that.projectsperson[0].dictCode
+        that.getqueryCourseList()
       })
       // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
       //   console.log(res)
@@ -377,10 +378,12 @@ export default {
       const courseCode = row.courseCode || '1'
       this.$router.push(`/course/courseDetail/${courseCode}`)
     },
-
+    handleClick(tab, event) {
+      this.getqueryCourseList();
+    },
     getqueryCourseList() {
       let that = this
-      that.$http.post('http://192.168.71.16:3333/medicine/base/queryCourseList', { "currentPage": 1, "size": 100000, "type": 1 }).then(res => {
+      that.$http.post('/base/queryCourseList', { "currentPage": 1, "size": 100000, "type": 1, 'dictCode': this.activeName }).then(res => {
         console.log(res)
         that.courseList = res && res.datas
         // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
@@ -402,7 +405,7 @@ export default {
   },
   mounted() {
     this.getprojectsperson()
-    this.getqueryCourseList()
+
   }
 
 }

@@ -6,15 +6,15 @@ const GitRevision = new GitRevisionPlugin()
 const buildDate = JSON.stringify(new Date().toLocaleString())
 const createThemeColorReplacerPlugin = require('./config/plugin.config')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
 // check Git
-function getGitHash () {
+function getGitHash() {
   try {
     return GitRevision.version()
-  } catch (e) {}
+  } catch (e) { }
   return 'unknown'
 }
 // eslint-disable-next-line no-unused-vars
@@ -64,36 +64,36 @@ const vueConfig = {
     config.resolve.alias.set('@$', resolve('src'))
 
     // fixed svg-loader by https://github.com/damianstasik/vue-svg-loader/issues/185#issuecomment-1126721069
-		const svgRule = config.module.rule('svg')
-		// Remove regular svg config from root rules list
-		config.module.rules.delete('svg')
+    const svgRule = config.module.rule('svg')
+    // Remove regular svg config from root rules list
+    config.module.rules.delete('svg')
 
-		config.module.rule('svg')
-			// Use svg component rule
-			.oneOf('svg_as_component')
-				.resourceQuery(/inline/)
-				.test(/\.(svg)(\?.*)?$/)
-				.use('babel-loader')
-					.loader('babel-loader')
-					.end()
-				.use('vue-svg-loader')
-					.loader('vue-svg-loader')
-					.options({
-						svgo: {
-							plugins: [
-								{ prefixIds: true },
-								{ cleanupIDs: true },
-								{ convertShapeToPath: false },
-								{ convertStyleToAttrs: true }
-							]
-						}
-					})
-					.end()
-				.end()
-			// Otherwise use original svg rule
-			.oneOf('svg_as_regular')
-				.merge(svgRule.toConfig())
-				.end()
+    config.module.rule('svg')
+      // Use svg component rule
+      .oneOf('svg_as_component')
+      .resourceQuery(/inline/)
+      .test(/\.(svg)(\?.*)?$/)
+      .use('babel-loader')
+      .loader('babel-loader')
+      .end()
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader')
+      .options({
+        svgo: {
+          plugins: [
+            { prefixIds: true },
+            { cleanupIDs: true },
+            { convertShapeToPath: false },
+            { convertStyleToAttrs: true }
+          ]
+        }
+      })
+      .end()
+      .end()
+      // Otherwise use original svg rule
+      .oneOf('svg_as_regular')
+      .merge(svgRule.toConfig())
+      .end()
 
     // en_US: If prod is on assets require on cdn
     // zh_CN: 如果是 prod 模式，则引入 CDN 依赖文件，有需要减少包大小请自行解除依赖
@@ -124,15 +124,30 @@ const vueConfig = {
 
   devServer: {
     // development server port 8000
-    port: 8000
-    // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
+    port: 8000,
+    client: {
+      overlay: false // 编译错误时，取消全屏覆盖（建议关掉）
+    },
+    /** 接口代理 */
     // proxy: {
-    //   '/api': {
-    //     target: 'https://mock.ihx.me/mock/5baf3052f7da7e07e04a5116/antd-pro',
-    //     ws: false,
-    //     changeOrigin: true
+    //   "/medicine/": {
+    //     target: "http://118.178.233.104:8080/medicine/",
+    //     ws: true,
+    //     /** 是否允许跨域 */
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace("/medicine", "")
     //   }
     // }
+    // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
+    proxy: {
+      '/medicine': {
+        // target: 'http://118.178.233.104:8080',
+        target: 'http://10.105.100.24:8090',
+        ws: false,
+        changeOrigin: true,
+        rewrite: (path) => path.replace("/medicine", "")
+      }
+    }
   },
 
   // disable source map in production

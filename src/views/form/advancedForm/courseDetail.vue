@@ -258,7 +258,7 @@ export default {
       let that = this
       console.log(this.$route)
       let courseCode = this.$route.params.id
-      that.$http.post('http://192.168.71.16:3333/medicine/base/queryCourseList', { "currentPage": 1, "size": 10000, "type": 1, courseCode }).then(res => {
+      that.$http.post('/base/queryCourseList', { "currentPage": 1, "size": 10000, "type": 1, courseCode }).then(res => {
         console.log(res)
         that.courseList = res && res.datas
         // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
