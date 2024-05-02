@@ -1,25 +1,17 @@
 <template>
-  <page-header-wrapper :title="false">
+  <page-header-wrapper11 :title="false">
     <!-- PageHeader 第二种使用方式 (v-slot) -->
-    <template v-slot:content>
-    </template>
-
+    <template v-slot:content> </template>
 
     <div class="content">
-
-      <div class="title">
-        应急培训的意义
-      </div>
+      <div class="title">应急培训的意义</div>
 
       <div class="ant-pro-pages-list-projects-cardList">
         <a-list :data-source="courseList" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
           <a-list-item slot="renderItem" slot-scope="item">
             <div class="listelem">
-
-
               <div class="icon">
                 <i class="el-icon-connection"></i>
-
               </div>
 
               <div class="title">
@@ -30,15 +22,13 @@
               </div>
 
               <div class="btn">
-                <el-button type="warning">了解更多</el-button>
+                <el-button type="warning" @click="handleClick(item.id)">了解更多</el-button>
               </div>
             </div>
-
           </a-list-item>
         </a-list>
       </div>
     </div>
-
 
     <div class="imgcontent flex">
       <div class="">
@@ -74,15 +64,21 @@
         </div>
       </div>
 
-
       <div class="cardList">
         <el-row :gutter="16">
-          <el-col class="gutter-row" v-for="item in projectsperson.slice(0, 4)" :xs="24" :sm="24" :md="12" :lg="12"
-            :xl="12">
+          <el-col
+            class="gutter-row"
+            v-for="item in projectsperson.slice(0, 4)"
+            :xs="24"
+            :sm="24"
+            :md="12"
+            :lg="12"
+            :xl="12"
+          >
             <div data-v-373a1af0="" class="expert-box border-line">
               <div data-v-373a1af0="" class="">
                 <!-- <img data-v-373a1af0="" :src="item.avatar" alt="" class="expert-img" /> -->
-                <el-image :src="item.avatar" style="width: 150px;height:150px;" class="expert-img">
+                <el-image :src="item.avatar" style="width: 150px; height: 150px" class="expert-img">
                   <div slot="error" class="image-slot">
                     <i class="el-icon-picture-outline"></i>
                   </div>
@@ -93,7 +89,6 @@
                   {{ item.realname }}
                 </p>
                 <p data-v-373a1af0="" class="expert-intro" :title="item.introduction">
-
                   {{ item.introduction }}
                   <!-- 
                   <el-tooltip class="item" effect="dark" :content="item.introduction" placement="top-start">
@@ -106,8 +101,6 @@
         </el-row>
       </div>
     </div>
-
-
 
     <!-- 跑马灯 -->
     <div class="carousel">
@@ -123,8 +116,12 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div v-for="item in courseListcarousel" :key="item.id" class="swiper-slide"
-            :style="`background-image:url(${item.icon})`">
+          <div
+            v-for="item in courseListcarousel"
+            :key="item.id"
+            class="swiper-slide"
+            :style="`background-image:url(${item.icon})`"
+          >
             <!-- <h3>{{ item.title }}</h3>
                       <el-button>立即办理</el-button> -->
           </div>
@@ -133,18 +130,13 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
-
-
-
     </div>
-
 
     <!-- 举办学校急救教育师资专业培训 -->
     <div class="lastmodel">
-
       <div class="">
         <div class="flex">
-          <el-image :src="titlebg" fit="contain" style="width: 100px;height:100px;" class="expert-img">
+          <el-image :src="titlebg" fit="contain" style="width: 100px; height: 100px" class="expert-img">
             <div slot="error" class="image-slot">
               <i class="el-icon-picture-outline"></i>
             </div>
@@ -167,28 +159,22 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
-
-
-
-  </page-header-wrapper>
+  </page-header-wrapper11>
 </template>
 
 <script>
 import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
-import Swiper from 'swiper'; // 注意引入的是Swiper
+import Swiper from 'swiper' // 注意引入的是Swiper
 import 'swiper/css/swiper.min.css' // 注意这里的引入
 export default {
   name: 'StepForm',
   components: {
     Step1,
     Step2,
-    Step3
+    Step3,
   },
   data() {
     return {
@@ -199,53 +185,64 @@ export default {
       titlebg: require('@/assets/page-logo-1.png'),
       courseList: [
         {
-          title: "保障生命安全",
-          subtitle: "Engineering & Technology",
+          title: '保障生命安全',
+          subtitle: 'Engineering & Technology',
+          id: '1111',
           icon: require('@/assets/jchu.jpg'),
-          content: "培训的核心目标是保障生命安全。通过提供急救知识和技能培训，帮助参与者及时有效地救助受伤或生病的人员，最大限度地减少伤亡。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
+          content:
+            '培训的核心目标是保障生命安全。通过提供急救知识和技能培训，帮助参与者及时有效地救助受伤或生病的人员，最大限度地减少伤亡。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。',
         },
         {
-          title: "传播应急意识",
-          subtitle: "Arts & Humanities",
+          title: '传播应急意识',
+          subtitle: 'Arts & Humanities',
+          id: '2222',
           icon: require('@/assets/ggcs.jpg'),
-          content: "培训有助于传播应急意识，提高社会公众对于应急情况的认识和重视程度，培养人们在面对危险时的警惕性和应对能力。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
+          content:
+            '培训有助于传播应急意识，提高社会公众对于应急情况的认识和重视程度，培养人们在面对危险时的警惕性和应对能力。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。',
         },
         {
-          title: "保障公共安全",
-          subtitle: "Business & Management",
+          title: '保障公共安全',
+          id: '55555',
+          subtitle: 'Business & Management',
           icon: require('@/assets/xinli.jpg'),
-          content: "通过培训社会各界人员的应急能力，可以更好地保障公共安全，提高社会整体的应急响应水平，减少灾害和事故带来的损失。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。"
-        }
+          content:
+            '通过培训社会各界人员的应急能力，可以更好地保障公共安全，提高社会整体的应急响应水平，减少灾害和事故带来的损失。 通过参加基础急救课程，学员可以掌握应急救援的基本技能，提高自己的应急能力。',
+        },
       ],
       projectsperson: [],
 
       courseListcarousel: [
         {
-          title: "保障生命安全",
+          title: '保障生命安全',
           icon: require('@/assets/jchu.jpg'),
         },
         {
-          title: "传播应急意识",
+          title: '传播应急意识',
           icon: require('@/assets/ggcs.jpg'),
         },
         {
-          title: "保障公共安全",
+          title: '保障公共安全',
           icon: require('@/assets/xinli.jpg'),
         },
         {
-          title: "保障公共安全",
+          title: '保障公共安全',
           icon: require('@/assets/course_sports_portfolio_feat.jpg'),
         },
         {
-          title: "保障公共安全",
+          title: '保障公共安全',
           icon: require('@/assets/course_biology_portfolio_feat-1.jpg'),
-        }
+        },
       ],
     }
   },
   methods: {
+    handleClick(row) {
+      console.log(row)
+      const trainingCode = row || '1'
+      this.$router.push(`/training/politicsSeminar/${trainingCode}`)
+    },
     getSwiper() {
-      this.swiper = new Swiper(".swiper-container", {
+      this.swiper = new Swiper('.swiper-container', {
         loop: true, // 无缝
         autoplay: false,
         paginationClickable: true,
@@ -292,12 +289,12 @@ export default {
     },
     gobook() {
       this.$router.push('/trainingDetail/3333')
-    }
+    },
   },
   mounted() {
     this.getprojectsperson()
     this.getSwiper()
-  }
+  },
 }
 </script>
 
@@ -309,7 +306,6 @@ export default {
   margin: 16px auto;
 }
 
-
 .content {
   max-width: 80%;
   margin: 16px auto;
@@ -320,26 +316,25 @@ export default {
     font-weight: 600;
     text-align: center;
     // padding: 90px 30px 90px 30px;
-    color: #333C4E;
+    color: #333c4e;
     margin: 20px 0;
   }
 
   .elemcontent {
     font-size: 15px;
-    color: #7E8890;
+    color: #7e8890;
     margin: 30px 0;
   }
 
   .listelem {
-    background: #FFF;
+    background: #fff;
     // max-width: 200px;
     padding: 35px;
     min-height: 400px;
 
-
     &:hover {
       .title {
-        color: #f09a3e
+        color: #f09a3e;
       }
 
       i {
@@ -347,9 +342,7 @@ export default {
         transform: translateX(20px);
         /* 在悬停时水平向右移动10像素 */
       }
-
     }
-
   }
 
   .btn {
@@ -365,11 +358,6 @@ export default {
       font-size: 50px;
     }
   }
-
-
-
-
-
 }
 
 .imgcontent {
@@ -382,7 +370,7 @@ export default {
   align-items: center;
   display: flex;
   justify-content: center;
-  color: #FFF;
+  color: #fff;
 
   i {
     font-size: 50px;
@@ -424,12 +412,10 @@ export default {
   }
 
   div {
-    >div {
+    > div {
       margin-bottom: 20px;
     }
-
   }
-
 }
 
 .teacher {
@@ -462,7 +448,7 @@ export default {
   }
 
   .expert-box {
-    background: #FFF;
+    background: #fff;
     text-align: center;
     padding: 45px 30px;
     margin-bottom: 20px;
@@ -474,12 +460,12 @@ export default {
 
     .expert-name {
       font-size: 18px;
-      color: #7E8890;
+      color: #7e8890;
     }
 
     .expert-intro {
       font-size: 14px;
-      color: #7E8890;
+      color: #7e8890;
       line-height: 30px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -492,15 +478,9 @@ export default {
       //根据样式设置
       line-height: 1.2em;
       max-height: 2.4em;
-
     }
   }
-
-
-
-
 }
-
 
 .carousel {
   margin: 30px 60px;
@@ -513,7 +493,6 @@ export default {
     text-align: center;
   }
 
-
   // width: 1200px;
   // margin: 0 auto;
   padding: 70px 0;
@@ -525,17 +504,14 @@ export default {
     padding: 36px 22px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #F7F8FA;
+    background-color: #f7f8fa;
     cursor: pointer;
 
     .el-button {
       z-index: 2;
     }
   }
-
-
 }
-
 
 .lastmodel {
   // width: 100%;
@@ -547,7 +523,7 @@ export default {
   align-items: center;
   display: flex;
   justify-content: center;
-  color: #FFF;
+  color: #fff;
   width: 800px;
 
   i {
@@ -568,7 +544,7 @@ export default {
 
   .subtitle {
     font-size: 20px;
-    color: #7E8890;
+    color: #7e8890;
   }
 
   .bottomline {
@@ -586,14 +562,13 @@ export default {
 
   .content {
     font-size: 15px;
-    color: #7E8890;
+    color: #7e8890;
   }
 
   div {
-    >div {
+    > div {
       margin-bottom: 20px;
     }
-
   }
 }
 </style>

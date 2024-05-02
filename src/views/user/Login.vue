@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <a-form id="formLogin" class="user-layout-login" ref="formLogin" :form="form"  @submit="handleSubmit">
+    <a-form id="formLogin" class="user-layout-login" ref="formLogin" :form="form" @submit="handleSubmit">
       <a-alert
         v-if="isLoginError"
         type="error"
@@ -103,9 +103,9 @@
         <a-checkbox v-decorator="['rememberMe', { valuePropName: 'checked' }]">{{
           $t('user.login.remember-me')
         }}</a-checkbox>
-        <router-link :to="{ name: 'recover', params: { user: 'aaa' } }" class="forge-password" style="float: right">{{
+        <!-- <router-link :to="{ name: 'recover', params: { user: 'aaa' } }" class="forge-password" style="float: right">{{
           $t('user.login.forgot-password')
-        }}</router-link>
+        }}</router-link> -->
       </a-form-item>
 
       <a-form-item style="margin-top: 24px">
@@ -186,15 +186,13 @@ export default {
 
     // const query = this.$route.query
     // if (query&&query.type) {
-      
+
     // }else{
     //   Login(aa)
     //   .then((res) => this.loginSuccess(res))
     //   .catch((err) => this.requestFailed(err))
     //   .finally(() => {})
     // }
-
-
 
     get2step({})
       .then((res) => {

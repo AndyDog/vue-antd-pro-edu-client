@@ -1,6 +1,14 @@
 <template>
-  <pro-layout :menus="menus" :collapsed="collapsed" :mediaQuery="query" :isMobile="isMobile"
-    :handleMediaQuery="handleMediaQuery" :handleCollapse="handleCollapse" :i18nRender="i18nRender" v-bind="settings">
+  <pro-layout
+    :menus="menus"
+    :collapsed="collapsed"
+    :mediaQuery="query"
+    :isMobile="isMobile"
+    :handleMediaQuery="handleMediaQuery"
+    :handleCollapse="handleCollapse"
+    :i18nRender="i18nRender"
+    v-bind="settings"
+  >
     <!-- Ads begin
       广告代码 真实项目中请移除
       production remove this Ads
@@ -20,10 +28,15 @@
     <template v-slot:headerContentRender>
       <div>
         <a-tooltip title="刷新页面">
-          <a-icon type="reload" style="font-size: 18px; cursor: pointer" @click="() => {
-            $message.info('只是一个DEMO')
-          }
-            " />
+          <a-icon
+            type="reload"
+            style="font-size: 18px; cursor: pointer"
+            @click="
+              () => {
+                $message.info('只是一个DEMO')
+              }
+            "
+          />
         </a-tooltip>
       </div>
     </template>
@@ -43,20 +56,22 @@
     <template v-slot:footerRender>
       <div class="fusion-title-heading-footer">
         <div class="fusion-highlighted-text-wrapper">
-          <h2 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated" style="
-              margin: 0;
-              text-transform: capitalize;
-            ">
+          <h2
+            class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
+            style="margin: 0; text-transform: capitalize"
+          >
             <span class="fusion-highlighted-text-prefix">加入我们</span>
-            <span class="fusion-highlighted-text-wrapper"><span class="fusion-highlighted-text">为14亿中国人</span><svg
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
-                <path d="M8.1,146.2c0,0,240.6-55.6,479-13.8"></path>
-              </svg></span>
+            <span class="fusion-highlighted-text-wrapper"
+              ><span class="fusion-highlighted-text">为14亿中国人</span
+              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path d="M8.1,146.2c0,0,240.6-55.6,479-13.8"></path></svg
+            ></span>
             <span class="fusion-highlighted-text-postfix">健康生命保驾护航</span>
           </h2>
         </div>
-        <p style="text-align: center; font-size: 20px;color: #7E8890;margin-bottom: 60px;">
-          致力于保障人民生命安全和健康，以及提供及时有效的医疗救援服务，为社会稳定与发展作出积极贡献</p>
+        <p style="text-align: center; font-size: 20px; color: #7e8890; margin-bottom: 60px">
+          致力于保障人民生命安全和健康，以及提供及时有效的医疗救援服务，为社会稳定与发展作出积极贡献
+        </p>
         <div>
           <el-form :inline="true" :model="formInline" class="demo-form-inline">
             <el-form-item label="">
@@ -69,17 +84,13 @@
               <el-input v-model="formInline.user" placeholder="电话"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button style="height:40px;" type="warning" @click="onSubmit">Apply Now</el-button>
+              <el-button style="height: 40px" type="warning" @click="onSubmit">Apply Now</el-button>
             </el-form-item>
           </el-form>
-
-
         </div>
       </div>
       <div class="allfooter">
-        <div>
-          应急医学数字教育示范基地© 保留所有权利由 XXXX 提供支持
-        </div>
+        <div>应急医学数字教育示范基地© 保留所有权利由 XXXX 提供支持</div>
       </div>
       <!-- <GlobalFooter></GlobalFooter> -->
       <!-- <div class="footer">
@@ -131,12 +142,11 @@
       <a-back-top />
     </div>
 
-
     <div class="bannercontent">
       <!-- @/assets/banner.png -->
       <!-- {{ bannerobj }} -->
 
-      <el-image :src="bannerobj.url1" style="width: 100%;" fit="cover">
+      <el-image :src="bannerobj.url1" style="width: 100%" fit="cover">
         <div slot="error" class="image-slot">
           <img :src="bannerobj.url2" class="banner" alt="banner" />
         </div>
@@ -145,8 +155,10 @@
         <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated">
           应急医学数字教育示范基地
         </h1>
-        <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
-          style="font-size: 26px; margin: 10px 20px">
+        <h1
+          class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
+          style="font-size: 26px; margin: 10px 20px"
+        >
           EMERGENCY MEDICAL DIGITAL EDUCATION DEMONSTRATION BASE
         </h1>
         <div class="btngroup">
@@ -219,9 +231,7 @@ export default {
       // 是否手机模式
       isMobile: false,
 
-      formInline: {
-
-      }
+      formInline: {},
     }
   },
   computed: {
@@ -246,32 +256,52 @@ export default {
       const obj = {
         Workplace: {
           url1: this.homemainsliderbg,
-          url2: require('@/assets/home_main_slider_bg.jpg')
+          url2: require('@/assets/home_main_slider_bg.jpg'),
         },
         intro: {
           url1: this.coursegraphicdesignportfolioheader,
-          url2: require('@/assets/course_graphic_design_portfolio_header.jpg')
+          url2: require('@/assets/course_graphic_design_portfolio_header.jpg'),
         },
         courseDetailhome: {
           url1: this.coursesmaintopheader,
-          url2: require('@/assets/courses_main_top_header.jpg')
+          url2: require('@/assets/courses_main_top_header.jpg'),
         },
         courseDetail: {
           url1: this.universitypagetitlebaropbg,
-          url2: require('@/assets/university_page_title_bar_op_bg.jpg')
+          url2: require('@/assets/university_page_title_bar_op_bg.jpg'),
         },
         training: {
           url1: this.facilitiesptbtopbg1,
-          url2: require('@/assets/facilities_ptb_top_bg-1.jpg')
+          url2: require('@/assets/facilities_ptb_top_bg-1.jpg'),
+        },
+
+        trainingHome: {
+          url1: this.coursesmaintopheader,
+          url2: require('@/assets/courses_main_top_header.jpg'),
+        },
+        politicsSeminar: {
+          url1: this.universitypagetitlebaropbg,
+          url2: require('@/assets/university_page_title_bar_op_bg.jpg'),
         },
 
         showwork: {
           url1: this.latestnewsptbtopbg1,
-          url2: require('@/assets/latest_news_ptb_top_bg-1.jpg')
+          url2: require('@/assets/latest_news_ptb_top_bg-1.jpg'),
         },
+
+        showworkHome: {
+          url1: this.latestnewsptbtopbg1,
+          url2: require('@/assets/latest_news_ptb_top_bg-1.jpg'),
+        },
+
+        showworkDetail: {
+          url1: this.latestnewsptbtopbg1,
+          url2: require('@/assets/university_page_title_bar_op_bg.jpg'),
+        },
+
         zzrz: {
           url1: this.admissionsptbtopbg,
-          url2: require('@/assets/admissions_ptb_top_bg.jpg')
+          url2: require('@/assets/admissions_ptb_top_bg.jpg'),
         },
       }
       return obj[this.$route.name] || this.facilitiesptbtopbg1
@@ -352,7 +382,7 @@ export default {
     },
     tabClick(key) {
       console.log(key)
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 0)
       this.$router.push(key)
     },
   },
@@ -370,21 +400,18 @@ export default {
 
   .fusion-highlighted-text-prefix {
     font-size: 34px;
-    color: #FFF;
+    color: #fff;
   }
 
   .fusion-highlighted-text-postfix {
     font-size: 34px;
-    color: #FFF;
+    color: #fff;
   }
 
   .fusion-highlighted-text {
     font-size: 34px;
     color: #f09a3e;
   }
-
-
-
 }
 
 .fusion-highlighted-text-wrapper {
@@ -417,6 +444,5 @@ export default {
 .allfooter {
   padding: 20px 30px;
   background-image: linear-gradient(180deg, #b1c3ff 0%, #ffffff 100%);
-  ;
 }
 </style>

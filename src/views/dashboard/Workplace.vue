@@ -1,47 +1,36 @@
 <template>
   <!-- <div> -->
   <page-header-wrapper1 :title="false">
-    <template v-slot:content>
-    </template>
-    <template v-slot:extraContent>
-    </template>
-
+    <template v-slot:content> </template>
+    <template v-slot:extraContent> </template>
 
     <div class="containerhomne logocontainer">
-
-
       <div class="homepagecontent1">
         <div class="homepagecontent1img">
-          <el-image class="img-responsive wp-image-7 lazyloaded"
-            src="http://106.54.167.222:39900/wp-content/uploads/2024/04/logo-300x296.png">
+          <el-image
+            class="img-responsive wp-image-7 lazyloaded"
+            src="http://106.54.167.222:39900/wp-content/uploads/2024/04/logo-300x296.png"
+          >
             <div slot="error" class="image-slot">
-              <img width="300" height="296" src="../../assets/logo-300x296.png" alt="">
+              <img width="300" height="296" src="../../assets/logo-300x296.png" alt="" />
             </div>
           </el-image>
         </div>
 
         <div class="homepagecontent1title">
           <div>
-            <div class="title">
-              应急医学数字教育示范基地
-            </div>
-            <div class="subtitle">
-              中国教育科学研究院培训中心与国家应急医学研究中心共建
-            </div>
+            <div class="title">应急医学数字教育示范基地</div>
+            <div class="subtitle">中国教育科学研究院培训中心与国家应急医学研究中心共建</div>
             <div class="bottomline">
               <div class="bottomlinecenter"></div>
             </div>
           </div>
-
         </div>
-
 
         <el-row type="flex" :gutter="30" class="row-bg" justify="center">
           <el-col :span="10">
             <div class="grid-content bg-purple">
-              <div class="cardtitle">
-                示范基地简介
-              </div>
+              <div class="cardtitle">示范基地简介</div>
               <div class="fusion-text fusion-text-2">
                 <p>
                   应急医学数字教育示范基地，是北京安华数字应急技术有限公司与应急总医院（国家应急医学研究中心）合作共建基地，是为全国51万所学校的应急培训教育打造设施建设标准、培训实施标准及基地建设模版，也是急救培训教育的对外宣传窗口。
@@ -54,27 +43,25 @@
           </el-col>
           <el-col :span="10">
             <div class="grid-content bg-purple-light">
-
               <div class="introlistRightList">
-
-                <video width="380" height="250" controls="">
-                  <source src="http://vod.jj-edu.cn/promotional.mp4" type="video/mp4">
-                </video>
-
+                <el-image :src="tzbanner">
+                  <div slot="error" class="image-slot">
+                    <video width="380" height="250" controls="">
+                      <source src="http://vod.jj-edu.cn/promotional.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </el-image>
               </div>
             </div>
           </el-col>
         </el-row>
       </div>
 
-
       <div class="introlist">
         <el-row type="flex" :gutter="30" class="row-bg" justify="center">
           <el-col :span="10">
             <div class="grid-content bg-purple">
-              <div class="title">
-                我们在做什么
-              </div>
+              <div class="title">我们在做什么</div>
               <div class="subtitle">
                 致力于急救教学、学习和研究，并培养生命安全的领航者，他们在社会急救中发挥至关重要的作用。
               </div>
@@ -91,12 +78,8 @@
           </el-col>
           <el-col :span="10">
             <div class="grid-content bg-purple-light">
-              <div class="title">
-                应急文化
-              </div>
+              <div class="title">应急文化</div>
               <div class="introlistRightList">
-
-
                 <div>
                   <a-collapse default-active-key="1" :bordered="false" accordion>
                     <template #expandIcon="props">
@@ -104,14 +87,33 @@
                     </template>
                     <a-collapse-panel key="1" header="我们的使命" :style="customStyle">
                       <div class="panel-body toggle-content fusion-clearfix">
-                        <p>应急医学的使命是保障人民生命安全、健康和社会稳定，应对各种突发事件和紧急情况，提供及时、有效的医疗救援和支持。其核心使命包括：</p>
+                        <p>
+                          应急医学的使命是保障人民生命安全、健康和社会稳定，应对各种突发事件和紧急情况，提供及时、有效的医疗救援和支持。其核心使命包括：
+                        </p>
                         <ol>
-                          <li><strong>保护生命</strong>：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。</li>
-                          <li><strong>减轻痛苦</strong>：应急医学努力提供及时有效的医疗救助，缓解伤痛，减轻患者的痛苦。</li>
-                          <li><strong>控制疫情</strong>：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。</li>
-                          <li><strong>维护社会秩序</strong>：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。</li>
-                          <li><strong>恢复生活</strong>：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。</li>
-                          <li><strong>预防再次发生</strong>：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。</li>
+                          <li>
+                            <strong>保护生命</strong
+                            >：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。
+                          </li>
+                          <li>
+                            <strong>减轻痛苦</strong>：应急医学努力提供及时有效的医疗救助，缓解伤痛，减轻患者的痛苦。
+                          </li>
+                          <li>
+                            <strong>控制疫情</strong
+                            >：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。
+                          </li>
+                          <li>
+                            <strong>维护社会秩序</strong
+                            >：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。
+                          </li>
+                          <li>
+                            <strong>恢复生活</strong
+                            >：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。
+                          </li>
+                          <li>
+                            <strong>预防再次发生</strong
+                            >：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。
+                          </li>
                         </ol>
                       </div>
                     </a-collapse-panel>
@@ -121,70 +123,121 @@
                         <div class="markdown prose w-full break-words dark:prose-invert light">
                           <ol>
                             <li>
-                              <strong>综合性和多学科性</strong>：应急医学强调跨学科合作和综合应对，不仅涉及医学领域，还包括工程学、社会学、心理学等多个学科的知识与技能。综合性和多学科性是应对复杂紧急情况的重要保障。
+                              <strong>综合性和多学科性</strong
+                              >：应急医学强调跨学科合作和综合应对，不仅涉及医学领域，还包括工程学、社会学、心理学等多个学科的知识与技能。综合性和多学科性是应对复杂紧急情况的重要保障。
                             </li>
                             <li>
-                              <strong>及时响应和迅速行动</strong>：应急医学强调对紧急情况的敏感度和快速反应能力。在灾难或事故发生后，应急医学需要立即展开行动，以最大限度地减少伤亡和病患，保障生命安全。
+                              <strong>及时响应和迅速行动</strong
+                              >：应急医学强调对紧急情况的敏感度和快速反应能力。在灾难或事故发生后，应急医学需要立即展开行动，以最大限度地减少伤亡和病患，保障生命安全。
                             </li>
                             <li>
-                              <strong>预防为主和全民参与</strong>：应急医学注重预防工作，强调在突发事件发生前就进行风险评估、预警和预防措施的制定。同时，鼓励全民参与，提高公众的应对能力和自救能力。
+                              <strong>预防为主和全民参与</strong
+                              >：应急医学注重预防工作，强调在突发事件发生前就进行风险评估、预警和预防措施的制定。同时，鼓励全民参与，提高公众的应对能力和自救能力。
                             </li>
-                            <li><strong>科学管理和资源优化</strong>：应急医学提倡科学管理医疗资源，包括人力、物资和设施等，以确保在紧急情况下资源的合理利用和最大化效益。</li>
-                            <li><strong>人文关怀和心理支持</strong>：应急医学强调对受灾群众的人文关怀和心理支持，关注其身心健康，通过心理援助和社会支持，帮助他们度过难关。</li>
-                            <li><strong>持续改进和学习</strong>：应急医学不断总结经验教训，不断改进工作方法和应对策略，以适应不断变化的紧急情况和应对挑战。</li>
+                            <li>
+                              <strong>科学管理和资源优化</strong
+                              >：应急医学提倡科学管理医疗资源，包括人力、物资和设施等，以确保在紧急情况下资源的合理利用和最大化效益。
+                            </li>
+                            <li>
+                              <strong>人文关怀和心理支持</strong
+                              >：应急医学强调对受灾群众的人文关怀和心理支持，关注其身心健康，通过心理援助和社会支持，帮助他们度过难关。
+                            </li>
+                            <li>
+                              <strong>持续改进和学习</strong
+                              >：应急医学不断总结经验教训，不断改进工作方法和应对策略，以适应不断变化的紧急情况和应对挑战。
+                            </li>
                           </ol>
-                          <p>综上所述，应急医学的理念是以综合性、及时响应、全民参与、科学管理、人文关怀和持续改进为核心，为突发事件和紧急情况下的医疗救援提供指导和支持。</p>
+                          <p>
+                            综上所述，应急医学的理念是以综合性、及时响应、全民参与、科学管理、人文关怀和持续改进为核心，为突发事件和紧急情况下的医疗救援提供指导和支持。
+                          </p>
                         </div>
                       </div>
                     </a-collapse-panel>
                     <a-collapse-panel key="3" header="我们的承诺" :style="customStyle">
                       <div class="panel-body toggle-content fusion-clearfix">
                         <div class="panel-body toggle-content fusion-clearfix">
-                          <p>应急医学的承诺体现了医疗机构、医护人员以及整个应急医学系统对于保障人民生命安全和健康的坚定信念和责任感。其主要承诺包括：</p>
+                          <p>
+                            应急医学的承诺体现了医疗机构、医护人员以及整个应急医学系统对于保障人民生命安全和健康的坚定信念和责任感。其主要承诺包括：
+                          </p>
                           <ol>
-                            <li><strong>保障生命安全</strong>：应急医学承诺在突发事件和紧急情况下，尽最大努力保障每一个人的生命安全，无论是受伤患者、疫情患者还是其他受灾群众。</li>
-                            <li><strong>及时救援和医疗救助</strong>：应急医学承诺对于受伤患者和急需医疗救助的人员提供及时救援和医疗支持，无论是在灾难现场还是医疗机构内。</li>
-                            <li><strong>全面覆盖和公平对待</strong>：应急医学承诺在紧急情况下，为所有需要帮助的人提供服务，不分国界、种族、信仰或社会地位，保证医疗服务的公平和公正。</li>
-                            <li><strong>保障医护人员安全</strong>：应急医学承诺为医护人员提供必要的安全保障措施，确保他们在执行任务时的安全与健康。</li>
-                            <li><strong>透明和诚信</strong>：应急医学承诺在信息公开、沟通透明方面保持高度诚信，及时向公众通报灾情、疫情及相关医疗信息，以促进社会信任和合作。</li>
-                            <li><strong>持续改进和学习</strong>：应急医学承诺不断改进工作方法和应对策略，吸取经验教训，提高医疗救援能力和效率。</li>
-                            <li><strong>关注人文关怀和心理支持</strong>：应急医学承诺为受灾群众提供人文关怀和心理支持，关注他们的身心健康，帮助他们渡过难关。</li>
+                            <li>
+                              <strong>保障生命安全</strong
+                              >：应急医学承诺在突发事件和紧急情况下，尽最大努力保障每一个人的生命安全，无论是受伤患者、疫情患者还是其他受灾群众。
+                            </li>
+                            <li>
+                              <strong>及时救援和医疗救助</strong
+                              >：应急医学承诺对于受伤患者和急需医疗救助的人员提供及时救援和医疗支持，无论是在灾难现场还是医疗机构内。
+                            </li>
+                            <li>
+                              <strong>全面覆盖和公平对待</strong
+                              >：应急医学承诺在紧急情况下，为所有需要帮助的人提供服务，不分国界、种族、信仰或社会地位，保证医疗服务的公平和公正。
+                            </li>
+                            <li>
+                              <strong>保障医护人员安全</strong
+                              >：应急医学承诺为医护人员提供必要的安全保障措施，确保他们在执行任务时的安全与健康。
+                            </li>
+                            <li>
+                              <strong>透明和诚信</strong
+                              >：应急医学承诺在信息公开、沟通透明方面保持高度诚信，及时向公众通报灾情、疫情及相关医疗信息，以促进社会信任和合作。
+                            </li>
+                            <li>
+                              <strong>持续改进和学习</strong
+                              >：应急医学承诺不断改进工作方法和应对策略，吸取经验教训，提高医疗救援能力和效率。
+                            </li>
+                            <li>
+                              <strong>关注人文关怀和心理支持</strong
+                              >：应急医学承诺为受灾群众提供人文关怀和心理支持，关注他们的身心健康，帮助他们渡过难关。
+                            </li>
                           </ol>
-                          <p>综上所述，应急医学的承诺是坚定地致力于保障人民生命安全和健康，以及提供及时有效的医疗救援服务，为社会稳定与发展作出积极贡献。</p>
+                          <p>
+                            综上所述，应急医学的承诺是坚定地致力于保障人民生命安全和健康，以及提供及时有效的医疗救援服务，为社会稳定与发展作出积极贡献。
+                          </p>
                         </div>
                       </div>
                     </a-collapse-panel>
                     <a-collapse-panel key="4" header="我们的价值" :style="customStyle">
                       <div class="panel-body toggle-content fusion-clearfix">
                         <ol>
-                          <li><strong>保障生命安全</strong>：应急医学通过及时的救援和医疗服务，可以最大程度地减少伤亡人数，保障人民生命安全，是社会稳定和发展的基础。</li>
-                          <li><strong>保障公共卫生</strong>：在突发事件和紧急情况下，应急医学不仅能够控制疫情传播，还能够提供各种预防措施，保障公众健康，维护社会公共卫生安全。</li>
-                          <li><strong>维护社会稳定</strong>：应急医学在灾难和紧急情况中发挥着重要的维稳作用，通过提供医疗救援和支持，稳定受灾群众情绪，防止社会动荡和混乱。</li>
-                          <li><strong>提高应对能力</strong>：应急医学可以通过应急演练、培训和技术创新等手段，提高医疗机构和医护人员的应急能力和水平，为日常医疗工作提供更好的支持。</li>
-                          <li><strong>促进社会团结</strong>：在灾难面前，应急医学能够促进社会各界的团结合作，凝聚社会力量，共同应对危机，增强社会凝聚力和向心力。</li>
-                          <li><strong>提升国家形象</strong>：应急医学的高效运作和优质服务，能够提升国家在国际社会中的形象和声誉，增强国际社会的信任和合作。</li>
-                          <li><strong>推动科技发展</strong>：应急医学在医疗设备、医疗技术和医疗管理等方面不断创新和发展，推动医疗科技的进步，促进医疗卫生事业的发展。</li>
+                          <li>
+                            <strong>保障生命安全</strong
+                            >：应急医学通过及时的救援和医疗服务，可以最大程度地减少伤亡人数，保障人民生命安全，是社会稳定和发展的基础。
+                          </li>
+                          <li>
+                            <strong>保障公共卫生</strong
+                            >：在突发事件和紧急情况下，应急医学不仅能够控制疫情传播，还能够提供各种预防措施，保障公众健康，维护社会公共卫生安全。
+                          </li>
+                          <li>
+                            <strong>维护社会稳定</strong
+                            >：应急医学在灾难和紧急情况中发挥着重要的维稳作用，通过提供医疗救援和支持，稳定受灾群众情绪，防止社会动荡和混乱。
+                          </li>
+                          <li>
+                            <strong>提高应对能力</strong
+                            >：应急医学可以通过应急演练、培训和技术创新等手段，提高医疗机构和医护人员的应急能力和水平，为日常医疗工作提供更好的支持。
+                          </li>
+                          <li>
+                            <strong>促进社会团结</strong
+                            >：在灾难面前，应急医学能够促进社会各界的团结合作，凝聚社会力量，共同应对危机，增强社会凝聚力和向心力。
+                          </li>
+                          <li>
+                            <strong>提升国家形象</strong
+                            >：应急医学的高效运作和优质服务，能够提升国家在国际社会中的形象和声誉，增强国际社会的信任和合作。
+                          </li>
+                          <li>
+                            <strong>推动科技发展</strong
+                            >：应急医学在医疗设备、医疗技术和医疗管理等方面不断创新和发展，推动医疗科技的进步，促进医疗卫生事业的发展。
+                          </li>
                         </ol>
                       </div>
                     </a-collapse-panel>
                   </a-collapse>
                 </div>
-
-
-
               </div>
             </div>
           </el-col>
         </el-row>
-
-
       </div>
 
-
-
       <div class="imglist">
-
-
         <el-row :gutter="20">
           <el-col :span="8" v-for="item in imglist">
             <div class="imgelem">
@@ -201,27 +254,15 @@
             </div>
           </el-col>
         </el-row>
-
-
-
-
       </div>
 
-
-
-
       <div class="news">
-        <div class="title">
-          最新要闻
-        </div>
-        <div class="subtitle">
-          新闻早知道
-        </div>
+        <div class="title">最新要闻</div>
+        <div class="subtitle">新闻早知道</div>
         <div class="bottomline">
           <div class="bottomlinecenter"></div>
         </div>
         <div class="newcontent">
-
           <div class="ant-pro-pages-list-projects-cardList">
             <a-list :data-source="datanews" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
               <a-list-item slot="renderItem" slot-scope="item">
@@ -236,8 +277,12 @@
                     <span>{{ item.updatedAt | fromNow }}</span>
                     <div class="avatarList">
                       <avatar-list size="small" :max-length="2">
-                        <avatar-list-item v-for="(member, i) in item.members" :key="`${item.id}-avatar-${i}`"
-                          :src="member.avatar" :tips="member.name" />
+                        <avatar-list-item
+                          v-for="(member, i) in item.members"
+                          :key="`${item.id}-avatar-${i}`"
+                          :src="member.avatar"
+                          :tips="member.name"
+                        />
                       </avatar-list>
                     </div>
                   </div>
@@ -245,22 +290,11 @@
               </a-list-item>
             </a-list>
           </div>
-
-
         </div>
-
       </div>
-
-
-
-
-
     </div>
 
-
-    <div>
-
-    </div>
+    <div></div>
   </page-header-wrapper1>
 </template>
 
@@ -385,37 +419,36 @@ export default {
       imglist: [
         {
           url: require('@/assets/home_courses_section_bg.jpg'),
-          title: "课程"
+          title: '课程',
         },
         {
           url: require('@/assets/home_events_section_bg-1.jpg'),
-          title: "事件"
+          title: '事件',
         },
         {
           url: require('@/assets/home_latest_news_section_bg-1.jpg'),
-          title: "热点新闻"
-        }
+          title: '热点新闻',
+        },
       ],
       introlist1: [
         {
-          name: "应急救援 – 在灾难、事故等突发情况下，为伤员提供紧急救护和医疗救助，包括现场急救、伤员分类、转运和安全的医疗处置等",
-          icon: "el-icon-picture-outline-round"
+          name: '应急救援 – 在灾难、事故等突发情况下，为伤员提供紧急救护和医疗救助，包括现场急救、伤员分类、转运和安全的医疗处置等',
+          icon: 'el-icon-picture-outline-round',
         },
         {
-          name: "紧急医疗管理 – 管理医疗资源、协调医疗人员，确保在紧急情况下医疗服务的有效组织和运作。",
-          icon: "el-icon-s-shop"
+          name: '紧急医疗管理 – 管理医疗资源、协调医疗人员，确保在紧急情况下医疗服务的有效组织和运作。',
+          icon: 'el-icon-s-shop',
         },
         {
-          name: "应急预案制定和培训 – 制定应急医疗预案，培训医疗人员和应急救援人员，提高他们应对紧急情况的能力和应变能力。",
-          icon: "el-icon-potato-strips"
+          name: '应急预案制定和培训 – 制定应急医疗预案，培训医疗人员和应急救援人员，提高他们应对紧急情况的能力和应变能力。',
+          icon: 'el-icon-potato-strips',
         },
         {
-          name: "心理援助 – 在灾难或紧急情况下，为受创伤的个体和群体提供心理援助和心理治疗，缓解心理创伤。",
-          icon: "el-icon-potato-strips"
-        }
+          name: '心理援助 – 在灾难或紧急情况下，为受创伤的个体和群体提供心理援助和心理治疗，缓解心理创伤。',
+          icon: 'el-icon-potato-strips',
+        },
       ],
-      customStyle:
-        'background: #fff;border-radius: 4px;margin-bottom: 24px;border: 0;overflow: hidden',
+      customStyle: 'background: #fff;border-radius: 4px;margin-bottom: 24px;border: 0;overflow: hidden',
     }
   },
   computed: {
@@ -458,7 +491,7 @@ export default {
   },
   methods: {
     getList() {
-      this.$http.get('/list/article', { params: { count: 3 } }).then(res => {
+      this.$http.get('/list/article', { params: { count: 3 } }).then((res) => {
         console.log('res', res)
         this.datanews = res.result
         // this.loading = false
@@ -512,7 +545,7 @@ export default {
       console.log(item)
       this.$route.meta.title = item.description
       // this.$router.push('/dashboard/news/3333')
-    }
+    },
   },
 }
 </script>
@@ -722,7 +755,6 @@ export default {
 }
 </style>
 
-
 <style scoped>
 body {
   font-family: Arial, sans-serif;
@@ -759,7 +791,7 @@ nav ul li a {
   background-color: #fff;
   border-radius: 5px;
   /* 调整边框圆角 */
-  font-family: "黑体", "Microsoft YaHei", sans-serif;
+  font-family: '黑体', 'Microsoft YaHei', sans-serif;
   transition: color 0.3s ease, background-color 0.3s ease;
   border: 2px solid transparent;
   /* 添加边框并设置初始为透明
@@ -792,7 +824,7 @@ nav ul li a.active {
 /*banner
 			*/
 /*课程开始 */
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   header h1 {
     font-size: 20px;
     /* 在小屏幕上调整字体大小 */
@@ -868,8 +900,8 @@ h2 {
 }
 
 .course img {
-  border-top-left-radius: calc(.75rem - 1px);
-  border-top-right-radius: calc(.75rem - 1px);
+  border-top-left-radius: calc(0.75rem - 1px);
+  border-top-right-radius: calc(0.75rem - 1px);
   max-width: 100%;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -1100,8 +1132,7 @@ h2 {
   /* 白色字体 */
 }
 
-@media screen and (max-width:767px) {
-
+@media screen and (max-width: 767px) {
   .team-details,
   .team-members {
     width: 100%;
@@ -1177,8 +1208,8 @@ h2 {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #0053AA;
-  color: #F7FED5;
+  background-color: #0053aa;
+  color: #f7fed5;
   padding: 6px 24px;
   border: none;
   border-radius: 20px;
@@ -1193,7 +1224,7 @@ h2 {
 }
 
 .more-button:hover {
-  background-color: #F3A000;
+  background-color: #f3a000;
   color: #fff;
 }
 
@@ -1252,8 +1283,6 @@ footer p {
 } */
 </style>
 
-
-
 <style lang="less" scoped>
 .imglist {
   padding: 20px;
@@ -1272,7 +1301,7 @@ footer p {
 
       div:first-child {
         font-size: 40px;
-        color: #FFF;
+        color: #fff;
         margin-bottom: 40px;
       }
 
@@ -1288,7 +1317,7 @@ footer p {
 
       div:nth-child(3) {
         font-size: 20px;
-        color: #FFF;
+        color: #fff;
         // border-top: 1px solid #f09a3e;
         padding-top: 30px;
       }
@@ -1310,7 +1339,6 @@ footer p {
   }
 }
 
-
 .news {
   padding: 20px;
   background: #f7f5f4;
@@ -1326,12 +1354,11 @@ footer p {
     display: flex;
     justify-content: center;
     font-size: 20px;
-    color: #7E8890;
+    color: #7e8890;
     padding-bottom: 30px;
   }
 
   .bottomline {
-
     text-align: center;
     display: flex;
     justify-content: center;
@@ -1348,7 +1375,6 @@ footer p {
   }
 }
 
-
 .introlist {
   padding: 20px;
   background: #f7f5f4;
@@ -1362,16 +1388,16 @@ footer p {
 
   .subtitle {
     font-size: 15px;
-    color: #7E8890;
+    color: #7e8890;
     margin-bottom: 20px;
   }
 
   .list {
     font-size: 19px;
-    color: #7E8890;
+    color: #7e8890;
 
     i {
-      color: #f09a3e
+      color: #f09a3e;
     }
 
     div {
@@ -1382,20 +1408,18 @@ footer p {
 
   .introlistLeftFooter {
     font-size: 15px;
-    color: #7E8890;
+    color: #7e8890;
   }
 
   /deep/.ant-collapse-header {
     font-size: 20px;
-    color: #f09a3e
+    color: #f09a3e;
   }
 
-  /deep/ .ant-collapse>.ant-collapse-item>.ant-collapse-header .ant-collapse-arrow {
+  /deep/ .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
     font-size: 25px;
     margin-right: 15px;
   }
-
-
 }
 
 .homepagecontent1 {
@@ -1436,19 +1460,17 @@ footer p {
         background: #f09a3e;
       }
     }
-
-
   }
 
   .cardtitle {
-    color: #333C4E;
+    color: #333c4e;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
   }
 
   .fusion-text {
-    color: #7E8890;
+    color: #7e8890;
 
     p {
       line-height: 30px;

@@ -1,22 +1,23 @@
 <template>
-
   <div id="userLayout" :class="['user-layout-wrapper', isMobile && 'mobile']">
     <div class="container">
       <!-- <div class="user-layout-lang">
         <select-lang class="select-lang-trigger" />
       </div> -->
 
-
-        <div class="user-layout-content1" >
-          <img style="width:100%;height:100%;" src="@/assets/loginBg2.png" class="logo" alt="logo">
-        </div>
-
+      <div class="user-layout-content1">
+        <el-image :src="loginbackground" style="width: 470px; height: 510px">
+          <div slot="error" class="image-slot">
+            <img style="width: 470px; height: 510px" src="@/assets/loginBg2.png" class="logo" alt="logo" />
+          </div>
+        </el-image>
+      </div>
 
       <div class="user-layout-content">
         <div class="top">
           <div class="header">
             <a href="/">
-              <img src="@/assets/logo.png" class="logo" alt="logo">
+              <img src="@/assets/logo.png" class="logo" alt="logo" />
               <span class="title">国家应急医学研究中心</span>
             </a>
           </div>
@@ -34,9 +35,7 @@
             <a href="_self">隐私</a>
             <a href="_self">条款</a>
           </div> -->
-          <div class="copyright">
-            Copyright &copy;  版权所有未经允许请勿转载
-          </div>
+          <div class="copyright">Copyright &copy; 版权所有未经允许请勿转载</div>
         </div>
       </div>
     </div>
@@ -47,19 +46,27 @@
 <script>
 import { deviceMixin } from '@/store/device-mixin'
 import SelectLang from '@/components/SelectLang'
-
+import { mapState } from 'vuex'
 export default {
   name: 'UserLayout',
   components: {
-    SelectLang
+    SelectLang,
   },
   mixins: [deviceMixin],
-  mounted () {
+  computed: {
+    ...mapState({
+      nickname: (state) => state.user.nickname,
+      welcome: (state) => state.user.welcome,
+      loginbackground: (state) => state.app.imgList['loginbackground'],
+    }),
+  },
+
+  mounted() {
     document.body.classList.add('userLayout')
   },
-  beforeDestroy () {
+  beforeDestroy() {
     document.body.classList.remove('userLayout')
-  }
+  },
 }
 </script>
 
@@ -105,8 +112,8 @@ export default {
     }
 
     .user-layout-content {
-      padding: 32px  24px;
-      background: #FFF;
+      padding: 32px 24px;
+      background: #fff;
       .top {
         text-align: center;
 
@@ -133,7 +140,7 @@ export default {
 
           .title {
             font-size: 33px;
-            color: rgba(0, 0, 0, .85);
+            color: rgba(0, 0, 0, 0.85);
             font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
             font-weight: 600;
             position: relative;
@@ -179,13 +186,17 @@ export default {
         }
       }
     }
-  .user-layout-content1 {
-    width:470px;height:510px;
-  }
+    .user-layout-content1 {
+      width: 470px;
+      height: 510px;
+      img {
+        width: 470px;
+        height: 510px;
+      }
+    }
     a {
       text-decoration: none;
     }
-
   }
 }
 </style>

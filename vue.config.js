@@ -14,7 +14,7 @@ function resolve(dir) {
 function getGitHash() {
   try {
     return GitRevision.version()
-  } catch (e) { }
+  } catch (e) {}
   return 'unknown'
 }
 // eslint-disable-next-line no-unused-vars
@@ -26,7 +26,7 @@ const assetsCDN = {
     vue: 'Vue',
     'vue-router': 'VueRouter',
     vuex: 'Vuex',
-    axios: 'axios'
+    axios: 'axios',
   },
   css: [],
   // https://unpkg.com/browse/vue@2.6.10/
@@ -34,8 +34,8 @@ const assetsCDN = {
     '//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js',
     '//cdn.jsdelivr.net/npm/vue-router@3.5.1/dist/vue-router.min.js',
     '//cdn.jsdelivr.net/npm/vuex@3.1.1/dist/vuex.min.js',
-    '//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'
-  ]
+    '//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js',
+  ],
 }
 
 // vue.config.js
@@ -47,20 +47,20 @@ const vueConfig = {
       // Ignore all locale files of moment.js
       new webpack.IgnorePlugin({
         contextRegExp: /^\.\/locale$/,
-        resourceRegExp: /moment$/
+        resourceRegExp: /moment$/,
       }),
       new webpack.DefinePlugin({
         APP_VERSION: `"${packageJson.version}"`,
         GIT_HASH: JSON.stringify(getGitHash()),
-        BUILD_DATE: buildDate
-      })
-    ]
+        BUILD_DATE: buildDate,
+      }),
+    ],
     // en_US: `if prod, add externals`
     // zh_CN: `这里是用来控制编译忽略外部依赖的，与 config.plugin('html') 配合可以编译时引入外部CDN文件依赖`
     // externals: isProd ? assetsCDN.externals : {}
   },
 
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.resolve.alias.set('@$', resolve('src'))
 
     // fixed svg-loader by https://github.com/damianstasik/vue-svg-loader/issues/185#issuecomment-1126721069
@@ -68,7 +68,8 @@ const vueConfig = {
     // Remove regular svg config from root rules list
     config.module.rules.delete('svg')
 
-    config.module.rule('svg')
+    config.module
+      .rule('svg')
       // Use svg component rule
       .oneOf('svg_as_component')
       .resourceQuery(/inline/)
@@ -84,9 +85,9 @@ const vueConfig = {
             { prefixIds: true },
             { cleanupIDs: true },
             { convertShapeToPath: false },
-            { convertStyleToAttrs: true }
-          ]
-        }
+            { convertStyleToAttrs: true },
+          ],
+        },
       })
       .end()
       .end()
@@ -114,19 +115,19 @@ const vueConfig = {
 
           // 'primary-color': '#F5222D',
           // 'link-color': '#F5222D',
-          'border-radius-base': '2px'
+          'border-radius-base': '2px',
         },
         // DO NOT REMOVE THIS LINE
-        javascriptEnabled: true
-      }
-    }
+        javascriptEnabled: true,
+      },
+    },
   },
 
   devServer: {
     // development server port 8000
     port: 8000,
     client: {
-      overlay: false // 编译错误时，取消全屏覆盖（建议关掉）
+      overlay: false, // 编译错误时，取消全屏覆盖（建议关掉）
     },
     /** 接口代理 */
     // proxy: {
@@ -141,20 +142,20 @@ const vueConfig = {
     // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
     proxy: {
       '/medicine': {
-        // target: 'http://118.178.233.104:8080',
-        target: 'http://10.105.100.24:8090',
+        target: 'http://118.178.233.104:8080',
+        // target: 'http://10.105.100.24:8090',
         ws: false,
         changeOrigin: true,
-        rewrite: (path) => path.replace("/medicine", "")
-      }
-    }
+        rewrite: (path) => path.replace('/medicine', ''),
+      },
+    },
   },
 
   // disable source map in production
   productionSourceMap: false,
   lintOnSave: undefined,
   // babel-loader no-ignore node_modules/*
-  transpileDependencies: []
+  transpileDependencies: [],
 }
 
 // preview.pro.loacg.com only do not use in your production;
