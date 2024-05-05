@@ -17,7 +17,7 @@ export default {
   mounted() {},
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .showworkDetail {
 }
 </style>

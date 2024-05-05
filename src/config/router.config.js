@@ -112,6 +112,7 @@ export const asyncRouterMap = [
       {
         path: '/showwork',
         name: 'showwork',
+        redirect: '/showwork/home',
         // hidden: true,
         component: () => import('@/views/list/showworkHome'),
         meta: { title: 'menu.showwork', keepAlive: true, permission: ['table'] },

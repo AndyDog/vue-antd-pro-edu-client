@@ -319,7 +319,8 @@ export default {
     this.menus = this.menus.filter((item) => {
       return !item.hidden
     })
-    console.log(routes.children)
+    this.activeKey = this.$route.path
+    console.log(this.activeKey)
     // 处理侧栏收起状态
     this.$watch('collapsed', () => {
       this.$store.commit(SIDEBAR_TYPE, this.collapsed)
@@ -384,6 +385,15 @@ export default {
       console.log(key)
       window.scrollTo(0, 0)
       this.$router.push(key)
+    },
+  },
+  watch: {
+    $route(to, from) {
+      console.log('路由变化了')
+      console.log(to)
+      console.log(from)
+
+      this.activeKey = to.path
     },
   },
 }

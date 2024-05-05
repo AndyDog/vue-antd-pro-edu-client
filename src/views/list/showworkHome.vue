@@ -1,9 +1,7 @@
 <template>
-  <template>
-    <page-header-wrapper :title="false">
-      <router-view />
-    </page-header-wrapper>
-  </template>
+  <page-header-wrapper :title="false">
+    <router-view />
+  </page-header-wrapper>
 </template>
 
 <script>
@@ -20,7 +18,7 @@ export default {
   mounted() {},
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .wrapper {
 }
 </style>
