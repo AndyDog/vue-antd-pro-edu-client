@@ -319,8 +319,10 @@ export default {
     this.menus = this.menus.filter((item) => {
       return !item.hidden
     })
-    this.activeKey = this.$route.path
-    console.log(this.activeKey)
+    this.activeKey = this.$route.meta.parentPath || this.$route.path
+    // const path = this.$route.path
+    // const splicePath = path.split('/')
+    console.log(this.$route)
     // 处理侧栏收起状态
     this.$watch('collapsed', () => {
       this.$store.commit(SIDEBAR_TYPE, this.collapsed)
@@ -393,7 +395,7 @@ export default {
       console.log(to)
       console.log(from)
 
-      this.activeKey = to.path
+      this.activeKey = to.redirectedFrom || to.path
     },
   },
 }

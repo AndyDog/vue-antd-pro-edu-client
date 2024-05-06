@@ -11,18 +11,27 @@
           <a-list-item slot="renderItem" slot-scope="item">
             <div class="listelem">
               <div class="icon">
-                <i class="el-icon-connection"></i>
+                <!-- <i class="el-icon-connection"></i> -->
+                <el-image
+                  style="width: 100px; height: 100px; border-radius: 50%"
+                  :src="item.imagePath"
+                  class="image-slot"
+                >
+                  <div
+                    slot="error"
+                    src="https://cube.elemecdn.com/6/94/4d3ea6c1363487062b070a73e6cabjpeg.jpeg"
+                    class="image-slot"
+                  >
+                    <img style="width: 100px; height: 100px; border-radius: 50%" :src="trainingProgram" />
+                  </div>
+                </el-image>
               </div>
 
-              <div class="title">
-                {{ item.title }}
-              </div>
-              <div class="elemcontent">
-                {{ item.content }}
-              </div>
+              <div class="title" v-html="item.trainingName" :title="item.trainingName"></div>
+              <div class="elemcontent" v-html="item.introduction"></div>
 
               <div class="btn">
-                <el-button type="warning" @click="handleClick(item.id)">了解更多</el-button>
+                <el-button type="warning" @click="handleClick(item)">了解更多</el-button>
               </div>
             </div>
           </a-list-item>
@@ -169,6 +178,7 @@ import Step2 from './Step2'
 import Step3 from './Step3'
 import Swiper from 'swiper' // 注意引入的是Swiper
 import 'swiper/css/swiper.min.css' // 注意这里的引入
+import { mapState } from 'vuex'
 export default {
   name: 'StepForm',
   components: {
@@ -238,7 +248,7 @@ export default {
   methods: {
     handleClick(row) {
       console.log(row)
-      const trainingCode = row || '1'
+      const trainingCode = row.trainingCode || '1'
       this.$router.push(`/training/politicsSeminar/${trainingCode}`)
     },
     getSwiper() {
@@ -273,6 +283,23 @@ export default {
         // console.log(that.projects)
       })
     },
+    getqueryCourseList() {
+      let that = this
+      that.$http.post('/training/queryInfomationList', { page: 1, size: 100000, type: 1 }).then((res) => {
+        console.log(res)
+        that.courseList = res && res.datas
+        // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
+        // console.log(that.projectsperson)
+        // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
+        // that.activeName = that.projectsperson[0].dictCode
+      })
+      // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
+      //   console.log(res)
+      //   that.projectsperson = res && res.data && res.data.list
+      //   // this.loading = false
+      //   // console.log(that.projects)
+      // })
+    },
     // handler
     nextStep() {
       if (this.currentTab < 2) {
@@ -291,7 +318,14 @@ export default {
       this.$router.push('/trainingDetail/3333')
     },
   },
+  computed: {
+    ...mapState({
+      // 动态主路由
+      trainingProgram: (state) => state.app.imgList.trainingProgram,
+    }),
+  },
   mounted() {
+    this.getqueryCourseList()
     this.getprojectsperson()
     this.getSwiper()
   },
@@ -312,18 +346,26 @@ export default {
   text-align: center;
 
   .title {
-    font-size: 36px;
+    font-size: 26px;
     font-weight: 600;
     text-align: center;
     // padding: 90px 30px 90px 30px;
     color: #333c4e;
     margin: 20px 0;
+    white-space: nowrap; // 不换行
+    overflow: hidden; // 溢出隐藏
+    text-overflow: ellipsis; // 超出显示省略号
   }
 
   .elemcontent {
     font-size: 15px;
     color: #7e8890;
     margin: 30px 0;
+    white-space: nowrap; // 不换行
+    overflow: hidden; // 溢出隐藏
+    -webkit-line-clamp: 2; // 设置两行文字溢出
+    text-overflow: ellipsis; // 超出显示省略号
+    height: 60px;
   }
 
   .listelem {
@@ -385,6 +427,9 @@ export default {
   .title {
     font-size: 34px;
     font-weight: 600;
+    white-space: nowrap; // 不换行
+    overflow: hidden; // 溢出隐藏
+    text-overflow: ellipsis; // 超出显示省略号
     // color: #333c4e;
   }
 

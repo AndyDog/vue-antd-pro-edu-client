@@ -2,12 +2,12 @@
   <page-header-wrapper11 :title="false">
     <div class="courseDetail">
       <!-- 校园急救课程详情 -->
-      <el-tabs tab-position="left" style="min-height: 200px;">
+      <el-tabs tab-position="left" style="min-height: 200px">
         <el-tab-pane label="课程简介">
-
           <div>
-            <h1 style="font-size: 2rem;font-weight: 600;" v-if="courseList && courseList.length > 0">{{
-              courseList[0].courseName }}概述</h1>
+            <h1 style="font-size: 2rem; font-weight: 600" v-if="courseList && courseList.length > 0">
+              {{ courseList[0].courseName }}概述
+            </h1>
           </div>
           <div>
             <h1 v-if="courseList && courseList.length > 0">
@@ -17,20 +17,15 @@
           <div class="bookBtn">
             <el-button type="warning">点击购买</el-button>
           </div>
-
-
         </el-tab-pane>
         <el-tab-pane label="课程内容">课程内容</el-tab-pane>
         <el-tab-pane label="课程形式">课程形式</el-tab-pane>
         <el-tab-pane label="课程目标">课程目标</el-tab-pane>
       </el-tabs>
     </div>
-
-
-
   </page-header-wrapper11>
 </template>
-  
+
 <script>
 import RepositoryForm from './RepositoryForm'
 import TaskForm from './TaskForm'
@@ -49,7 +44,7 @@ const fieldLabels = {
   owner2: '执行人',
   approver2: '责任人',
   dateRange2: '生效日期',
-  type2: '任务类型'
+  type2: '任务类型',
 }
 
 export default {
@@ -58,7 +53,7 @@ export default {
   components: {
     FooterToolBar,
     RepositoryForm,
-    TaskForm
+    TaskForm,
   },
   data() {
     return {
@@ -86,57 +81,56 @@ export default {
           dataIndex: 'name',
           key: 'name',
           width: '20%',
-          scopedSlots: { customRender: 'name' }
+          scopedSlots: { customRender: 'name' },
         },
         {
           title: '工号',
           dataIndex: 'workId',
           key: 'workId',
           width: '20%',
-          scopedSlots: { customRender: 'workId' }
+          scopedSlots: { customRender: 'workId' },
         },
         {
           title: '所属部门',
           dataIndex: 'department',
           key: 'department',
           width: '40%',
-          scopedSlots: { customRender: 'department' }
+          scopedSlots: { customRender: 'department' },
         },
         {
           title: '操作',
           key: 'action',
-          scopedSlots: { customRender: 'operation' }
-        }
+          scopedSlots: { customRender: 'operation' },
+        },
       ],
       imageList: [
         {
           key: '1',
-          url: require("@/assets/client-logo-5.png"),
+          url: require('@/assets/client-logo-5.png'),
         },
         {
           key: '2',
-          url: require("@/assets/client-logo-6-1.png"),
+          url: require('@/assets/client-logo-6-1.png'),
         },
         {
           key: '3',
-          url: require("@/assets/client-logo-7-2.png"),
+          url: require('@/assets/client-logo-7-2.png'),
         },
         {
           key: '4',
-          url: require("@/assets/client-logo-8-1.png"),
+          url: require('@/assets/client-logo-8-1.png'),
         },
         {
           key: '5',
-          url: require("@/assets/client-logo-9-2.png"),
-        }
+          url: require('@/assets/client-logo-9-2.png'),
+        },
       ],
       errors: [],
-      ke1image: require("@/assets/ke1.jpg"),
-      courseList: []
+      ke1image: require('@/assets/ke1.jpg'),
+      courseList: [],
     }
   },
   methods: {
-
     handleSubmit(e) {
       e.preventDefault()
     },
@@ -148,11 +142,11 @@ export default {
         workId: '',
         department: '',
         editable: true,
-        isNew: true
+        isNew: true,
       })
     },
     remove(key) {
-      const newData = this.data.filter(item => item.key !== key)
+      const newData = this.data.filter((item) => item.key !== key)
       this.data = newData
     },
     saveRow(record) {
@@ -169,29 +163,31 @@ export default {
           resolve({ loop: false })
         }, 800)
       }).then(() => {
-        const target = this.data.find(item => item.key === key)
+        const target = this.data.find((item) => item.key === key)
         target.editable = false
         target.isNew = false
         this.memberLoading = false
       })
     },
     toggle(key) {
-      const target = this.data.find(item => item.key === key)
+      const target = this.data.find((item) => item.key === key)
       target._originalData = { ...target }
       target.editable = !target.editable
     },
     getRowByKey(key, newData) {
       const data = this.data
-      return (newData || data).find(item => item.key === key)
+      return (newData || data).find((item) => item.key === key)
     },
     cancel(key) {
-      const target = this.data.find(item => item.key === key)
-      Object.keys(target).forEach(key => { target[key] = target._originalData[key] })
+      const target = this.data.find((item) => item.key === key)
+      Object.keys(target).forEach((key) => {
+        target[key] = target._originalData[key]
+      })
       target._originalData = undefined
     },
     handleChange(value, key, column) {
       const newData = [...this.data]
-      const target = newData.find(item => key === item.key)
+      const target = newData.find((item) => key === item.key)
       if (target) {
         target[column] = value
         this.data = newData
@@ -200,7 +196,10 @@ export default {
 
     // 最终全页面提交
     validate() {
-      const { $refs: { repository, task }, $notification } = this
+      const {
+        $refs: { repository, task },
+        $notification,
+      } = this
       const repositoryForm = new Promise((resolve, reject) => {
         repository.form.validateFields((err, values) => {
           if (err) {
@@ -222,27 +221,29 @@ export default {
 
       // clean this.errors
       this.errors = []
-      Promise.all([repositoryForm, taskForm]).then(values => {
-        $notification['error']({
-          message: 'Received values of form:',
-          description: JSON.stringify(values)
+      Promise.all([repositoryForm, taskForm])
+        .then((values) => {
+          $notification['error']({
+            message: 'Received values of form:',
+            description: JSON.stringify(values),
+          })
         })
-      }).catch(() => {
-        const errors = Object.assign({}, repository.form.getFieldsError(), task.form.getFieldsError())
-        const tmp = { ...errors }
-        this.errorList(tmp)
-      })
+        .catch(() => {
+          const errors = Object.assign({}, repository.form.getFieldsError(), task.form.getFieldsError())
+          const tmp = { ...errors }
+          this.errorList(tmp)
+        })
     },
     errorList(errors) {
       if (!errors || errors.length === 0) {
         return
       }
       this.errors = Object.keys(errors)
-        .filter(key => errors[key])
-        .map(key => ({
+        .filter((key) => errors[key])
+        .map((key) => ({
           key: key,
           message: errors[key][0],
-          fieldLabel: fieldLabels[key]
+          fieldLabel: fieldLabels[key],
         }))
     },
     scrollToField(fieldKey) {
@@ -252,13 +253,11 @@ export default {
       }
     },
 
-
-
     getqueryCourseList() {
       let that = this
       console.log(this.$route)
       let courseCode = this.$route.params.id
-      that.$http.post('/base/queryCourseList', { "currentPage": 1, "size": 10000, "type": 1, courseCode }).then(res => {
+      that.$http.post('/base/queryCourseList', { currentPage: 1, size: 10000, type: 1, courseCode }).then((res) => {
         console.log(res)
         that.courseList = res && res.datas
         // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
@@ -273,16 +272,13 @@ export default {
       //   // console.log(that.projects)
       // })
     },
-
-
   },
   mounted() {
-
     this.getqueryCourseList()
-  }
+  },
 }
 </script>
-  
+
 <style lang="less" scoped>
 .el-col-lg-4-8 {
   width: 20%;
@@ -295,7 +291,7 @@ export default {
 }
 
 .imglist {
-  background: #FFF;
+  background: #fff;
 }
 
 .bookBtn {
@@ -344,12 +340,10 @@ export default {
         background: #f09a3e;
       }
     }
-
-
   }
 
   .homepagecontentbtn {
-    background: #FFF;
+    background: #fff;
 
     .introlistRightList {
       text-align: center;
@@ -361,7 +355,7 @@ export default {
       }
 
       .content {
-        color: #7E8890;
+        color: #7e8890;
         font-size: 15px;
         line-height: 30px;
         padding: 20px 0;
@@ -373,16 +367,15 @@ export default {
     }
   }
 
-
   .cardtitle {
-    color: #333C4E;
+    color: #333c4e;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
   }
 
   .fusion-text {
-    color: #7E8890;
+    color: #7e8890;
 
     p {
       line-height: 30px;
@@ -391,4 +384,3 @@ export default {
   }
 }
 </style>
-  

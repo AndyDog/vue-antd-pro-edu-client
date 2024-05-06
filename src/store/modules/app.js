@@ -60,6 +60,7 @@ const app = {
       latestnewsptbtopbg1: api + 'latest_news_ptb_top_bg-1',
       admissionsptbtopbg: api + 'admissions_ptb_top_bg',
       universitypagetitlebaropbg: api + 'university_page_title_bar_op_bg',
+      trainingProgram: api + 'trainingProgram',
     },
   },
   mutations: {
