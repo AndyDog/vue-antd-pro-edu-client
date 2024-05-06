@@ -248,8 +248,8 @@ export default {
   methods: {
     handleClick(row) {
       console.log(row)
-      const trainingCode = row.trainingCode || '1'
-      this.$router.push(`/training/politicsSeminar/${trainingCode}`)
+      const trainingId = row.trainingId || '1'
+      this.$router.push(`/training/politicsSeminar/${trainingId}`)
     },
     getSwiper() {
       this.swiper = new Swiper('.swiper-container', {

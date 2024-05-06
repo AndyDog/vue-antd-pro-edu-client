@@ -6,20 +6,31 @@
         <div class="topImage">
           <el-image
             style="width: 100%"
-            src="http://106.54.167.222:39900/wp-content/uploads/2016/03/52287a43fb669fb9eec898a8865b8fb0-768x432.jpg"
+            :src="
+              result.trainingImgUrl ||
+              'http://106.54.167.222:39900/wp-content/uploads/2016/03/52287a43fb669fb9eec898a8865b8fb0-768x432.jpg'
+            "
           >
             <div slot="error" class="image-slot">
-              <i class="el-icon-picture-outline"></i>
+              <img
+                style="width: 100%"
+                src="http://106.54.167.222:39900/wp-content/uploads/2016/03/52287a43fb669fb9eec898a8865b8fb0-768x432.jpg"
+                alt=""
+              />
             </div>
           </el-image>
           <div class="topImageTilte">
-            <span>急救教育指导师</span>
-            <span>1 4 月 @ 12:00 上午 - 26 8 月 @ 9:00 上午</span>
+            <span>{{ result.trainingName || '急救教育指导师' }} </span>
+            <span>
+              <label v-if="result.beginDate"> {{ moment(result.beginDate).format('LLL') }} </label> -
+
+              <label v-if="result.endDate"> {{ moment(result.endDate).format('LLL') }} </label>
+            </span>
             <span>|</span>
-            <span>¥2340</span>
+            <span>¥{{ result.price }}</span>
           </div>
         </div>
-        <div class="content">
+        <div class="content" v-if="!result.introduction">
           <div class="">
             <div class="">
               <h3 class="fusion-title-heading title-heading-left fusion-responsive-typography-calculated">
@@ -180,6 +191,21 @@
             </div>
           </div>
         </div>
+
+        <div v-else class="content">
+          <div v-html="result.introduction"></div>
+          <p>
+            <img
+              decoding="async"
+              class="alignnone size-medium ls-is-cached lazyloaded"
+              src="http://vod.jj-edu.cn/UGwDqJrl0hwTlPW2_payment.png"
+              data-orig-src="http://vod.jj-edu.cn/UGwDqJrl0hwTlPW2_payment.png"
+              height="720"
+              width="100%"
+              style="object-fit: contain"
+            />
+          </p>
+        </div>
       </div>
       <div class="politicsSem-right">
         <el-card class="box-card">
@@ -190,9 +216,10 @@
             <div class="label">{{ o.label }}</div>
             <div class="value">{{ o.key }}</div>
           </div>
+          <div class="price"><el-button style="width: 100%; margin-top: 10px" type="warning">立即购买</el-button></div>
         </el-card>
 
-        <el-card class="box-card">
+        <el-card class="box-card" v-if="false">
           <div slot="header" class="clearfix">
             <span>主办人</span>
           </div>
@@ -202,7 +229,7 @@
           </div>
         </el-card>
 
-        <el-card class="box-card">
+        <el-card class="box-card" v-if="false">
           <div slot="header" class="clearfix">
             <span>地点</span>
           </div>
@@ -222,6 +249,10 @@ import Step2 from './Step2'
 import Step3 from './Step3'
 import Swiper from 'swiper' // 注意引入的是Swiper
 import 'swiper/css/swiper.min.css' // 注意这里的引入
+import dayjs from 'dayjs'
+import moment from 'moment'
+import 'moment/locale/zh-cn'
+moment.locale('zh-cn')
 export default {
   name: 'politicsSeminar',
   components: {
@@ -242,56 +273,88 @@ export default {
         },
         {
           label: '费用：',
-          key: '¥2340',
+          key: '',
         },
         {
           label: '活动分类:',
           key: '培训项目',
         },
-        {
-          label: '网址：',
-          key: 'http://106.54.167.222:39900/avada_portfolio/physics/',
-        },
+        // {
+        //   label: '网址：',
+        //   key: 'http://106.54.167.222:39900/avada_portfolio/physics/',
+        // },
       ],
-      rightDetail2: [
-        {
-          label: '主办单位：',
-          key: '主办单位',
-        },
-        {
-          label: 'Phone：',
-          key: '123456789010',
-        },
-        {
-          label: '电子邮件信箱：',
-          key: '278995881@qq.com',
-        },
-        {
-          label: '访问主办人官网',
-          key: 'classify',
-          type: 'btn',
-        },
-      ],
-      rightDetail3: [
-        {
-          label: '地点：',
-          key: '北京 北京 中国',
-        },
-        {
-          label: 'Phone：',
-          key: '1316123456789',
-        },
-        {
-          label: '前往地点网址',
-          key: 'email',
-          type: 'btn',
-          map: true,
-        },
-      ],
+      result: {},
+      moment,
+      // rightDetail2: [
+      //   {
+      //     label: '主办单位：',
+      //     key: '主办单位',
+      //   },
+      //   {
+      //     label: 'Phone：',
+      //     key: '123456789010',
+      //   },
+      //   {
+      //     label: '电子邮件信箱：',
+      //     key: '278995881@qq.com',
+      //   },
+      //   {
+      //     label: '访问主办人官网',
+      //     key: 'classify',
+      //     type: 'btn',
+      //   },
+      // ],
+      // rightDetail3: [
+      //   {
+      //     label: '地点：',
+      //     key: '北京 北京 中国',
+      //   },
+      //   {
+      //     label: 'Phone：',
+      //     key: '1316123456789',
+      //   },
+      //   {
+      //     label: '前往地点网址',
+      //     key: 'email',
+      //     type: 'btn',
+      //     map: true,
+      //   },
+      // ],
     }
   },
-  methods: {},
-  mounted() {},
+  methods: {
+    getqueryCourseList() {
+      let that = this
+      // const routeparam = this.$route.params.id
+      const id = this.$route.params.id
+      // console.log(routeparam)
+      if (id) {
+        that.$http
+          .post('/training/queryInfomationList', { page: 1, size: 100000, trainingId: id, type: 1 })
+          .then((res) => {
+            console.log(res)
+            // that.courseList = res && res.datas  beginDate
+            let result = res?.datas?.[0] ?? null
+            this.result = result
+
+            this.rightDetail1[0].key = result.beginDate ? moment(result.beginDate).format('LLL') : ''
+            this.rightDetail1[1].key = result.endDate ? moment(result.endDate).format('LLL') : ''
+            this.rightDetail1[2].key = result.price
+            // this.rightDetail1[3].key = result.trainingName
+
+            // this.rightDetail2[0].key = result.organizer
+            // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
+            // console.log(that.projectsperson)
+            // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
+            // that.activeName = that.projectsperson[0].dictCode
+          })
+      }
+    },
+  },
+  mounted() {
+    this.getqueryCourseList()
+  },
 }
 </script>
 
