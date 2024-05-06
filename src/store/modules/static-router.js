@@ -87,6 +87,11 @@ const routerdata = [
       { path: '/training', name: 'training', meta: { title: 'menu.training', keepAlive: false, permission: ['form'] } },
       { path: '/showwork', name: 'showwork', meta: { title: 'menu.showwork', keepAlive: false, permission: ['table'] } },
       { path: '/zzrz', name: 'zzrz', meta: { title: 'menu.zzrz', keepAlive: false, permission: ['table'] } },
+
+      { path: '/mytraining', name: 'mytraining', meta: { title: 'menu.mytraining', keepAlive: false, permission: ['table'] } },
+
+
+
       {
         path: '/recommendedTextbook',
         name: 'recommendedTextbook',

@@ -5,38 +5,48 @@
         <select-lang class="select-lang-trigger" />
       </div> -->
 
-      <div class="user-layout-content1">
-        <el-image :src="loginbackground" style="width: 470px; height: 510px">
-          <div slot="error" class="image-slot">
-            <img style="width: 470px; height: 510px" src="@/assets/loginBg2.png" class="logo" alt="logo" />
-          </div>
-        </el-image>
-      </div>
+
 
       <div class="user-layout-content">
-        <div class="top">
-          <div class="header">
-            <a href="/">
-              <img src="@/assets/logo.png" class="logo" alt="logo" />
-              <span class="title">国家应急医学研究中心</span>
-            </a>
-          </div>
-          <div class="desc">
-            国家应急医学研究中心
-            <!-- {{ $t('layouts.userLayout.title') }} -->
-          </div>
+
+
+        <div class="user-layout-content1">
+          <el-image :src="loginbackground" style="width: 470px; height: 510px" fit="cover">
+            <div slot="error" class="image-slot">
+              <img style="width: 470px; height: 510px" src="@/assets/loginBg2.png" class="logo" alt="logo" />
+            </div>
+          </el-image>
         </div>
+        <div class="user-layout-content-right">
 
-        <router-view />
+          <div class="top">
+            <div class="header">
+              <a href="/">
+                <img src="@/assets/logo.png" class="logo" alt="logo" />
+                <span class="title">国家应急医学研究中心</span>
+              </a>
+            </div>
+            <div class="desc">
+              国家应急医学研究中心
+              <!-- {{ $t('layouts.userLayout.title') }} -->
+            </div>
+          </div>
 
-        <div class="footer">
-          <!-- <div class="links">
+          <router-view />
+
+          <div class="footer">
+            <!-- <div class="links">
             <a href="_self">帮助</a>
             <a href="_self">隐私</a>
             <a href="_self">条款</a>
           </div> -->
-          <div class="copyright">Copyright &copy; 版权所有未经允许请勿转载</div>
+            <div class="copyright">Copyright &copy; 版权所有未经允许请勿转载</div>
+          </div>
         </div>
+
+
+
+
       </div>
     </div>
     <!-- <router-view /> -->
@@ -73,6 +83,7 @@ export default {
 <style lang="less" scoped>
 #userLayout.user-layout-wrapper {
   height: 100%;
+
   // background: url('../assets/loginBg.jpg');
   &.mobile {
     .container {
@@ -93,6 +104,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+
     .user-layout-lang {
       width: 100%;
       height: 40px;
@@ -112,8 +124,18 @@ export default {
     }
 
     .user-layout-content {
-      padding: 32px 24px;
+
       background: #fff;
+      display: flex;
+
+
+      .user-layout-content1 {}
+
+      .user-layout-content-right {
+        padding: 32px 24px;
+      }
+
+
       .top {
         text-align: center;
 
@@ -147,6 +169,7 @@ export default {
             top: 2px;
           }
         }
+
         .desc {
           font-size: 14px;
           color: rgba(0, 0, 0, 0.45);
@@ -172,28 +195,34 @@ export default {
         .links {
           margin-bottom: 8px;
           font-size: 14px;
+
           a {
             color: rgba(0, 0, 0, 0.45);
             transition: all 0.3s;
+
             &:not(:last-child) {
               margin-right: 40px;
             }
           }
         }
+
         .copyright {
           color: rgba(0, 0, 0, 0.45);
           font-size: 14px;
         }
       }
     }
+
     .user-layout-content1 {
       width: 470px;
       height: 510px;
+
       img {
         width: 470px;
         height: 510px;
       }
     }
+
     a {
       text-decoration: none;
     }

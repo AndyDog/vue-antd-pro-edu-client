@@ -1,14 +1,6 @@
 <template>
-  <pro-layout
-    :menus="menus"
-    :collapsed="collapsed"
-    :mediaQuery="query"
-    :isMobile="isMobile"
-    :handleMediaQuery="handleMediaQuery"
-    :handleCollapse="handleCollapse"
-    :i18nRender="i18nRender"
-    v-bind="settings"
-  >
+  <pro-layout :menus="menus" :collapsed="collapsed" :mediaQuery="query" :isMobile="isMobile"
+    :handleMediaQuery="handleMediaQuery" :handleCollapse="handleCollapse" :i18nRender="i18nRender" v-bind="settings">
     <!-- Ads begin
       广告代码 真实项目中请移除
       production remove this Ads
@@ -28,15 +20,10 @@
     <template v-slot:headerContentRender>
       <div>
         <a-tooltip title="刷新页面">
-          <a-icon
-            type="reload"
-            style="font-size: 18px; cursor: pointer"
-            @click="
-              () => {
-                $message.info('只是一个DEMO')
-              }
-            "
-          />
+          <a-icon type="reload" style="font-size: 18px; cursor: pointer" @click="() => {
+            $message.info('只是一个DEMO')
+          }
+            " />
         </a-tooltip>
       </div>
     </template>
@@ -56,16 +43,13 @@
     <template v-slot:footerRender>
       <div class="fusion-title-heading-footer">
         <div class="fusion-highlighted-text-wrapper">
-          <h2
-            class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
-            style="margin: 0; text-transform: capitalize"
-          >
+          <h2 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
+            style="margin: 0; text-transform: capitalize">
             <span class="fusion-highlighted-text-prefix">加入我们</span>
-            <span class="fusion-highlighted-text-wrapper"
-              ><span class="fusion-highlighted-text">为14亿中国人</span
-              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
-                <path d="M8.1,146.2c0,0,240.6-55.6,479-13.8"></path></svg
-            ></span>
+            <span class="fusion-highlighted-text-wrapper"><span class="fusion-highlighted-text">为14亿中国人</span><svg
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path d="M8.1,146.2c0,0,240.6-55.6,479-13.8"></path>
+              </svg></span>
             <span class="fusion-highlighted-text-postfix">健康生命保驾护航</span>
           </h2>
         </div>
@@ -146,7 +130,7 @@
       <!-- @/assets/banner.png -->
       <!-- {{ bannerobj }} -->
 
-      <el-image :src="bannerobj.url1" style="width: 100%" fit="cover">
+      <el-image v-if="bannerobj.url1" :src="bannerobj.url1" style="width: 100%" fit="cover">
         <div slot="error" class="image-slot">
           <img :src="bannerobj.url2" class="banner" alt="banner" />
         </div>
@@ -155,10 +139,8 @@
         <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated">
           应急医学数字教育示范基地
         </h1>
-        <h1
-          class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
-          style="font-size: 26px; margin: 10px 20px"
-        >
+        <h1 class="fusion-title-heading title-heading-center fusion-responsive-typography-calculated"
+          style="font-size: 26px; margin: 10px 20px">
           EMERGENCY MEDICAL DIGITAL EDUCATION DEMONSTRATION BASE
         </h1>
         <div class="btngroup">

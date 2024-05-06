@@ -54,5 +54,6 @@ export default {
   'menu.courseDetail': '校园急救课程',
   'information.news': '急救新闻',
   'information.newslist': '急救新闻',
+  'menu.mytraining': '我的培训',
   // 'menu7':"简介",
 }

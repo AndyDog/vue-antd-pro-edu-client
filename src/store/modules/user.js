@@ -30,18 +30,21 @@ const user = {
       state.roles = roles
     },
     SET_INFO: (state, info) => {
+      console.log(info)
       state.info = info
     }
   },
 
   actions: {
     // 登录
-    Login ({ commit }, userInfo) {
+    Login({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
         login(userInfo).then(response => {
-          const result = response.result
-          storage.set(ACCESS_TOKEN, result.token, new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
-          commit('SET_TOKEN', result.token)
+          console.log(response)
+          const result = response.data
+          storage.set(ACCESS_TOKEN, result, new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
+          commit('SET_TOKEN', result)
+          commit('SET_INFO', result)
           resolve()
         }).catch(error => {
           reject(error)
@@ -50,7 +53,7 @@ const user = {
     },
 
     // 获取用户信息
-    GetInfo ({ commit }) {
+    GetInfo({ commit }) {
       return new Promise((resolve, reject) => {
         // 请求后端获取用户信息 /api/user/info
         getInfo().then(response => {
@@ -61,7 +64,7 @@ const user = {
               const per = {
                 ...permission,
                 actionList: (permission.actionEntitySet || {}).map(item => item.action)
-               }
+              }
               return per
             })
             role.permissionList = role.permissions.map(permission => { return permission.permissionId })
@@ -84,11 +87,12 @@ const user = {
     },
 
     // 登出
-    Logout ({ commit, state }) {
+    Logout({ commit, state }) {
       return new Promise((resolve) => {
         logout(state.token).then(() => {
           commit('SET_TOKEN', '')
           commit('SET_ROLES', [])
+          commit('SET_INFO', null)
           storage.remove(ACCESS_TOKEN)
           resolve()
         }).catch((err) => {

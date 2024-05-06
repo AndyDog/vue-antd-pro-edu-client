@@ -141,7 +141,13 @@ export const asyncRouterMap = [
         component: () => import('@/views/zzrz/index'),
         meta: { title: 'menu.zzrz', keepAlive: true, permission: ['table'] },
       },
-
+      {
+        path: '/mytraining',
+        name: 'mytraining',
+        // hidden: true,
+        component: () => import('@/views/form/mytraining'),
+        meta: { title: 'menu.mytraining', keepAlive: true, permission: ['table'] },
+      },
       {
         path: '/recommendedTextbook',
         name: 'recommendedTextbook',
@@ -201,6 +207,9 @@ export const asyncRouterMap = [
         component: () => import('@/views/list/QueryList'),
         meta: { title: 'menu.stylecenter', keepAlive: true, permission: ['table'] },
       },
+
+
+
 
       // forms
       // {
