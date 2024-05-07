@@ -349,15 +349,17 @@ export default {
 
     getqueryCourseListtop() {
       let that = this
-      that.$http.post('/training/getUserTraining', { page: 1, size: 100000, userId: 1 }).then((res) => {
-        console.log(res)
-        that.toptab = res && res.datas
-        this.activeNameparent = that.toptab[0].trainingId
-        // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
-        // console.log(that.projectsperson)
-        // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
-        // that.activeName = that.projectsperson[0].dictCode
-      })
+      that.$http
+        .post('/training/getUserTraining', { page: 1, size: 100000, userId: '0e0b317e-bb93-4a85-95eb-be92814fe770' })
+        .then((res) => {
+          console.log(res)
+          that.toptab = res && res.datas
+          this.activeNameparent = that.toptab[0].trainingId
+          // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
+          // console.log(that.projectsperson)
+          // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
+          // that.activeName = that.projectsperson[0].dictCode
+        })
       // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
       //   console.log(res)
       //   that.projectsperson = res && res.data && res.data.list
