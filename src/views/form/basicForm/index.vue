@@ -1,5 +1,5 @@
 <template>
-  <div style="" class="contentwarp">
+  <div style="" class="contentwarp ant-pro-page-header-wrap">
 
     <div class="topNew">
       <div v-for="item in newslistNew">
@@ -421,4 +421,5 @@ export default {
     }
   }
 
-}</style>
+}
+</style>

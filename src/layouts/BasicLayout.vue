@@ -129,7 +129,6 @@
     <div class="bannercontent">
       <!-- @/assets/banner.png -->
       <!-- {{ bannerobj }} -->
-
       <el-image v-if="bannerobj.url1" :src="bannerobj.url1" style="width: 100%" fit="cover">
         <div slot="error" class="image-slot">
           <img :src="bannerobj.url2" class="banner" alt="banner" />
