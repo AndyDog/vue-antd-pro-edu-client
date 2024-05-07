@@ -85,12 +85,18 @@ const routerdata = [
       { path: '/intro', name: 'intro', meta: { title: 'menu.intro', keepAlive: false, permission: ['form'] } },
       { path: '/course', name: 'course', meta: { title: 'menu.course', keepAlive: false, permission: ['form'] } },
       { path: '/training', name: 'training', meta: { title: 'menu.training', keepAlive: false, permission: ['form'] } },
-      { path: '/showwork', name: 'showwork', meta: { title: 'menu.showwork', keepAlive: false, permission: ['table'] } },
+      {
+        path: '/showwork',
+        name: 'showwork',
+        meta: { title: 'menu.showwork', keepAlive: false, permission: ['table'] },
+      },
       { path: '/zzrz', name: 'zzrz', meta: { title: 'menu.zzrz', keepAlive: false, permission: ['table'] } },
 
-      { path: '/mytraining', name: 'mytraining', meta: { title: 'menu.mytraining', keepAlive: false, permission: ['table'] } },
-
-
+      {
+        path: '/mytraining',
+        name: 'mytraining',
+        meta: { title: 'menu.mytraining', keepAlive: false, permission: ['table'] },
+      },
 
       {
         path: '/recommendedTextbook',
@@ -184,7 +190,12 @@ const routerdata = [
               {
                 path: '/account/settings/custom',
                 name: 'CustomSettings',
-                meta: { title: 'account.settings.menuMap.custom', hidden: true, keepAlive: false, permission: ['user'] },
+                meta: {
+                  title: 'account.settings.menuMap.custom',
+                  hidden: true,
+                  keepAlive: false,
+                  permission: ['user'],
+                },
               },
               {
                 path: '/account/settings/binding',

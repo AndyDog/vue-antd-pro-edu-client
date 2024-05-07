@@ -27,6 +27,7 @@ import './core/lazy_use' // use lazy load components
 import './permission' // permission control
 import './utils/filter' // global filter
 import './global.less' // global style
+import './base.less'
 // import './base.less' // base style
 Vue.config.productionTip = false
 
