@@ -42,7 +42,7 @@ const user = {
         login(userInfo)
           .then((response) => {
             console.log(response)
-            const result = response.data
+            const result = response?.datas?.[0]
             storage.set(ACCESS_TOKEN, result, new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
             commit('SET_TOKEN', result)
             commit('SET_INFO', result)
@@ -108,7 +108,7 @@ const user = {
             console.log('logout fail:', err)
             // resolve()
           })
-          .finally(() => {})
+          .finally(() => { })
       })
     },
   },

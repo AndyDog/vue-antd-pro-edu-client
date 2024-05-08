@@ -1,25 +1,27 @@
 <template>
   <div class="ele-body list-article-responsive">
+
     <div v-if="toptab && toptab.length > 0">
+      <!-- {{ activeNameparent }} -->
       <el-tabs v-model="activeNameparent" @tab-click="handleClick">
-        <el-tab-pane v-for="item in toptab" :label="item.trainingName" :name="item.trainingId"></el-tab-pane>
+        <el-tab-pane v-for="item in toptab" :label="item.trainingName || '--'" :name="item.userTrainingId"></el-tab-pane>
         <!-- <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
       <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
       <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane> -->
       </el-tabs>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="9" :xl="9">
-          <div data-v-1477b94e="" class="article-list-right" v-if="activedata">
+
+          <div data-v-1477b94e="" class="article-list-right" v-if="activedata && activedata.trainingModel">
             <div data-v-1477b94e="" class="el-card is-never-shadow">
               <!---->
               <div class="el-card__body" style="padding: 15px">
                 <div data-v-1477b94e="" class="el-image">
-                  <el-image :src="activedata && activedata.trainingModel.imagePath" fit="contain" lazy>
+                  <el-image :src="activedata && activedata.trainingModel && activedata.trainingModel.imagePath"
+                    fit="contain" lazy>
                     <div slot="error" class="image-slot">
-                      <img
-                        src="http://106.14.124.163:8090/api/system/sysStaticPicture/trainingProgram"
-                        class="el-image__inner"
-                      />
+                      <img src="http://106.14.124.163:8090/api/system/sysStaticPicture/trainingProgram"
+                        class="el-image__inner" />
                     </div>
                   </el-image>
 
@@ -49,11 +51,8 @@
                   </div>
                 </div>
                 <div data-v-1477b94e="" class="exam" style="text-align: center">
-                  <a
-                    data-v-1477b94e=""
-                    class="el-link el-link--primary is-underline"
-                    style="font-size: 12px; padding: 5px 0px"
-                  >
+                  <a data-v-1477b94e="" class="el-link el-link--primary is-underline"
+                    style="font-size: 12px; padding: 5px 0px">
                     <!---->
                     <span class="el-link--inner">
                       正常考试
@@ -209,23 +208,17 @@
                     <p>&nbsp;</p>
                     <p>
                       附件：
-                      <a
-                        title="学校急救教育线上培训课程内容"
-                        href="http://vod.jj-edu.cn/VQJcpiqv8tGZSeCb_Ch5nQWS3pYyAcOOuAAOZtRGP8vE61.docx"
-                        target="_blank"
-                        rel="noopener"
-                      >
+                      <a title="学校急救教育线上培训课程内容"
+                        href="http://vod.jj-edu.cn/VQJcpiqv8tGZSeCb_Ch5nQWS3pYyAcOOuAAOZtRGP8vE61.docx" target="_blank"
+                        rel="noopener">
                         学校急救教育线上培训课程内容
                       </a>
                     </p>
                     <p>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <a
-                        title="学校急救教育师资专业培训参训回执表"
-                        href="http://vod.jj-edu.cn/v3MKZSjsO4VJxthA_Ch5nQWS3pZmAFkpDAABVrYHOMuA41.docx"
-                        target="_blank"
-                        rel="noopener"
-                      >
+                      <a title="学校急救教育师资专业培训参训回执表"
+                        href="http://vod.jj-edu.cn/v3MKZSjsO4VJxthA_Ch5nQWS3pZmAFkpDAABVrYHOMuA41.docx" target="_blank"
+                        rel="noopener">
                         学校急救教育师资专业培训参训回执表
                       </a>
                     </p>
@@ -258,8 +251,7 @@
                 </a-list-item>
               </a-list>
             </el-tab-pane>
-          </el-tabs></el-col
-        >
+          </el-tabs></el-col>
       </el-row>
     </div>
 
@@ -309,7 +301,7 @@ export default {
     activedata() {
       let that = this
       const result = that.toptab.filter((item) => {
-        return this.activeNameparent == item.trainingId
+        return this.activeNameparent == item.userTrainingId
       })
 
       return result?.[0] ?? null
@@ -346,7 +338,7 @@ export default {
           that.projectsperson = uniqueBy(that.projectsperson, (item) => item.dictId)
           that.activeName = that.projectsperson[0].dictId
           // that.getqueryCourseList()
-          that.getUserTrainingDetail()
+
         })
       // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
       //   console.log(res)
@@ -384,19 +376,22 @@ export default {
 
       // userInfo
       let param = { page: 1, size: 100000 }
-      console.log(Object.keys(this.userInfo))
-      // if (this.userInfo && Object.keys(this.userInfo).length > 0) {
-      param.userId = '0e0b317e-bb93-4a85-95eb-be92814fe770'
-      that.$http.post('/training/getUserTraining', param).then((res) => {
-        console.log(res)
-        that.toptab = res && res.datas
-        this.activeNameparent = that.toptab[0].trainingId
-        // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
-        // console.log(that.projectsperson)
-        // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
-        // that.activeName = that.projectsperson[0].dictCode
-      })
-      // }
+      console.log(Object.keys(this.AccessToken))
+      if (this.AccessToken && Object.keys(this.AccessToken).length > 0) {
+        param.userId = this.AccessToken?.userId ?? '0e0b317e-bb93-4a85-95eb-be92814fe770'
+        that.$http.post('/training/getUserTraining', param).then((res) => {
+          console.log(res)
+          console.log('top')
+          that.toptab = res && res.datas
+          console.log(that.toptab)
+          that.activeNameparent = that.toptab[0].userTrainingId
+          that.getUserTrainingDetail()
+          // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
+          // console.log(that.projectsperson)
+          // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
+          // that.activeName = that.projectsperson[0].dictCode
+        })
+      }
 
       // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
       //   console.log(res)
@@ -408,17 +403,19 @@ export default {
 
     getUserTrainingDetail() {
       let that = this
-      let param = { trainingId: this.activeNameparent, dictId: this.activeName }
-      param.userId = '0e0b317e-bb93-4a85-95eb-be92814fe770'
-      that.$http.post('/training/getUserTrainingDetail', param).then((res) => {
-        console.log(res)
-        // that.trainingModel = res && res.data
-        that.courseList = res && res.datas
-      })
+      let param = { userTrainingId: this.activeNameparent, dictId: this.activeName }
+      if (this.AccessToken && Object.keys(this.AccessToken).length > 0) {
+        param.userId = this.AccessToken?.userId ?? '0e0b317e-bb93-4a85-95eb-be92814fe770'
+        that.$http.post('/training/getUserTrainingDetail', param).then((res) => {
+          console.log(res)
+          // that.trainingModel = res && res.data
+          that.courseList = res && res.datas
+        })
+      }
     },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
-  created() {},
+  created() { },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
     let AccessToken = storage.get('Access-Token')
@@ -427,13 +424,13 @@ export default {
     this.getqueryCourseListtop()
     this.getprojectsperson()
   },
-  beforeCreate() {}, //生命周期 - 创建之前
-  beforeMount() {}, //生命周期 - 挂载之前
-  beforeUpdate() {}, //生命周期 - 更新之前
-  updated() {}, //生命周期 - 更新之后
-  beforeDestroy() {}, //生命周期 - 销毁之前
-  destroyed() {}, //生命周期 - 销毁完成
-  activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
+  beforeCreate() { }, //生命周期 - 创建之前
+  beforeMount() { }, //生命周期 - 挂载之前
+  beforeUpdate() { }, //生命周期 - 更新之前
+  updated() { }, //生命周期 - 更新之后
+  beforeDestroy() { }, //生命周期 - 销毁之前
+  destroyed() { }, //生命周期 - 销毁完成
+  activated() { }, //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
 <style lang="less" scoped>
@@ -571,7 +568,7 @@ ul {
   width: 25%;
 }
 
-.exam-item > div {
+.exam-item>div {
   padding: 0 5px;
 }
 
@@ -771,7 +768,7 @@ ul {
   display: none;
 }
 
-.el-menu--horizontal > .el-menu-item {
+.el-menu--horizontal>.el-menu-item {
   height: 50px;
   line-height: 50px;
 }
@@ -817,7 +814,7 @@ ul {
   margin-top: 15px;
 }
 
-.article-list-user-group > span {
+.article-list-user-group>span {
   vertical-align: middle;
 }
 
@@ -888,7 +885,7 @@ ul {
     max-height: 300px;
   }
 
-  .article-list-tags > span {
+  .article-list-tags>span {
     height: 20px;
     padding: 0 5px;
     line-height: 19px;
