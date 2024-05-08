@@ -1,9 +1,6 @@
 <template>
   <div class="ele-body list-article-responsive">
-
-
     <div v-if="toptab && toptab.length > 0">
-
       <el-tabs v-model="activeNameparent" @tab-click="handleClick">
         <el-tab-pane v-for="item in toptab" :label="item.trainingName" :name="item.trainingId"></el-tab-pane>
         <!-- <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
@@ -12,39 +9,57 @@
       </el-tabs>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="9" :xl="9">
-          <div data-v-1477b94e="" class="article-list-right">
+          <div data-v-1477b94e="" class="article-list-right" v-if="activedata">
             <div data-v-1477b94e="" class="el-card is-never-shadow">
               <!---->
               <div class="el-card__body" style="padding: 15px">
                 <div data-v-1477b94e="" class="el-image">
-                  <img src="http://106.14.124.163:8090/api/system/sysStaticPicture/trainingProgram"
-                    class="el-image__inner" />
+                  <el-image :src="activedata && activedata.trainingModel.imagePath" fit="contain" lazy>
+                    <div slot="error" class="image-slot">
+                      <img
+                        src="http://106.14.124.163:8090/api/system/sysStaticPicture/trainingProgram"
+                        class="el-image__inner"
+                      />
+                    </div>
+                  </el-image>
+
                   <!---->
                 </div>
                 <div data-v-1477b94e="" class="professional_name">
-                  <h5 data-v-1477b94e="">2023年山东省学校急救教育师资专业培训</h5>
+                  <h5 data-v-1477b94e="">{{ activedata.trainingModel.trainingName }}</h5>
                 </div>
                 <div data-v-1477b94e="" class="training-tag">
                   <div data-v-1477b94e="">
                     <span data-v-1477b94e="" class="el-tag el-tag--medium el-tag--plain"> 要求学时 </span>
-                    <p data-v-1477b94e="">32.0</p>
+                    <p data-v-1477b94e="">{{ activedata.trainingModel.studyHours }}</p>
                   </div>
                   <div data-v-1477b94e="">
-                    <span data-v-1477b94e="" class="el-tag el-tag--success el-tag--medium el-tag--plain"> 已学学时 </span>
-                    <p data-v-1477b94e="">0.0</p>
+                    <span data-v-1477b94e="" class="el-tag el-tag--success el-tag--medium el-tag--plain">
+                      已学学时
+                    </span>
+                    <p data-v-1477b94e="">{{ activedata.learnedDuration || 0 }}</p>
                   </div>
                   <div data-v-1477b94e="">
-                    <span data-v-1477b94e="" class="el-tag el-tag--danger el-tag--medium el-tag--plain"> 未学学时 </span>
-                    <p data-v-1477b94e="">32</p>
+                    <span data-v-1477b94e="" class="el-tag el-tag--danger el-tag--medium el-tag--plain">
+                      未学学时
+                    </span>
+                    <p data-v-1477b94e="">
+                      {{ activedata.trainingModel.studyHoursLength - activedata.learnedDuration }}
+                    </p>
                   </div>
                 </div>
                 <div data-v-1477b94e="" class="exam" style="text-align: center">
-                  <a data-v-1477b94e="" class="el-link el-link--primary is-underline"
-                    style="font-size: 12px; padding: 5px 0px">
+                  <a
+                    data-v-1477b94e=""
+                    class="el-link el-link--primary is-underline"
+                    style="font-size: 12px; padding: 5px 0px"
+                  >
                     <!---->
                     <span class="el-link--inner">
                       正常考试
-                      <span data-v-1477b94e="" style="font-size: 12px"> (2023-11-01 00:00~2024-10-31 00:00) </span>
+                      <span data-v-1477b94e="" style="font-size: 12px">
+                        ({{ activedata.trainingModel.beginDate }}~{{ activedata.trainingModel.endDate }})
+                      </span>
                     </span>
                     <!---->
                   </a>
@@ -63,7 +78,7 @@
               </div>
               <div class="el-card__body" style="padding: 10px 5px 10px 10px">
                 <div data-v-1477b94e="" class="wdms_html introduction el-scrollbar">
-                  <article class="4ever-article">
+                  <article class="4ever-article" v-html="activedata.trainingModel.introduction">
                     <p style="text-align: center">&nbsp;</p>
                     <h2 style="text-align: center">关于举办2023年山东省学校急救教育师资专业培训的通知</h2>
                     <p>&nbsp;</p>
@@ -160,7 +175,9 @@
                     </p>
                     <p style="text-indent: 2em">&nbsp;</p>
                     <p style="text-indent: 2em">3.报名方式</p>
-                    <p style="text-indent: 2em">（1）由参训单位组织报名并填写《学校急救教育师资专业培训参训回执表》。</p>
+                    <p style="text-indent: 2em">
+                      （1）由参训单位组织报名并填写《学校急救教育师资专业培训参训回执表》。
+                    </p>
                     <p style="text-indent: 2em">（2）在表内选择就近的线下实训点：</p>
                     <p style="text-indent: 2em">◆SD-JN-01山东省计算中心（国家超级计算济南中心）</p>
                     <p style="text-indent: 2em">（联系人：霍吉东 15662772258）</p>
@@ -192,17 +209,23 @@
                     <p>&nbsp;</p>
                     <p>
                       附件：
-                      <a title="学校急救教育线上培训课程内容"
-                        href="http://vod.jj-edu.cn/VQJcpiqv8tGZSeCb_Ch5nQWS3pYyAcOOuAAOZtRGP8vE61.docx" target="_blank"
-                        rel="noopener">
+                      <a
+                        title="学校急救教育线上培训课程内容"
+                        href="http://vod.jj-edu.cn/VQJcpiqv8tGZSeCb_Ch5nQWS3pYyAcOOuAAOZtRGP8vE61.docx"
+                        target="_blank"
+                        rel="noopener"
+                      >
                         学校急救教育线上培训课程内容
                       </a>
                     </p>
                     <p>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <a title="学校急救教育师资专业培训参训回执表"
-                        href="http://vod.jj-edu.cn/v3MKZSjsO4VJxthA_Ch5nQWS3pZmAFkpDAABVrYHOMuA41.docx" target="_blank"
-                        rel="noopener">
+                      <a
+                        title="学校急救教育师资专业培训参训回执表"
+                        href="http://vod.jj-edu.cn/v3MKZSjsO4VJxthA_Ch5nQWS3pZmAFkpDAABVrYHOMuA41.docx"
+                        target="_blank"
+                        rel="noopener"
+                      >
                         学校急救教育师资专业培训参训回执表
                       </a>
                     </p>
@@ -217,7 +240,7 @@
         </el-col>
         <el-col :xs="24" :sm="24" :md="12" :lg="15" :xl="15">
           <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane v-for="item in projectsperson" :label="item.dictName" :name="item.dictCode">
+            <el-tab-pane v-for="item in projectsperson" :label="item.dictName" :name="item.dictId">
               <a-list :data-source="courseList" :grid="{ gutter: 24, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
                 <a-list-item slot="renderItem" slot-scope="item">
                   <a-card class="ant-pro-pages-list-projects-card imgelem" hoverable @click="gobook(item)">
@@ -235,15 +258,14 @@
                 </a-list-item>
               </a-list>
             </el-tab-pane>
-          </el-tabs></el-col>
+          </el-tabs></el-col
+        >
       </el-row>
     </div>
 
     <div v-else>
       <el-empty description="暂无数据" />
     </div>
-
-
   </div>
 </template>
 <script>
@@ -274,6 +296,7 @@ export default {
       ke1image: require('@/assets/ke1.jpg'),
       defaultimage: require('@/assets/WTshSAcfPFulGGZg_i-AgeF3Chw2ABgwoAAKJEK3smWg766.jpg'),
       AccessToken: {},
+      trainingModel: null,
     }
   },
   //计算属性 类似于data概念
@@ -282,6 +305,15 @@ export default {
       // 动态主路由
       userInfo: (state) => state.user.info,
     }),
+
+    activedata() {
+      let that = this
+      const result = that.toptab.filter((item) => {
+        return this.activeNameparent == item.trainingId
+      })
+
+      return result?.[0] ?? null
+    },
   },
   //监控data中的数据变化
   watch: {
@@ -311,9 +343,10 @@ export default {
           that.projectsperson = res && res.datas
           // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
           console.log(that.projectsperson)
-          that.projectsperson = uniqueBy(that.projectsperson, (item) => item.dictCode)
-          that.activeName = that.projectsperson[0].dictCode
-          that.getqueryCourseList()
+          that.projectsperson = uniqueBy(that.projectsperson, (item) => item.dictId)
+          that.activeName = that.projectsperson[0].dictId
+          // that.getqueryCourseList()
+          that.getUserTrainingDetail()
         })
       // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
       //   console.log(res)
@@ -323,12 +356,13 @@ export default {
       // })
     },
     handleClick(tab, event) {
-      this.getqueryCourseList()
+      // this.getqueryCourseList()
+      this.getUserTrainingDetail()
     },
     getqueryCourseList() {
       let that = this
       that.$http
-        .post('/base/queryCourseList', { currentPage: 1, size: 100000, type: 1, dictCode: this.activeName })
+        .post('/base/queryCourseList', { currentPage: 1, size: 100000, type: 1, dictId: this.activeName })
         .then((res) => {
           console.log(res)
           that.courseList = res && res.datas
@@ -350,20 +384,19 @@ export default {
 
       // userInfo
       let param = { page: 1, size: 100000 }
-      if (this.userInfo && Object.keys(this.userInfo).length > 0) {
-        param.userId = '0e0b317e-bb93-4a85-95eb-be92814fe770'
-        that.$http
-          .post('/training/getUserTraining', param)
-          .then((res) => {
-            console.log(res)
-            that.toptab = res && res.datas
-            this.activeNameparent = that.toptab[0].trainingId
-            // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
-            // console.log(that.projectsperson)
-            // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
-            // that.activeName = that.projectsperson[0].dictCode
-          })
-      }
+      console.log(Object.keys(this.userInfo))
+      // if (this.userInfo && Object.keys(this.userInfo).length > 0) {
+      param.userId = '0e0b317e-bb93-4a85-95eb-be92814fe770'
+      that.$http.post('/training/getUserTraining', param).then((res) => {
+        console.log(res)
+        that.toptab = res && res.datas
+        this.activeNameparent = that.toptab[0].trainingId
+        // that.projectsperson = Array.from(new Set(that.projectsperson.map(item => item.dictCode)));
+        // console.log(that.projectsperson)
+        // that.courseList = uniqueBy(that.projectsperson, item => item.dictCode);
+        // that.activeName = that.projectsperson[0].dictCode
+      })
+      // }
 
       // queryDictionariesDetailLike({ "currentPage": 1, "size": 100000, "parentCode": "course_classification", "type": 1 }).then((res) => {
       //   console.log(res)
@@ -371,10 +404,21 @@ export default {
       //   // this.loading = false
       //   // console.log(that.projects)
       // })
-    }
+    },
+
+    getUserTrainingDetail() {
+      let that = this
+      let param = { trainingId: this.activeNameparent, dictId: this.activeName }
+      param.userId = '0e0b317e-bb93-4a85-95eb-be92814fe770'
+      that.$http.post('/training/getUserTrainingDetail', param).then((res) => {
+        console.log(res)
+        // that.trainingModel = res && res.data
+        that.courseList = res && res.datas
+      })
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
-  created() { },
+  created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
     let AccessToken = storage.get('Access-Token')
@@ -383,13 +427,13 @@ export default {
     this.getqueryCourseListtop()
     this.getprojectsperson()
   },
-  beforeCreate() { }, //生命周期 - 创建之前
-  beforeMount() { }, //生命周期 - 挂载之前
-  beforeUpdate() { }, //生命周期 - 更新之前
-  updated() { }, //生命周期 - 更新之后
-  beforeDestroy() { }, //生命周期 - 销毁之前
-  destroyed() { }, //生命周期 - 销毁完成
-  activated() { }, //如果页面有keep-alive缓存功能，这个函数会触发
+  beforeCreate() {}, //生命周期 - 创建之前
+  beforeMount() {}, //生命周期 - 挂载之前
+  beforeUpdate() {}, //生命周期 - 更新之前
+  updated() {}, //生命周期 - 更新之后
+  beforeDestroy() {}, //生命周期 - 销毁之前
+  destroyed() {}, //生命周期 - 销毁完成
+  activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
 <style lang="less" scoped>
@@ -527,7 +571,7 @@ ul {
   width: 25%;
 }
 
-.exam-item>div {
+.exam-item > div {
   padding: 0 5px;
 }
 
@@ -727,7 +771,7 @@ ul {
   display: none;
 }
 
-.el-menu--horizontal>.el-menu-item {
+.el-menu--horizontal > .el-menu-item {
   height: 50px;
   line-height: 50px;
 }
@@ -773,7 +817,7 @@ ul {
   margin-top: 15px;
 }
 
-.article-list-user-group>span {
+.article-list-user-group > span {
   vertical-align: middle;
 }
 
@@ -844,7 +888,7 @@ ul {
     max-height: 300px;
   }
 
-  .article-list-tags>span {
+  .article-list-tags > span {
     height: 20px;
     padding: 0 5px;
     line-height: 19px;

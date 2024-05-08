@@ -1,25 +1,39 @@
 <template>
   <div class="main">
     <a-form id="formLogin" class="user-layout-login" ref="formLogin" :form="form" @submit="handleSubmit">
-      <a-alert v-if="isLoginError" type="error" showIcon style="margin-bottom: 24px"
-        :message="$t('user.login.message-invalid-credentials')" />
+      <a-alert
+        v-if="isLoginError"
+        type="error"
+        showIcon
+        style="margin-bottom: 24px"
+        :message="$t('user.login.message-invalid-credentials')"
+      />
       <a-form-item>
-        <a-input size="large" type="text" :placeholder="$t('user.login.username.placeholder')" v-decorator="[
-          'username',
-          {
-            rules: [{ required: true, message: $t('user.userName.required') }, { validator: handleUsernameOrEmail }],
-            validateTrigger: 'change',
-          },
-        ]">
+        <a-input
+          size="large"
+          type="text"
+          :placeholder="$t('user.login.username.placeholder')"
+          v-decorator="[
+            'username',
+            {
+              rules: [{ required: true, message: $t('user.userName.required') }, { validator: handleUsernameOrEmail }],
+              validateTrigger: 'change',
+            },
+          ]"
+        >
           <a-icon slot="prefix" type="user" :style="{ color: 'rgba(0,0,0,.25)' }" />
         </a-input>
       </a-form-item>
 
       <a-form-item>
-        <a-input-password size="large" :placeholder="$t('user.login.password.placeholder')" v-decorator="[
-          'password',
-          { rules: [{ required: true, message: $t('user.password.required') }], validateTrigger: 'blur' },
-        ]">
+        <a-input-password
+          size="large"
+          :placeholder="$t('user.login.password.placeholder')"
+          v-decorator="[
+            'password',
+            { rules: [{ required: true, message: $t('user.password.required') }], validateTrigger: 'blur' },
+          ]"
+        >
           <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }" />
         </a-input-password>
       </a-form-item>
@@ -95,8 +109,15 @@
       </a-form-item>
 
       <a-form-item style="margin-top: 24px">
-        <a-button size="large" type="primary" htmlType="submit" class="login-button" :loading="state.loginBtn"
-          :disabled="state.loginBtn">{{ $t('user.login.login') }}</a-button>
+        <a-button
+          size="large"
+          type="primary"
+          htmlType="submit"
+          class="login-button"
+          :loading="state.loginBtn"
+          :disabled="state.loginBtn"
+          >{{ $t('user.login.login') }}</a-button
+        >
       </a-form-item>
 
       <div class="user-login-other">
@@ -114,8 +135,12 @@
       </div>
     </a-form>
 
-    <two-step-captcha v-if="requiredTwoStepCaptcha" :visible="stepCaptchaVisible" @success="stepCaptchaSuccess"
-      @cancel="stepCaptchaCancel"></two-step-captcha>
+    <two-step-captcha
+      v-if="requiredTwoStepCaptcha"
+      :visible="stepCaptchaVisible"
+      @success="stepCaptchaSuccess"
+      @cancel="stepCaptchaCancel"
+    ></two-step-captcha>
   </div>
 </template>
 
@@ -214,12 +239,15 @@ export default {
           const loginParams = { ...values }
           // delete loginParams.username
           // loginParams[!state.loginType ? 'email' : 'username'] = values.username
-          // loginParams.password = md5(values.password)
-          loginParams.passWord = values.password
+          loginParams.passWord = md5(values.password)
+          // loginParams.passWord = values.password
           loginParams.loginName = values.username
-
-          console.log('login params', JSON.stringify(loginParams))
-          Login(loginParams)
+          const param = {
+            passWord: loginParams.passWord,
+            loginName: loginParams.loginName,
+          }
+          console.log('login params', JSON.stringify(param))
+          Login(param)
             .then((res) => this.loginSuccess(res))
             .catch((err) => this.requestFailed(err))
             .finally(() => {
