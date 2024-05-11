@@ -39,7 +39,8 @@
 
             <div class="bottom-line flex">
 
-                <el-link type="warning" :underline="false"> Read More <i class="el-icon-arrow-right"></i></el-link>
+                <el-link type="warning" :underline="false" @click="newsdetail(item)"> Read More <i
+                        class="el-icon-arrow-right"></i></el-link>
 
             </div>
         </div>
@@ -60,6 +61,18 @@ export default {
                 return []
             }
         }
+    },
+    methods: {
+        newsdetail(item) {
+            let that = this;
+            console.log(item)
+            // this.$route.meta.title = item.title
+            this.$router.push(`/showwork/showworkDetail/${item.id}/${item.title}`)
+            setTimeout(() => {
+                // that.$route.meta.title = item.title
+            }, 100);
+
+        },
     }
 }
 </script>

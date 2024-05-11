@@ -291,7 +291,12 @@ export default {
       return this.$route.name
     },
     routenameTitle() {
+      // console.log('menu[this.$route.meta.title], this.$route.meta.title')
+      // console.log(this.$route.param)
+      // console.log(menu[this.$route.meta.title], this.$route.params?.title) || this.$route.params?.title || ''
+      // this.$route.meta.title = menu[this.$route.meta.title] || this.$route.params?.title
       return menu[this.$route.meta.title]
+      // return this.$route.meta.title
     },
   },
   created() {
@@ -368,6 +373,7 @@ export default {
       console.log(key)
       window.scrollTo(0, 0)
       this.$router.push(key)
+      window.scrollTo(0, 0)
     },
   },
   watch: {
@@ -375,7 +381,12 @@ export default {
       console.log('路由变化了')
       console.log(to)
       console.log(from)
-
+      if (to.redirectedFrom == '/showwork') {
+        // this.$route.meta.title = '新闻动态'
+        this.$route.meta.title = '新闻动态'
+      }
+      //  this.$route.meta.title = item.description
+      window.scrollTo(0, 0)
       this.activeKey = to.redirectedFrom || to.path
     },
   },

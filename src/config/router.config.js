@@ -125,7 +125,7 @@ export const asyncRouterMap = [
             meta: { title: 'menu.showworkHome', keepAlive: true, permission: ['form'], parentPath: '/showwork' },
           },
           {
-            path: 'showworkDetail/:id',
+            path: 'showworkDetail/:id/:title',
             name: 'showworkDetail',
             hidden: true,
             component: () => import('@/views/list/showworkDetail'),

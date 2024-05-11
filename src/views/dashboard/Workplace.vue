@@ -213,7 +213,7 @@
       <div class="imglist">
         <el-row :gutter="20">
           <el-col :span="8" v-for="item in imglist">
-            <div class="imgelem">
+            <div class="imgelem" @click="link(item)">
               <el-image :src="item.url">
                 <div slot="error" class="image-slot">
                   <i class="el-icon-picture-outline"></i>
@@ -513,8 +513,19 @@ export default {
     newsdetail(item) {
       console.log(item)
       this.$route.meta.title = item.description
-      // this.$router.push('/dashboard/news/3333')
+      this.$router.push(`/showwork/showworkDetail/${item.id}`)
+      this.$route.meta.title = item.description
     },
+    link(item) {
+      console.log(item)
+      if (item.title == '课程') {
+        this.$router.push({ path: '/course' })
+      } else if (item.title == '热点新闻') {
+        this.$router.push({ path: '/showwork' })
+      } else {
+        this.$router.push({ path: '/showwork' })
+      }
+    }
   },
 }
 </script>
