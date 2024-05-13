@@ -7,17 +7,29 @@
             <div class="avatar">
               <img :src="avatar" />
             </div>
-            <div class="username">梁海军</div>
+            <div class="username">{{ AccessToken.userName }}</div>
             <!-- <div class="bio">海纳百川，有容乃大</div> -->
           </div>
           <div class="account-center-detail">
-            <p><i class="title"></i>交互专家</p>
-            <p><i class="group"></i>蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED</p>
+            <p><i class="title"></i>角色：
+
+              <el-tag v-if="AccessToken.userRoleList" size="mini">{{ AccessToken.userRoleList[0].roleName
+              }}</el-tag>
+
+            </p>
+            <p><i class="group"></i>机构</p>
             <p>
               <i class="address"></i>
-              <span>北京市</span>
+              <span>分组</span>
               <!-- <span>杭州市</span> -->
             </p>
+
+            <p>
+              <i class="date"></i>
+              <span>创建时间：</span>
+              <span>{{ AccessToken.insertTime }}</span>
+            </p>
+
           </div>
           <a-divider />
 
@@ -25,32 +37,24 @@
             <div class="tagsTitle">标签</div>
             <div>
               <template v-for="(tag, index) in tags">
-                <a-tooltip v-if="tag.length > 20" :key="tag" :title="tag">
+                <!-- <a-tooltip v-if="tag.length > 20" :key="tag" :title="tag">
                   <a-tag :key="tag" :closable="index !== 0" :close="() => handleTagClose(tag)">{{
                     `${tag.slice(0, 20)}...`
                   }}</a-tag>
-                </a-tooltip>
-                <a-tag v-else :key="tag" :closable="index !== 0" :close="() => handleTagClose(tag)">{{ tag }}</a-tag>
+                </a-tooltip> -->
+                <a-tag :key="tag">{{ tag }}</a-tag>
               </template>
-              <a-input
-                v-if="tagInputVisible"
-                ref="tagInput"
-                type="text"
-                size="small"
-                :style="{ width: '78px' }"
-                :value="tagInputValue"
-                @change="handleInputChange"
-                @blur="handleTagInputConfirm"
-                @keyup.enter="handleTagInputConfirm"
-              />
+              <!-- <a-input v-if="tagInputVisible" ref="tagInput" type="text" size="small" :style="{ width: '78px' }"
+                :value="tagInputValue" @change="handleInputChange" @blur="handleTagInputConfirm"
+                @keyup.enter="handleTagInputConfirm" />
               <a-tag v-else @click="showTagInput" style="background: #fff; borderstyle: dashed">
                 <a-icon type="plus" />New Tag
-              </a-tag>
+              </a-tag> -->
             </div>
           </div>
           <a-divider :dashed="true" />
 
-          <div class="account-center-team">
+          <!-- <div class="account-center-team">
             <div class="teamTitle">团队</div>
             <a-spin :spinning="teamSpinning">
               <div class="members">
@@ -64,21 +68,67 @@
                 </a-row>
               </div>
             </a-spin>
-          </div>
+          </div> -->
         </a-card>
       </a-col>
       <a-col :md="24" :lg="17">
-        <a-card
-          style="width: 100%"
-          :bordered="false"
-          :tabList="tabListNoTitle"
-          :activeTabKey="noTitleKey"
-          @tabChange="(key) => handleTabChange(key, 'noTitleKey')"
-        >
+        <!-- <a-card style="width: 100%" :bordered="false" :tabList="tabListNoTitle" :activeTabKey="noTitleKey"
+          @tabChange="(key) => handleTabChange(key, 'noTitleKey')">
           <article-page v-if="noTitleKey === 'article'"></article-page>
           <app-page v-else-if="noTitleKey === 'app'"></app-page>
           <project-page v-else-if="noTitleKey === 'project'"></project-page>
-        </a-card>
+        </a-card> -->
+
+        <el-tabs v-model="activeName" @tab-click="handleClick">
+          <el-tab-pane label="基本信息" name="first">
+
+
+            <el-form ref="form" :model="form" label-width="80px">
+              <el-form-item label="姓名">
+                <el-input v-model="form.name"></el-input>
+              </el-form-item>
+              <el-form-item label="性别">
+                <el-select v-model="form.region" placeholder="请选择性别">
+                  <el-option label="男" value="0"></el-option>
+                  <el-option label="女" value="1"></el-option>
+                </el-select>
+              </el-form-item>
+
+              <el-form-item label="身份证号">
+                <el-input v-model="form.idCard"></el-input>
+              </el-form-item>
+
+              <el-form-item label="出生日期:">
+                <el-col :span="11">
+                  <el-date-picker type="date" placeholder="选择日期" v-model="form.date1"
+                    style="width: 100%;"></el-date-picker>
+                </el-col>
+
+              </el-form-item>
+              <el-form-item label="邮箱">
+                <el-input v-model="form.Email"></el-input>
+              </el-form-item>
+              <el-form-item label="手机号">
+                <el-input v-model="form.iphone"></el-input>
+              </el-form-item>
+
+              <el-form-item label="个人简介">
+                <el-input type="textarea" v-model="form.desc"></el-input>
+              </el-form-item>
+              <!-- <el-form-item>
+                <el-button type="primary" @click="onSubmit">立即创建</el-button>
+                <el-button>取消</el-button>
+              </el-form-item> -->
+            </el-form>
+
+
+          </el-tab-pane>
+          <!-- <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+      <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+      <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane> -->
+        </el-tabs>
+
+
       </a-col>
     </a-row>
   </div>
@@ -89,7 +139,7 @@ import { PageView, RouteView } from '@/layouts'
 import { AppPage, ArticlePage, ProjectPage } from './page'
 
 import { mapGetters } from 'vuex'
-
+import storage from 'store'
 export default {
   components: {
     RouteView,
@@ -120,6 +170,21 @@ export default {
         // }
       ],
       noTitleKey: 'app',
+      AccessToken: {},
+      activeName: "first",
+      form: {
+        name: '',
+        region: '',
+        date1: '',
+        date2: '',
+        idCard: "",
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: '',
+        iphone: "",
+        Email: ""
+      }
     }
   },
   computed: {
@@ -127,6 +192,15 @@ export default {
   },
   mounted() {
     this.getTeams()
+    let AccessToken = storage.get('Access-Token')
+    this.AccessToken = AccessToken
+    this.form.name = AccessToken.userName
+    this.form.gender = AccessToken.gender
+    this.form.date1 = AccessToken.birthday
+    this.form.idCard = AccessToken.idCard
+    this.form.Email = AccessToken.email
+    this.form.phone = AccessToken.phone
+    this.form.intro = AccessToken.intro
   },
   methods: {
     getTeams() {
@@ -175,22 +249,24 @@ export default {
 
 <style lang="less" scoped>
 .page-header-wrapper-grid-content-main {
-  width: 100%;
+  width: 1200px;
   height: 100%;
   min-height: 100%;
   transition: 0.3s;
+  margin: 0 auto;
 
   .account-center-avatarHolder {
     text-align: center;
     margin-bottom: 24px;
 
-    & > .avatar {
+    &>.avatar {
       margin: 0 auto;
       width: 104px;
       height: 104px;
       margin-bottom: 20px;
       border-radius: 50%;
       overflow: hidden;
+
       img {
         height: 100%;
         width: 100%;
@@ -225,9 +301,11 @@ export default {
     .title {
       background-position: 0 0;
     }
+
     .group {
       background-position: 0 -22px;
     }
+
     .address {
       background-position: 0 -44px;
     }
@@ -246,6 +324,7 @@ export default {
         margin: 12px 0;
         line-height: 24px;
         height: 24px;
+
         .member {
           font-size: 14px;
           color: rgba(0, 0, 0, 0.65);
@@ -256,6 +335,7 @@ export default {
           transition: all 0.3s;
           display: inline-block;
         }
+
         &:hover {
           span {
             color: #1890ff;

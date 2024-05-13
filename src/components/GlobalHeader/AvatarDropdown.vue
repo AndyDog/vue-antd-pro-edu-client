@@ -2,7 +2,7 @@
   <a-dropdown v-if="currentUser && currentUser.userName" placement="bottomRight">
 
     <span class="ant-pro-account-avatar">
-      <a-avatar size="small" src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
+      <a-avatar size="small" src="http://118.178.233.104:8080/medicine/user/downLoadImage?name=avatar"
         class="antd-pro-global-header-index-avatar" />
       <span>{{ currentUser.userName }}</span>
     </span>
@@ -12,10 +12,10 @@
           <a-icon type="user" />
           {{ $t('menu.account.center') }}
         </a-menu-item>
-        <a-menu-item v-if="menu" key="settings" @click="handleToSettings">
+        <!-- <a-menu-item v-if="menu" key="settings" @click="handleToSettings">
           <a-icon type="setting" />
           {{ $t('menu.account.settings') }}
-        </a-menu-item>
+        </a-menu-item> -->
         <a-menu-divider v-if="menu" />
         <a-menu-item key="logout" @click="handleLogout">
           <a-icon type="logout" />

@@ -1,57 +1,65 @@
 <template>
     <div class="newslist">
 
+        <template v-if="newsList && newsList.length > 0">
 
-        <div v-for="item in newsList" class="newselem">
-            <div class="img">
-                <el-image :src="item.img" fit="contain" style="width:100%;height:100%;">
-                    <div slot="error" class="image-slot">
-                        <i class="el-icon-picture-outline"></i>
-                    </div>
-                </el-image>
-            </div>
-            <div class="flex">
-                <div class="newLeft">
-                    <div class="newLefttop">
-                        <div>{{ item.date.split('-')[2] }}</div>
-                        <div>
-                            <span>
-                                {{ item.date.split('-')[1] }}, </span><span> {{ item.date.split('-')[0] }}
-                            </span>
+            <div v-for="item in newsList" class="newselem">
+                <div class="img">
+                    <el-image :src="item.imgUrl" fit="contain" style="width:100%;height:100%;">
+                        <div slot="error" class="image-slot">
+                            <img slot="cover" :src="newsimg" :alt="item.title" />
+                        </div>
+                    </el-image>
+
+
+
+                </div>
+                <div class="flex">
+                    <div class="newLeft">
+                        <div class="newLefttop" v-if="item.insertTime">
+                            <div>{{ moment(item.insertTime).format('DD') }}</div>
+                            <div>
+                                <span>
+                                    {{ item.insertTime.split('-')[1] }}, </span><span> {{ item.insertTime.split('-')[0] }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="icon-edit">
+                            <i class="el-icon-edit"></i>
                         </div>
                     </div>
-                    <div class="icon-edit">
-                        <i class="el-icon-edit"></i>
+                    <div class="newRight">
+                        <div class="title">{{ item.title }}</div>
+                        <div class="flex publish">
+                            By
+                            <el-link type="warning" :underline="false">{{ item.author }}</el-link>
+                            | <el-link type="warning" :underline="false">{{ item.dictName }}</el-link>
+                        </div>
+                        <div>
+                            <p v-html="item.txt"></p>
+                            <!-- {{ item.content }} -->
+                        </div>
                     </div>
                 </div>
-                <div class="newRight">
-                    <div class="title">{{ item.title }}</div>
-                    <div class="flex publish">
-                        By
-                        <el-link type="warning" :underline="false">{{ item.author }}</el-link>
-                        | <el-link type="warning" :underline="false">{{ item.source }}</el-link>
-                    </div>
-                    <div>
-                        {{ item.content }}
-                    </div>
+
+                <div class="bottom-line flex">
+
+                    <el-link type="warning" :underline="false" @click="newsdetail(item)"> Read More <i
+                            class="el-icon-arrow-right"></i></el-link>
+
                 </div>
             </div>
-
-            <div class="bottom-line flex">
-
-                <el-link type="warning" :underline="false" @click="newsdetail(item)"> Read More <i
-                        class="el-icon-arrow-right"></i></el-link>
-
-            </div>
+        </template>
+        <div v-else>
+            <el-empty description="暂无数据"></el-empty>
         </div>
-
-
 
 
     </div>
 </template>
 
 <script>
+import moment from 'moment'
 export default {
     name: 'newslist',
     props: {
@@ -62,12 +70,18 @@ export default {
             }
         }
     },
+    data() {
+        return {
+            moment,
+            newsimg: require('@/assets/266381809445946364978539786.png'),
+        }
+    },
     methods: {
         newsdetail(item) {
             let that = this;
             console.log(item)
             // this.$route.meta.title = item.title
-            this.$router.push(`/showwork/showworkDetail/${item.id}/${item.title}`)
+            this.$router.push(`/showwork/showworkDetail/${item.announcementId}/${item.title}`)
             setTimeout(() => {
                 // that.$route.meta.title = item.title
             }, 100);

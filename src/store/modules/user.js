@@ -10,7 +10,7 @@ const user = {
     token: '',
     name: '',
     welcome: '',
-    avatar: '',
+    avatar: 'http://118.178.233.104:8080/medicine/user/downLoadImage?name=avatar',
     roles: [],
     info: {},
   },

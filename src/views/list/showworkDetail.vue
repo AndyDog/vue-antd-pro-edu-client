@@ -6,11 +6,12 @@
       <div data-v-c019abce="" class="bg-white-1">
         <div data-v-c019abce="" style="min-height: calc(-90px + 100vh);">
           <div data-v-c019abce="">
-            <h2 data-v-c019abce="" class="intro-head">{{ title || '川渝浙省域急救教育实施启动会在北京外国语大学成功召开' }}</h2>
-            <h5 data-v-c019abce="" class="intro-time">发布时间：2023-12-23 06:45:14</h5>
+
+            <h2 data-v-c019abce="" class="intro-head">{{ newsList.title || title }}</h2>
+            <h5 data-v-c019abce="" class="intro-time">发布时间：{{ newsList.insertTime }}</h5>
             <div data-v-c019abce="" class="el-divider el-divider--horizontal"><!----></div>
-            <div data-v-c019abce="" class="wdms_html intro-content">
-              <p style="text-indent: 2em;">
+            <div data-v-c019abce="" class="wdms_html intro-content" v-html="newsList.txt">
+              <!-- <p style="text-indent: 2em;">
                 2023年12月19日上午，“全国学校急救教育省域工作实施启动会”在北京外国语大学国际大厦召开，会议为期三天。中国教育科学研究院培训中心管理部主任杨潮萍，国家应急医学研究中心办公室副主任祖洁琛，急救教育项目办公室负责人出席会议，来自四川、重庆、浙江三省（市）省域负责人共20多人全程参加了本次活动。
               </p>
               <p style="text-indent: 2em;">&nbsp;</p>
@@ -60,7 +61,7 @@
               </p>
               <p style="text-indent: 2em; text-align: left;">&nbsp;</p>
               <p style="text-align: left;"><img style="display: block; margin-left: auto; margin-right: auto;"
-                  src="http://vod.jj-edu.cn/k24AgKgaOVaCWksj_微信图片_20231223072349.jpg" alt="" width="740" height="555"></p>
+                  src="http://vod.jj-edu.cn/k24AgKgaOVaCWksj_微信图片_20231223072349.jpg" alt="" width="740" height="555"></p> -->
             </div><!---->
           </div>
         </div>
@@ -85,17 +86,34 @@ export default {
   components: {},
   props: {},
   data() {
-    return {}
+    return { newsList: {} }
   },
   watch: {},
   computed: {
     title() {
       return this.$route.params.title
+    },
+    id() {
+      return this.$route.params.id
     }
   },
-  methods: {},
+  methods: {
+    getNewsList() {
+      let that = this
+      let param = { dictCode: '资讯动态', dictId: 'dd3d91a8-1754-47d8-bcc5-3b8550d6ff2e', announcementId: this.id, announcementids: [this.id], type: 1 }
+      // if (this.AccessToken && Object.keys(this.AccessToken).length > 0) {
+      // param.userId = this.AccessToken?.userId ?? '0e0b317e-bb93-4a85-95eb-be92814fe770'
+      that.$http.post('/announcement/query', param).then((res) => {
+        console.log(res)
+        // that.trainingModel = res && res.data
+        that.newsList = res && res.datas && res.datas[0]
+      })
+      // }
+    },
+
+  },
   created() { },
-  mounted() { },
+  mounted() { this.getNewsList() },
 }
 </script>
 <style lang="less" scoped>
