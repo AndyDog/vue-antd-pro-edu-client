@@ -512,9 +512,10 @@ export default {
     },
     newsdetail(item) {
       console.log(item)
-      this.$route.meta.title = item.description
-      this.$router.push(`/showwork/showworkDetail/${item.id}`)
-      this.$route.meta.title = item.description
+      // this.$route.meta.title = item.description
+      // this.$router.push(`/showwork/showworkDetail/${item.id}`)
+      this.$router.push(`/showwork/showworkDetail/${item.id}/${item.description}`)
+      // this.$route.meta.title = item.description
     },
     link(item) {
       console.log(item)
