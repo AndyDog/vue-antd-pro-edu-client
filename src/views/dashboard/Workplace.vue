@@ -7,8 +7,10 @@
     <div class="containerhomne logocontainer ant-pro-page-header-wrap">
       <div class="homepagecontent1">
         <div class="homepagecontent1img">
-          <el-image class="img-responsive wp-image-7 lazyloaded"
-            src="http://106.54.167.222:39900/wp-content/uploads/2024/04/logo-300x296.png">
+          <el-image
+            class="img-responsive wp-image-7 lazyloaded"
+            src="http://106.54.167.222:39900/wp-content/uploads/2024/04/logo-300x296.png"
+          >
             <div slot="error" class="image-slot">
               <img width="300" height="296" src="../../assets/logo-300x296.png" alt="" />
             </div>
@@ -90,22 +92,27 @@
                         </p>
                         <ol>
                           <li>
-                            <strong>保护生命</strong>：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。
+                            <strong>保护生命</strong
+                            >：在突发事件中，应急医学致力于尽可能减少伤亡人数，最大限度地保护生命安全。
                           </li>
                           <li>
                             <strong>减轻痛苦</strong>：应急医学努力提供及时有效的医疗救助，缓解伤痛，减轻患者的痛苦。
                           </li>
                           <li>
-                            <strong>控制疫情</strong>：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。
+                            <strong>控制疫情</strong
+                            >：在传染病暴发或疫情爆发时，应急医学的使命是迅速控制疫情蔓延，保护公众健康。
                           </li>
                           <li>
-                            <strong>维护社会秩序</strong>：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。
+                            <strong>维护社会秩序</strong
+                            >：在灾难或紧急情况下，应急医学通过提供医疗服务和支持，维护社会秩序，保障社会稳定。
                           </li>
                           <li>
-                            <strong>恢复生活</strong>：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。
+                            <strong>恢复生活</strong
+                            >：应急医学不仅关注急救和救助阶段，还关注灾后恢复和重建工作，帮助受灾群众尽快恢复正常生活。
                           </li>
                           <li>
-                            <strong>预防再次发生</strong>：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。
+                            <strong>预防再次发生</strong
+                            >：通过总结经验教训，制定应急预案，提高公众和医疗人员的应对能力，预防类似事件再次发生。
                           </li>
                         </ol>
                       </div>
@@ -116,22 +123,28 @@
                         <div class="markdown prose w-full break-words dark:prose-invert light">
                           <ol>
                             <li>
-                              <strong>综合性和多学科性</strong>：应急医学强调跨学科合作和综合应对，不仅涉及医学领域，还包括工程学、社会学、心理学等多个学科的知识与技能。综合性和多学科性是应对复杂紧急情况的重要保障。
+                              <strong>综合性和多学科性</strong
+                              >：应急医学强调跨学科合作和综合应对，不仅涉及医学领域，还包括工程学、社会学、心理学等多个学科的知识与技能。综合性和多学科性是应对复杂紧急情况的重要保障。
                             </li>
                             <li>
-                              <strong>及时响应和迅速行动</strong>：应急医学强调对紧急情况的敏感度和快速反应能力。在灾难或事故发生后，应急医学需要立即展开行动，以最大限度地减少伤亡和病患，保障生命安全。
+                              <strong>及时响应和迅速行动</strong
+                              >：应急医学强调对紧急情况的敏感度和快速反应能力。在灾难或事故发生后，应急医学需要立即展开行动，以最大限度地减少伤亡和病患，保障生命安全。
                             </li>
                             <li>
-                              <strong>预防为主和全民参与</strong>：应急医学注重预防工作，强调在突发事件发生前就进行风险评估、预警和预防措施的制定。同时，鼓励全民参与，提高公众的应对能力和自救能力。
+                              <strong>预防为主和全民参与</strong
+                              >：应急医学注重预防工作，强调在突发事件发生前就进行风险评估、预警和预防措施的制定。同时，鼓励全民参与，提高公众的应对能力和自救能力。
                             </li>
                             <li>
-                              <strong>科学管理和资源优化</strong>：应急医学提倡科学管理医疗资源，包括人力、物资和设施等，以确保在紧急情况下资源的合理利用和最大化效益。
+                              <strong>科学管理和资源优化</strong
+                              >：应急医学提倡科学管理医疗资源，包括人力、物资和设施等，以确保在紧急情况下资源的合理利用和最大化效益。
                             </li>
                             <li>
-                              <strong>人文关怀和心理支持</strong>：应急医学强调对受灾群众的人文关怀和心理支持，关注其身心健康，通过心理援助和社会支持，帮助他们度过难关。
+                              <strong>人文关怀和心理支持</strong
+                              >：应急医学强调对受灾群众的人文关怀和心理支持，关注其身心健康，通过心理援助和社会支持，帮助他们度过难关。
                             </li>
                             <li>
-                              <strong>持续改进和学习</strong>：应急医学不断总结经验教训，不断改进工作方法和应对策略，以适应不断变化的紧急情况和应对挑战。
+                              <strong>持续改进和学习</strong
+                              >：应急医学不断总结经验教训，不断改进工作方法和应对策略，以适应不断变化的紧急情况和应对挑战。
                             </li>
                           </ol>
                           <p>
@@ -148,25 +161,32 @@
                           </p>
                           <ol>
                             <li>
-                              <strong>保障生命安全</strong>：应急医学承诺在突发事件和紧急情况下，尽最大努力保障每一个人的生命安全，无论是受伤患者、疫情患者还是其他受灾群众。
+                              <strong>保障生命安全</strong
+                              >：应急医学承诺在突发事件和紧急情况下，尽最大努力保障每一个人的生命安全，无论是受伤患者、疫情患者还是其他受灾群众。
                             </li>
                             <li>
-                              <strong>及时救援和医疗救助</strong>：应急医学承诺对于受伤患者和急需医疗救助的人员提供及时救援和医疗支持，无论是在灾难现场还是医疗机构内。
+                              <strong>及时救援和医疗救助</strong
+                              >：应急医学承诺对于受伤患者和急需医疗救助的人员提供及时救援和医疗支持，无论是在灾难现场还是医疗机构内。
                             </li>
                             <li>
-                              <strong>全面覆盖和公平对待</strong>：应急医学承诺在紧急情况下，为所有需要帮助的人提供服务，不分国界、种族、信仰或社会地位，保证医疗服务的公平和公正。
+                              <strong>全面覆盖和公平对待</strong
+                              >：应急医学承诺在紧急情况下，为所有需要帮助的人提供服务，不分国界、种族、信仰或社会地位，保证医疗服务的公平和公正。
                             </li>
                             <li>
-                              <strong>保障医护人员安全</strong>：应急医学承诺为医护人员提供必要的安全保障措施，确保他们在执行任务时的安全与健康。
+                              <strong>保障医护人员安全</strong
+                              >：应急医学承诺为医护人员提供必要的安全保障措施，确保他们在执行任务时的安全与健康。
                             </li>
                             <li>
-                              <strong>透明和诚信</strong>：应急医学承诺在信息公开、沟通透明方面保持高度诚信，及时向公众通报灾情、疫情及相关医疗信息，以促进社会信任和合作。
+                              <strong>透明和诚信</strong
+                              >：应急医学承诺在信息公开、沟通透明方面保持高度诚信，及时向公众通报灾情、疫情及相关医疗信息，以促进社会信任和合作。
                             </li>
                             <li>
-                              <strong>持续改进和学习</strong>：应急医学承诺不断改进工作方法和应对策略，吸取经验教训，提高医疗救援能力和效率。
+                              <strong>持续改进和学习</strong
+                              >：应急医学承诺不断改进工作方法和应对策略，吸取经验教训，提高医疗救援能力和效率。
                             </li>
                             <li>
-                              <strong>关注人文关怀和心理支持</strong>：应急医学承诺为受灾群众提供人文关怀和心理支持，关注他们的身心健康，帮助他们渡过难关。
+                              <strong>关注人文关怀和心理支持</strong
+                              >：应急医学承诺为受灾群众提供人文关怀和心理支持，关注他们的身心健康，帮助他们渡过难关。
                             </li>
                           </ol>
                           <p>
@@ -179,25 +199,32 @@
                       <div class="panel-body toggle-content fusion-clearfix">
                         <ol>
                           <li>
-                            <strong>保障生命安全</strong>：应急医学通过及时的救援和医疗服务，可以最大程度地减少伤亡人数，保障人民生命安全，是社会稳定和发展的基础。
+                            <strong>保障生命安全</strong
+                            >：应急医学通过及时的救援和医疗服务，可以最大程度地减少伤亡人数，保障人民生命安全，是社会稳定和发展的基础。
                           </li>
                           <li>
-                            <strong>保障公共卫生</strong>：在突发事件和紧急情况下，应急医学不仅能够控制疫情传播，还能够提供各种预防措施，保障公众健康，维护社会公共卫生安全。
+                            <strong>保障公共卫生</strong
+                            >：在突发事件和紧急情况下，应急医学不仅能够控制疫情传播，还能够提供各种预防措施，保障公众健康，维护社会公共卫生安全。
                           </li>
                           <li>
-                            <strong>维护社会稳定</strong>：应急医学在灾难和紧急情况中发挥着重要的维稳作用，通过提供医疗救援和支持，稳定受灾群众情绪，防止社会动荡和混乱。
+                            <strong>维护社会稳定</strong
+                            >：应急医学在灾难和紧急情况中发挥着重要的维稳作用，通过提供医疗救援和支持，稳定受灾群众情绪，防止社会动荡和混乱。
                           </li>
                           <li>
-                            <strong>提高应对能力</strong>：应急医学可以通过应急演练、培训和技术创新等手段，提高医疗机构和医护人员的应急能力和水平，为日常医疗工作提供更好的支持。
+                            <strong>提高应对能力</strong
+                            >：应急医学可以通过应急演练、培训和技术创新等手段，提高医疗机构和医护人员的应急能力和水平，为日常医疗工作提供更好的支持。
                           </li>
                           <li>
-                            <strong>促进社会团结</strong>：在灾难面前，应急医学能够促进社会各界的团结合作，凝聚社会力量，共同应对危机，增强社会凝聚力和向心力。
+                            <strong>促进社会团结</strong
+                            >：在灾难面前，应急医学能够促进社会各界的团结合作，凝聚社会力量，共同应对危机，增强社会凝聚力和向心力。
                           </li>
                           <li>
-                            <strong>提升国家形象</strong>：应急医学的高效运作和优质服务，能够提升国家在国际社会中的形象和声誉，增强国际社会的信任和合作。
+                            <strong>提升国家形象</strong
+                            >：应急医学的高效运作和优质服务，能够提升国家在国际社会中的形象和声誉，增强国际社会的信任和合作。
                           </li>
                           <li>
-                            <strong>推动科技发展</strong>：应急医学在医疗设备、医疗技术和医疗管理等方面不断创新和发展，推动医疗科技的进步，促进医疗卫生事业的发展。
+                            <strong>推动科技发展</strong
+                            >：应急医学在医疗设备、医疗技术和医疗管理等方面不断创新和发展，推动医疗科技的进步，促进医疗卫生事业的发展。
                           </li>
                         </ol>
                       </div>
@@ -250,8 +277,12 @@
                     <span>{{ item.updatedAt | fromNow }}</span>
                     <div class="avatarList">
                       <avatar-list size="small" :max-length="2">
-                        <avatar-list-item v-for="(member, i) in item.members" :key="`${item.id}-avatar-${i}`"
-                          :src="member.avatar" :tips="member.name" />
+                        <avatar-list-item
+                          v-for="(member, i) in item.members"
+                          :key="`${item.id}-avatar-${i}`"
+                          :src="member.avatar"
+                          :tips="member.name"
+                        />
                       </avatar-list>
                     </div>
                   </div>
@@ -417,6 +448,7 @@ export default {
           icon: 'el-icon-potato-strips',
         },
       ],
+      newsList: [],
       customStyle: 'background: #fff;border-radius: 4px;margin-bottom: 24px;border: 0;overflow: hidden',
     }
   },
@@ -456,6 +488,7 @@ export default {
     this.initRadar()
     this.getprojectsperson()
     this.getList()
+    this.getNewsList()
     console.log('!!!!!!!!!!!!!!!!!!!')
   },
   methods: {
@@ -492,6 +525,19 @@ export default {
         // this.loading = false
         // console.log(that.projects)
       })
+    },
+
+    getNewsList() {
+      let that = this
+      let param = { dictCode: '资讯动态', dictId: 'dd3d91a8-1754-47d8-bcc5-3b8550d6ff2e' }
+      // if (this.AccessToken && Object.keys(this.AccessToken).length > 0) {
+      // param.userId = this.AccessToken?.userId ?? '0e0b317e-bb93-4a85-95eb-be92814fe770'
+      that.$http.post('/announcement/query', param).then((res) => {
+        console.log(res)
+        // that.trainingModel = res && res.data
+        that.newsList = res && res.datas
+      })
+      // }
     },
 
     initRadar() {
@@ -1102,7 +1148,6 @@ h2 {
 }
 
 @media screen and (max-width: 767px) {
-
   .team-details,
   .team-members {
     width: 100%;
@@ -1386,7 +1431,7 @@ footer p {
     color: #f09a3e;
   }
 
-  /deep/ .ant-collapse>.ant-collapse-item>.ant-collapse-header .ant-collapse-arrow {
+  /deep/ .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
     font-size: 25px;
     margin-right: 15px;
   }
